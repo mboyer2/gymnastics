@@ -28,7 +28,7 @@ var mainVm = new Vue({
                         groupDescription:'Non-Acrobatic Skills',     
                         groupPoints:.5,                                 
                         totalPoints: 0,                                 
-                        pic:'',
+                        pic:'public/Floor/floor1_NonAcrobatic_A/2.png',
                         reference:'',
                     },
                     {   name:'Handstand',
@@ -39,7 +39,7 @@ var mainVm = new Vue({
                         groupDescription:'Non-Acrobatic Skills',     
                         groupPoints:.5,                                 
                         totalPoints: 0,                                     
-                        pic:'',
+                        pic:'public/Floor/floor1_NonAcrobatic_A/3.png',
                         reference:'',
                     },
                     {   name:'Stradle Planche',
@@ -50,7 +50,7 @@ var mainVm = new Vue({
                         groupDescription:'Non-Acrobatic Skills',     
                         groupPoints:.5,                                 
                         totalPoints: 0,                                     
-                        pic:'',
+                        pic:'public/Floor/floor1_NonAcrobatic_A/4.png',
                         reference:'',
                     },
                     {   name:'Handstand Pirouette',
@@ -61,7 +61,7 @@ var mainVm = new Vue({
                         groupDescription:'Non-Acrobatic Skills',     
                         groupPoints:.5,                                 
                         totalPoints: 0,                                     
-                        pic:'',
+                        pic:'public/Floor/floor1_NonAcrobatic_A/5.png',
                         reference:'',
                     },
                     {   name:'',
@@ -72,7 +72,7 @@ var mainVm = new Vue({
                         groupDescription:'Non-Acrobatic Skills',     
                         groupPoints:.5,                                 
                         totalPoints: 0,                                     
-                        pic:'',
+                        pic:'public/Floor/floor1_NonAcrobatic_A/6.png',
                         reference:'',
                     },
                     {   name:'Back Walkover',
@@ -83,7 +83,7 @@ var mainVm = new Vue({
                         groupDescription:'Non-Acrobatic Skills',     
                         groupPoints:.5,                                 
                         totalPoints: 0,                                     
-                        pic:'',
+                        pic:'public/Floor/floor1_NonAcrobatic_A/7.png',
                         reference:'',
                     },
                     {   name:'Forward Walkover',
@@ -94,7 +94,7 @@ var mainVm = new Vue({
                         groupDescription:'Non-Acrobatic Skills',     
                         groupPoints:.5,                                 
                         totalPoints: 0,                                     
-                        pic:'',
+                        pic:'public/Floor/floor1_NonAcrobatic_A/8.png',
                         reference:'',
                     },
                     {   name:'Splits',
@@ -105,7 +105,7 @@ var mainVm = new Vue({
                         groupDescription:'Non-Acrobatic Skills',     
                         groupPoints:.5,                                 
                         totalPoints: 0,                                     
-                        pic:'',
+                        pic:'public/Floor/floor1_NonAcrobatic_A/9.png',
                         reference:'',
                     },
                     {   name:'Scale',
@@ -116,7 +116,7 @@ var mainVm = new Vue({
                         groupDescription:'Non-Acrobatic Skills',     
                         groupPoints:.5,                                 
                         totalPoints: 0,                                     
-                        pic:'',
+                        pic:'public/Floor/floor1_NonAcrobatic_A/10.png',
                         reference:'',
                     },
                     {   name:'Jump backward to front support',
@@ -127,7 +127,7 @@ var mainVm = new Vue({
                         groupDescription:'Non-Acrobatic Skills',     
                         groupPoints:.5,                                 
                         totalPoints: 0,                                     
-                        pic:'',
+                        pic:'public/Floor/floor1_NonAcrobatic_A/11.png',
                         reference:'',
                     },
                     {   name:'Butterfly',
@@ -138,7 +138,7 @@ var mainVm = new Vue({
                         groupDescription:'Non-Acrobatic Skills',     
                         groupPoints:.5,                                 
                         totalPoints: 0,                                     
-                        pic:'',
+                        pic:'public/Floor/floor1_NonAcrobatic_A/12.png',
                         reference:'',
                     },
                     {   name:'Breakdance Variation',
@@ -149,7 +149,7 @@ var mainVm = new Vue({
                         groupDescription:'Non-Acrobatic Skills',     
                         groupPoints:.5,                                 
                         totalPoints: 0,                                     
-                        pic:'',
+                        pic:'public/Floor/floor1_NonAcrobatic_A/13.png',
                         reference:'',
                     },
                     {   name:'Flair with 1/2 Spindle',
@@ -160,7 +160,7 @@ var mainVm = new Vue({
                         groupDescription:'Non-Acrobatic Skills',     
                         groupPoints:.5,                                 
                         totalPoints: 0,                                     
-                        pic:'',
+                        pic:'public/Floor/floor1_NonAcrobatic_A/14.png',
                         reference:'',
                     },
                     {   name:'Russian',
@@ -171,7 +171,7 @@ var mainVm = new Vue({
                         groupDescription:'Non-Acrobatic Skills',     
                         groupPoints:.5,                                 
                         totalPoints: 0,                                     
-                        pic:'',
+                        pic:'public/Floor/floor1_NonAcrobatic_A/15.png',
                         reference:'',
                     },
                     {   name:'Backward Roll 1/2 turn',
@@ -182,7 +182,7 @@ var mainVm = new Vue({
                         groupDescription:'Non-Acrobatic Skills',     
                         groupPoints:.5,                                 
                         totalPoints: 0,                                     
-                        pic:'',
+                        pic:'public/Floor/floor1_NonAcrobatic_A/16.png',
                         reference:'',
                     }]
                 },
@@ -198,7 +198,7 @@ var mainVm = new Vue({
                         groupDescription:'Non-Acrobatic Skills',     
                         groupPoints:.5,                                 
                         totalPoints: 0,                                     
-                        pic:'',
+                        pic:'public/Floor/floor1_NonAcrobatic_B/1.png',
                         reference:'',
                     },
                     {   name:'Press Handstand',
@@ -209,7 +209,7 @@ var mainVm = new Vue({
                         groupDescription:'Non-Acrobatic Skills',     
                         groupPoints:.5,                                 
                         totalPoints: 0,                                     
-                        pic:'',
+                        pic:'public/Floor/floor1_NonAcrobatic_B/2.png',
                         reference:'',
                     },
                     {   name:'Press Handstand',
@@ -220,7 +220,7 @@ var mainVm = new Vue({
                         groupDescription:'Non-Acrobatic Skills',     
                         groupPoints:.5,                                 
                         totalPoints: 0,                                     
-                        pic:'',
+                        pic:'public/Floor/floor1_NonAcrobatic_B/3.png',
                         reference:'',
                     },
                     {   name:'Japanese Handstand',
@@ -231,7 +231,7 @@ var mainVm = new Vue({
                         groupDescription:'Non-Acrobatic Skills',     
                         groupPoints:.5,                                 
                         totalPoints: 0,                                     
-                        pic:'',
+                        pic:'public/Floor/floor1_NonAcrobatic_B/4.png',
                         reference:'',
                     },
                     {   name:'Planche',
@@ -242,7 +242,7 @@ var mainVm = new Vue({
                         groupDescription:'Non-Acrobatic Skills',     
                         groupPoints:.5,                                 
                         totalPoints: 0,                                     
-                        pic:'',
+                        pic:'public/Floor/floor1_NonAcrobatic_B/5.png',
                         reference:'',
                     },
                     {   name:'Straddle Planche Press Handstand',
@@ -253,7 +253,7 @@ var mainVm = new Vue({
                         groupDescription:'Non-Acrobatic Skills',     
                         groupPoints:.5,                                 
                         totalPoints: 0,                                     
-                        pic:'',
+                        pic:'public/Floor/floor1_NonAcrobatic_B/6.png',
                         reference:'',
                     },
                     {   name:'Stalder Roll Press Handstand',
@@ -264,7 +264,7 @@ var mainVm = new Vue({
                         groupDescription:'Non-Acrobatic Skills',     
                         groupPoints:.5,                                 
                         totalPoints: 0,                                     
-                        pic:'',
+                        pic:'public/Floor/floor1_NonAcrobatic_B/7.png',
                         reference:'',
                     },
                     {   name:'Scale',
@@ -275,7 +275,7 @@ var mainVm = new Vue({
                         groupDescription:'Non-Acrobatic Skills',     
                         groupPoints:.5,                                 
                         totalPoints: 0,                                     
-                        pic:'',
+                        pic:'public/Floor/floor1_NonAcrobatic_B/8.png',
                         reference:'',
                     },
                     {   name:'Endo',
@@ -286,7 +286,7 @@ var mainVm = new Vue({
                         groupDescription:'Non-Acrobatic Skills',     
                         groupPoints:.5,                                 
                         totalPoints: 0,                                     
-                        pic:'',
+                        pic:'public/Floor/floor1_NonAcrobatic_B/9.png',
                         reference:'',
                     },
                     {   name:'Tong Fei',
@@ -297,7 +297,7 @@ var mainVm = new Vue({
                         groupDescription:'Non-Acrobatic Skills',     
                         groupPoints:.5,                                 
                         totalPoints: 0,                                     
-                        pic:'',
+                        pic:'public/Floor/floor1_NonAcrobatic_B/10.png',
                         reference:'',
                     },
                     {   name:'Flair handstand',
@@ -308,7 +308,7 @@ var mainVm = new Vue({
                         groupDescription:'Non-Acrobatic Skills',     
                         groupPoints:.5,                                 
                         totalPoints: 0,                                     
-                        pic:'',
+                        pic:'public/Floor/floor1_NonAcrobatic_B/11.png',
                         reference:'',
                     },
                     {   name:'Handstand to flair',
@@ -319,7 +319,7 @@ var mainVm = new Vue({
                         groupDescription:'Non-Acrobatic Skills',     
                         groupPoints:.5,                                 
                         totalPoints: 0,                                     
-                        pic:'',
+                        pic:'public/Floor/floor1_NonAcrobatic_B/12.png',
                         reference:'',
                     },
                     {   name:'Spindle Flair',
@@ -330,7 +330,7 @@ var mainVm = new Vue({
                         groupDescription:'Non-Acrobatic Skills',     
                         groupPoints:.5,                                 
                         totalPoints: 0,                                     
-                        pic:'',
+                        pic:'public/Floor/floor1_NonAcrobatic_B/13.png',
                         reference:'',
                     },
                     {   name:'Flair 1/2 spindle to handstand',
@@ -341,7 +341,7 @@ var mainVm = new Vue({
                         groupDescription:'Non-Acrobatic Skills',     
                         groupPoints:.5,                                 
                         totalPoints: 0,                                     
-                        pic:'',
+                        pic:'public/Floor/floor1_NonAcrobatic_B/14.png',
                         reference:'',
                     },
                     {   name:'Russian',
@@ -352,7 +352,7 @@ var mainVm = new Vue({
                         groupDescription:'Non-Acrobatic Skills',     
                         groupPoints:.5,                                 
                         totalPoints: 0,                                     
-                        pic:'',
+                        pic:'public/Floor/floor1_NonAcrobatic_B/15.png',
                         reference:'',
                     },
                     {   name:'',
@@ -363,7 +363,7 @@ var mainVm = new Vue({
                         groupDescription:'Non-Acrobatic Skills',     
                         groupPoints:.5,                                 
                         totalPoints: 0,                                     
-                        pic:'',
+                        pic:'public/Floor/floor1_NonAcrobatic_B/16.png',
                         reference:'',
                     }]
                 },
@@ -379,7 +379,7 @@ var mainVm = new Vue({
                         groupDescription:'Non-Acrobatic Skills',     
                         groupPoints:.5,                                 
                         totalPoints: 0,                                     
-                        pic:'',
+                        pic:'public/Floor/floor1_NonAcrobatic_C/1.png',
                         reference:'',
                     },
                     {
@@ -391,7 +391,7 @@ var mainVm = new Vue({
                         groupDescription:'Non-Acrobatic Skills',     
                         groupPoints:.5,                                 
                         totalPoints: 0,                                     
-                        pic:'',
+                        pic:'public/Floor/floor1_NonAcrobatic_C/2.png',
                         reference:'',
                     },
                     {
@@ -403,7 +403,7 @@ var mainVm = new Vue({
                         groupDescription:'Non-Acrobatic Skills',     
                         groupPoints:.5,                                 
                         totalPoints: 0,                                     
-                        pic:'',
+                        pic:'public/Floor/floor1_NonAcrobatic_C/3.png',
                         reference:'',
                     },
                     {
@@ -415,7 +415,7 @@ var mainVm = new Vue({
                         groupDescription:'Non-Acrobatic Skills',     
                         groupPoints:.5,                                 
                         totalPoints: 0,                                     
-                        pic:'',
+                        pic:'public/Floor/floor1_NonAcrobatic_C/4.png',
                         reference:'',
                     },
                     {
@@ -427,7 +427,7 @@ var mainVm = new Vue({
                         groupDescription:'Non-Acrobatic Skills',     
                         groupPoints:.5,                                 
                         totalPoints: 0,                                     
-                        pic:'',
+                        pic:'public/Floor/floor1_NonAcrobatic_C/5.png',
                         reference:'',
                     },
                     {
@@ -439,7 +439,7 @@ var mainVm = new Vue({
                         groupDescription:'Non-Acrobatic Skills',     
                         groupPoints:.5,                                 
                         totalPoints: 0,                                     
-                        pic:'',
+                        pic:'public/Floor/floor1_NonAcrobatic_C/6.png',
                         reference:'',
                     },
                     {
@@ -451,7 +451,7 @@ var mainVm = new Vue({
                         groupDescription:'Non-Acrobatic Skills',     
                         groupPoints:.5,                                 
                         totalPoints: 0,                                     
-                        pic:'',
+                        pic:'public/Floor/floor1_NonAcrobatic_C/7.png',
                         reference:'',
                     },
                     {
@@ -463,7 +463,7 @@ var mainVm = new Vue({
                         groupDescription:'Non-Acrobatic Skills',     
                         groupPoints:.5,                                 
                         totalPoints: 0,                                     
-                        pic:'',
+                        pic:'public/Floor/floor1_NonAcrobatic_C/8.png',
                         reference:'',
                     },
                     {
@@ -475,7 +475,7 @@ var mainVm = new Vue({
                         groupDescription:'Non-Acrobatic Skills',     
                         groupPoints:.5,                                 
                         totalPoints: 0,                                     
-                        pic:'',
+                        pic:'public/Floor/floor1_NonAcrobatic_C/9.png',
                         reference:'',
                     },
                     {
@@ -487,7 +487,7 @@ var mainVm = new Vue({
                         groupDescription:'Non-Acrobatic Skills',     
                         groupPoints:.5,                                 
                         totalPoints: 0,                                     
-                        pic:'',
+                        pic:'public/Floor/floor1_NonAcrobatic_C/10.png',
                         reference:'',
                     }]
                 },
@@ -503,7 +503,7 @@ var mainVm = new Vue({
                         groupDescription:'Non-Acrobatic Skills',     
                         groupPoints:.5,                                 
                         totalPoints: 0,                                     
-                        pic:'',
+                        pic:'public/Floor/floor1_NonAcrobatic_D/1.png',
                         reference:'',
                     },
                     {
@@ -515,7 +515,7 @@ var mainVm = new Vue({
                         groupDescription:'Non-Acrobatic Skills',     
                         groupPoints:.5,                                 
                         totalPoints: 0,                                     
-                        pic:'',
+                        pic:'public/Floor/floor1_NonAcrobatic_D/2.png',
                         reference:'',
                     },
                     {
@@ -527,7 +527,7 @@ var mainVm = new Vue({
                         groupDescription:'Non-Acrobatic Skills',     
                         groupPoints:.5,                                 
                         totalPoints: 0,                                     
-                        pic:'',
+                        pic:'public/Floor/floor1_NonAcrobatic_D/3.png',
                         reference:'',
                     },
                     {
@@ -539,7 +539,7 @@ var mainVm = new Vue({
                         groupDescription:'Non-Acrobatic Skills',     
                         groupPoints:.5,                                 
                         totalPoints: 0,                                     
-                        pic:'',
+                        pic:'public/Floor/floor1_NonAcrobatic_D/4.png',
                         reference:'',
                     },
                     {
@@ -551,19 +551,7 @@ var mainVm = new Vue({
                         groupDescription:'Non-Acrobatic Skills',     
                         groupPoints:.5,                                 
                         totalPoints: 0,                                     
-                        pic:'',
-                        reference:'',
-                    },
-                    {
-                        name:'Manna press handstand',
-                        description:'Manna (2 s.) and press to handstand (2 s.) also with straddle legs',
-                        value:'D',
-                        valuePoints:.4,                                 
-                        group:'Group I',
-                        groupDescription:'Non-Acrobatic Skills',     
-                        groupPoints:.5,                                 
-                        totalPoints: 0,                                     
-                        pic:'',
+                        pic:'public/Floor/floor1_NonAcrobatic_D/5.png',
                         reference:'',
                     }]
                 }
@@ -583,7 +571,7 @@ var mainVm = new Vue({
                         groupDescription:'Front Salto Skills',     
                         groupPoints:.5,                                 
                         totalPoints: 0,                                     
-                        pic:'',
+                        pic:'public/Floor/floor2_FrontSalto_A/1.png',
                         reference:'',
                     },
                     {
@@ -595,7 +583,7 @@ var mainVm = new Vue({
                         groupDescription:'Front Salto Skills',     
                         groupPoints:.5,                                 
                         totalPoints: 0,                                     
-                        pic:'',
+                        pic:'public/Floor/floor2_FrontSalto_A/2.png',
                         reference:'',
                     },
                     {
@@ -607,7 +595,7 @@ var mainVm = new Vue({
                         groupDescription:'Front Salto Skills',     
                         groupPoints:.5,                                 
                         totalPoints: 0,                                     
-                        pic:'',
+                        pic:'public/Floor/floor2_FrontSalto_A/3.png',
                         reference:'',
                     },
                     {
@@ -619,7 +607,7 @@ var mainVm = new Vue({
                         groupDescription:'Front Salto Skills',     
                         groupPoints:.5,                                 
                         totalPoints: 0,                                     
-                        pic:'',
+                        pic:'public/Floor/floor2_FrontSalto_A/4.png',
                         reference:'',
                     },
                     {
@@ -631,7 +619,7 @@ var mainVm = new Vue({
                         groupDescription:'Front Salto Skills',     
                         groupPoints:.5,                                 
                         totalPoints: 0,                                     
-                        pic:'',
+                        pic:'public/Floor/floor2_FrontSalto_A/5.png',
                         reference:'',
                     },
                     {
@@ -643,7 +631,7 @@ var mainVm = new Vue({
                         groupDescription:'Front Salto Skills',     
                         groupPoints:.5,                                 
                         totalPoints: 0,                                     
-                        pic:'',
+                        pic:'public/Floor/floor2_FrontSalto_A/6.png',
                         reference:'',
                     }]
                 },
@@ -659,7 +647,7 @@ var mainVm = new Vue({
                         groupDescription:'Front Salto Skills',     
                         groupPoints:.5,                                 
                         totalPoints: 0,                                     
-                        pic:'',
+                        pic:'public/Floor/floor2_FrontSalto_B/1.png',
                         reference:'',
                         connection: true
                     },
@@ -672,7 +660,7 @@ var mainVm = new Vue({
                         groupDescription:'Front Salto Skills',     
                         groupPoints:.5,                                 
                         totalPoints: 0,                                     
-                        pic:'',
+                        pic:'public/Floor/floor2_FrontSalto_B/2.png',
                         reference:'',
                         connection: true
                     },
@@ -685,7 +673,7 @@ var mainVm = new Vue({
                         groupDescription:'Front Salto Skills',     
                         groupPoints:.5,                                 
                         totalPoints: 0,                                     
-                        pic:'',
+                        pic:'public/Floor/floor2_FrontSalto_B/3.png',
                         reference:'',
                         connection: true
                     },
@@ -698,7 +686,7 @@ var mainVm = new Vue({
                         groupDescription:'Front Salto Skills',     
                         groupPoints:.5,                                 
                         totalPoints: 0,                                     
-                        pic:'',
+                        pic:'public/Floor/floor2_FrontSalto_B/4.png',
                         reference:'',
                         connection: true
                     },
@@ -711,7 +699,7 @@ var mainVm = new Vue({
                         groupDescription:'Front Salto Skills',     
                         groupPoints:.5,                                 
                         totalPoints: 0,                                     
-                        pic:'',
+                        pic:'public/Floor/floor2_FrontSalto_B/5.png',
                         reference:'',
                         connection: true
                     },
@@ -724,7 +712,7 @@ var mainVm = new Vue({
                         groupDescription:'Front Salto Skills',     
                         groupPoints:.5,                                 
                         totalPoints: 0,                                     
-                        pic:'',
+                        pic:'public/Floor/floor2_FrontSalto_B/6.png',
                         reference:'',
                         connection: true
                     }]
@@ -741,7 +729,7 @@ var mainVm = new Vue({
                         groupDescription:'Front Salto Skills',     
                         groupPoints:.5,                                 
                         totalPoints: 0,                                     
-                        pic:'',
+                        pic:'public/Floor/floor2_FrontSalto_C/1.png',
                         reference:'',
                         connection: true
                     },
@@ -754,7 +742,7 @@ var mainVm = new Vue({
                         groupDescription:'Front Salto Skills',     
                         groupPoints:.5,                                 
                         totalPoints: 0,                                     
-                        pic:'',
+                        pic:'public/Floor/floor2_FrontSalto_C/2.png',
                         reference:'',
                         connection: true
                     },
@@ -767,7 +755,7 @@ var mainVm = new Vue({
                         groupDescription:'Front Salto Skills',     
                         groupPoints:.5,                                 
                         totalPoints: 0,                                     
-                        pic:'',
+                        pic:'public/Floor/floor2_FrontSalto_C/3.png',
                         reference:'',
                         connection: true
                     },
@@ -780,7 +768,7 @@ var mainVm = new Vue({
                         groupDescription:'Front Salto Skills',     
                         groupPoints:.5,                                 
                         totalPoints: 0,                                     
-                        pic:'',
+                        pic:'public/Floor/floor2_FrontSalto_C/4.png',
                         reference:'',
                         connection: true
                     }]
@@ -797,7 +785,7 @@ var mainVm = new Vue({
                         groupDescription:'Front Salto Skills',     
                         groupPoints:.5,                                 
                         totalPoints: 0,                                     
-                        pic:'',
+                        pic:'public/Floor/floor2_FrontSalto_D/1.png',
                         reference:'',
                         connection: true
                     },
@@ -810,7 +798,7 @@ var mainVm = new Vue({
                         groupDescription:'Front Salto Skills',     
                         groupPoints:.5,                                 
                         totalPoints: 0,                                     
-                        pic:'',
+                        pic:'public/Floor/floor2_FrontSalto_D/2.png',
                         reference:'',
                         connection: true
                     },
@@ -823,7 +811,7 @@ var mainVm = new Vue({
                         groupDescription:'Front Salto Skills',     
                         groupPoints:.5,                                 
                         totalPoints: 0,                                     
-                        pic:'',
+                        pic:'public/Floor/floor2_FrontSalto_D/3.png',
                         reference:'',
                         connection: true
                     },
@@ -836,7 +824,7 @@ var mainVm = new Vue({
                         groupDescription:'Front Salto Skills',     
                         groupPoints:.5,                                 
                         totalPoints: 0,                                     
-                        pic:'',
+                        pic:'public/Floor/floor2_FrontSalto_D/4.png',
                         reference:'',
                         connection: true
                     }]
@@ -853,7 +841,7 @@ var mainVm = new Vue({
                         groupDescription:'Front Salto Skills',     
                         groupPoints:.5,                                 
                         totalPoints: 0,                                     
-                        pic:'',
+                        pic:'public/Floor/floor2_FrontSalto_E/1.png',
                         reference:'',
                         connection: true
                     },
@@ -866,7 +854,7 @@ var mainVm = new Vue({
                         groupDescription:'Front Salto Skills',     
                         groupPoints:.5,                                 
                         totalPoints: 0,                                     
-                        pic:'',
+                        pic:'public/Floor/floor2_FrontSalto_E/2.png',
                         reference:'',
                         connection: true
                     },
@@ -879,7 +867,7 @@ var mainVm = new Vue({
                         groupDescription:'Front Salto Skills',     
                         groupPoints:.5,                                 
                         totalPoints: 0,                                     
-                        pic:'',
+                        pic:'public/Floor/floor2_FrontSalto_E/3.png',
                         reference:'',
                         connection: true
                     }]
@@ -896,7 +884,7 @@ var mainVm = new Vue({
                         groupDescription:'Front Salto Skills',     
                         groupPoints:.5,                                 
                         totalPoints: 0,                                     
-                        pic:'',
+                        pic:'public/Floor/floor2_FrontSalto_FGH/1.png',
                         reference:'',
                         connection: true
                     },
@@ -909,7 +897,7 @@ var mainVm = new Vue({
                         groupDescription:'Front Salto Skills',     
                         groupPoints:.5,                                 
                         totalPoints: 0,                                     
-                        pic:'',
+                        pic:'public/Floor/floor2_FrontSalto_FGH/2.png',
                         reference:'',
                         connection: true
                     },
@@ -922,7 +910,7 @@ var mainVm = new Vue({
                         groupDescription:'Front Salto Skills',     
                         groupPoints:.5,                                 
                         totalPoints: 0,                                     
-                        pic:'',
+                        pic:'public/Floor/floor2_FrontSalto_FGH/3.png',
                         reference:'',
                         connection: true
                     }]
@@ -943,7 +931,7 @@ var mainVm = new Vue({
                         groupDescription:'Back Salto Skills',     
                         groupPoints:.5,                                 
                         totalPoints: 0,                                     
-                        pic:'',
+                        pic:'public/Floor/floor3_BackSalto_A/1.png',
                         reference:'',
 
                     },
@@ -956,7 +944,7 @@ var mainVm = new Vue({
                         groupDescription:'Back Salto Skills',     
                         groupPoints:.5,                                 
                         totalPoints: 0,                                     
-                        pic:'',
+                        pic:'public/Floor/floor3_BackSalto_A/2.png',
                         reference:'',
                     },
                     {
@@ -968,7 +956,7 @@ var mainVm = new Vue({
                         groupDescription:'Back Salto Skills',     
                         groupPoints:.5,                                 
                         totalPoints: 0,                                     
-                        pic:'',
+                        pic:'public/Floor/floor3_BackSalto_A/3.png',
                         reference:'',
                     },
                     {
@@ -980,7 +968,7 @@ var mainVm = new Vue({
                         groupDescription:'Back Salto Skills',     
                         groupPoints:.5,                                 
                         totalPoints: 0,                                     
-                        pic:'',
+                        pic:'public/Floor/floor3_BackSalto_A/4.png',
                         reference:'',
                     },
                     {
@@ -992,7 +980,7 @@ var mainVm = new Vue({
                         groupDescription:'Back Salto Skills',     
                         groupPoints:.5,                                 
                         totalPoints: 0,                                     
-                        pic:'',
+                        pic:'public/Floor/floor3_BackSalto_A/5.png',
                         reference:'',
                     }]
                 },
@@ -1008,7 +996,7 @@ var mainVm = new Vue({
                         groupDescription:'Back Salto Skills',     
                         groupPoints:.5,                                 
                         totalPoints: 0,                                     
-                        pic:'',
+                        pic:'public/Floor/floor3_BackSalto_B/1.png',
                         reference:'',
                         connection: true
                     },
@@ -1021,7 +1009,7 @@ var mainVm = new Vue({
                         groupDescription:'Back Salto Skills',     
                         groupPoints:.5,                                 
                         totalPoints: 0,                                     
-                        pic:'',
+                        pic:'public/Floor/floor3_BackSalto_B/2.png',
                         reference:'',
                         connection: true
                     },
@@ -1034,7 +1022,7 @@ var mainVm = new Vue({
                         groupDescription:'Back Salto Skills',     
                         groupPoints:.5,                                 
                         totalPoints: 0,                                     
-                        pic:'',
+                        pic:'public/Floor/floor3_BackSalto_B/3.png',
                         reference:'',
                         connection: true
                     },
@@ -1047,7 +1035,7 @@ var mainVm = new Vue({
                         groupDescription:'Back Salto Skills',     
                         groupPoints:.5,                                 
                         totalPoints: 0,                                     
-                        pic:'',
+                        pic:'public/Floor/floor3_BackSalto_B/4.png',
                         reference:'',
                         connection: true
                     },
@@ -1060,7 +1048,7 @@ var mainVm = new Vue({
                         groupDescription:'Back Salto Skills',     
                         groupPoints:.5,                                 
                         totalPoints: 0,                                     
-                        pic:'',
+                        pic:'public/Floor/floor3_BackSalto_B/5.png',
                         reference:'',
                         connection: true
                     },
@@ -1073,7 +1061,7 @@ var mainVm = new Vue({
                         groupDescription:'Back Salto Skills',     
                         groupPoints:.5,                                 
                         totalPoints: 0,                                     
-                        pic:'',
+                        pic:'public/Floor/floor3_BackSalto_B/6.png',
                         reference:'',
                         connection: true
                     }]
@@ -1090,7 +1078,7 @@ var mainVm = new Vue({
                         groupDescription:'Back Salto Skills',     
                         groupPoints:.5,                                 
                         totalPoints: 0,                                     
-                        pic:'',
+                        pic:'public/Floor/floor3_BackSalto_C/1.png',
                         reference:'',
                         connection: true
                     },
@@ -1103,7 +1091,7 @@ var mainVm = new Vue({
                         groupDescription:'Back Salto Skills',     
                         groupPoints:.5,                                 
                         totalPoints: 0,                                     
-                        pic:'',
+                        pic:'public/Floor/floor3_BackSalto_C/2.png',
                         reference:'',
                         connection: true
                     },
@@ -1116,7 +1104,7 @@ var mainVm = new Vue({
                         groupDescription:'Back Salto Skills',     
                         groupPoints:.5,                                 
                         totalPoints: 0,                                     
-                        pic:'',
+                        pic:'public/Floor/floor3_BackSalto_C/3.png',
                         reference:'',
                         connection: true
                     },
@@ -1129,7 +1117,7 @@ var mainVm = new Vue({
                         groupDescription:'Back Salto Skills',     
                         groupPoints:.5,                                 
                         totalPoints: 0,                                     
-                        pic:'',
+                        pic:'public/Floor/floor3_BackSalto_C/4.png',
                         reference:'',
                         connection: true
                     }]
@@ -1146,7 +1134,7 @@ var mainVm = new Vue({
                         groupDescription:'Back Salto Skills',     
                         groupPoints:.5,                                 
                         totalPoints: 0,                                     
-                        pic:'',
+                        pic:'public/Floor/floor3_BackSalto_D/1.png',
                         reference:'',
                         connection: true
                     },
@@ -1159,7 +1147,7 @@ var mainVm = new Vue({
                         groupDescription:'Back Salto Skills',     
                         groupPoints:.5,                                 
                         totalPoints: 0,                                     
-                        pic:'',
+                        pic:'public/Floor/floor3_BackSalto_D/2.png',
                         reference:'',
                         connection: true
                     },
@@ -1172,7 +1160,7 @@ var mainVm = new Vue({
                         groupDescription:'Back Salto Skills',     
                         groupPoints:.5,                                 
                         totalPoints: 0,                                     
-                        pic:'',
+                        pic:'public/Floor/floor3_BackSalto_D/3.png',
                         reference:'',
                         connection: true
                     },
@@ -1185,7 +1173,7 @@ var mainVm = new Vue({
                         groupDescription:'Back Salto Skills',     
                         groupPoints:.5,                                 
                         totalPoints: 0,                                     
-                        pic:'',
+                        pic:'public/Floor/floor3_BackSalto_D/4.png',
                         reference:'',
                         connection: true
                     },
@@ -1198,7 +1186,7 @@ var mainVm = new Vue({
                         groupDescription:'Back Salto Skills',     
                         groupPoints:.5,                                 
                         totalPoints: 0,                                     
-                        pic:'',
+                        pic:'public/Floor/floor3_BackSalto_D/5.png',
                         reference:'',
                         connection: true
                     }]
@@ -1215,7 +1203,7 @@ var mainVm = new Vue({
                         groupDescription:'Back Salto Skills',     
                         groupPoints:.5,                                 
                         totalPoints: 0,                                     
-                        pic:'',
+                        pic:'public/Floor/floor3_BackSalto_E/1.png',
                         reference:'',
                         connection: true
                     },
@@ -1228,7 +1216,7 @@ var mainVm = new Vue({
                         groupDescription:'Back Salto Skills',     
                         groupPoints:.5,                                 
                         totalPoints: 0,                                     
-                        pic:'',
+                        pic:'public/Floor/floor3_BackSalto_E/2.png',
                         reference:'',
                         connection: true
                     },
@@ -1241,7 +1229,7 @@ var mainVm = new Vue({
                         groupDescription:'Back Salto Skills',     
                         groupPoints:.5,                                 
                         totalPoints: 0,                                     
-                        pic:'',
+                        pic:'public/Floor/floor3_BackSalto_E/3.png',
                         reference:'',
                         connection: true
                     },
@@ -1254,7 +1242,20 @@ var mainVm = new Vue({
                         groupDescription:'Back Salto Skills',     
                         groupPoints:.5,                                 
                         totalPoints: 0,                                     
-                        pic:'',
+                        pic:'public/Floor/floor3_BackSalto_E/4.png',
+                        reference:'',
+                        connection: true
+                    },
+                    {
+                        name:'Tamayo',
+                        description:'Arabian Jump backward to double salto forward stretched or double salto backwards stretched with 1/2 turn',
+                        value:'E',
+                        valuePoints:.6,
+                        group: 'Group III',                                 
+                        groupDescription:'Back Salto Skills',     
+                        groupPoints:.5,                                 
+                        totalPoints: 0,                                     
+                        pic:'public/Floor/floor3_BackSalto_E/5.png',
                         reference:'',
                         connection: true
                     },
@@ -1267,7 +1268,7 @@ var mainVm = new Vue({
                         groupDescription:'Back Salto Skills',     
                         groupPoints:.5,                                 
                         totalPoints: 0,                                     
-                        pic:'',
+                        pic:'public/Floor/floor3_BackSalto_E/6.png',
                         reference:'',
                         connection: true
                     }]
@@ -1284,7 +1285,7 @@ var mainVm = new Vue({
                         groupDescription:'Back Salto Skills',     
                         groupPoints:.5,                                 
                         totalPoints: 0,                                     
-                        pic:'',
+                        pic:'public/Floor/floor3_BackSalto_FGH/2.png',
                         reference:'',
                         connection: true
                     },
@@ -1297,7 +1298,7 @@ var mainVm = new Vue({
                         groupDescription:'Back Salto Skills',     
                         groupPoints:.5,                                 
                         totalPoints: 0,                                     
-                        pic:'',
+                        pic:'public/Floor/floor3_BackSalto_FGH/4.png',
                         reference:'',
                         connection: true
                     },
@@ -1310,7 +1311,7 @@ var mainVm = new Vue({
                         groupDescription:'Back Salto Skills',     
                         groupPoints:.5,                                 
                         totalPoints: 0,                                     
-                        pic:'',
+                        pic:'public/Floor/floor3_BackSalto_FGH/5.png',
                         reference:'',
                         connection: true
                     },
@@ -1323,7 +1324,7 @@ var mainVm = new Vue({
                         groupDescription:'Back Salto Skills',     
                         groupPoints:.5,                                 
                         totalPoints: 0,                                     
-                        pic:'',
+                        pic:'public/Floor/floor3_BackSalto_FGH/6.png',
                         reference:'',
                         connection: true
                     },
@@ -1336,7 +1337,7 @@ var mainVm = new Vue({
                         groupDescription:'Back Salto Skills',     
                         groupPoints:.5,                                 
                         totalPoints: 0,                                     
-                        pic:'',
+                        pic:'public/Floor/floor3_BackSalto_FGH/7.png',
                         reference:'',
                         connection: true
                     }]
@@ -1353,7 +1354,7 @@ var mainVm = new Vue({
                         groupDescription:'Back Salto Skills',     
                         groupPoints:.5,                                 
                         totalPoints: 0,                                     
-                        pic:'',
+                        pic:'public/Floor/floor3_BackSalto_FGH/1.png',
                         reference:'',
                         connection: true
                     },
@@ -1366,7 +1367,7 @@ var mainVm = new Vue({
                         groupDescription:'Back Salto Skills',     
                         groupPoints:.5,                                 
                         totalPoints: 0,                                     
-                        pic:'',
+                        pic:'public/Floor/floor3_BackSalto_FGH/8.png',
                         reference:'',
                         connection: true
                     }]
@@ -1383,10 +1384,23 @@ var mainVm = new Vue({
                         groupDescription:'Back Salto Skills',     
                         groupPoints:.5,                                 
                         totalPoints: 0,                                     
-                        pic:'',
+                        pic:'public/Floor/floor3_BackSalto_FGH/9.png',
                         reference:'',
                         connection: true
-                    }]
+                    },
+                    {
+                        name:'Liukin',
+                        description:'Triple salto backward tucked',
+                        value:'H',
+                        valuePoints:.8,
+                        group: 'Group III',                                 
+                        groupDescription:'Back Salto Skills',     
+                        groupPoints:.5,                                 
+                        totalPoints: 0,                                     
+                        pic:'public/Floor/floor3_BackSalto_FGH/3.png',
+                        reference:'',
+                        connection: true
+                    }
                 }
             }
         }
