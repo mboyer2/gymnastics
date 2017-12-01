@@ -1,0 +1,24 @@
+{
+  "name": "gymnastics",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gymnastics.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mboyer2/gymnastics.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mboyer2/gymnastics/issues"
+  },
+  "homepage": "https://github.com/mboyer2/gymnastics#readme",
+  "dependencies": {
+    "express": "^4.16.2",
+    "request": "^2.83.0"
+  }
+}
