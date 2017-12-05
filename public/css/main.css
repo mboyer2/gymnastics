@@ -1,0 +1,77 @@
+.borders{
+	border:1px solid black;
+}
+
+/*.border-bottom{
+	border-bottom:1px solid black;
+}*/
+.padding-40{
+	padding-right: 40px;
+}
+
+.padding-34 {
+	padding-right: 34px;
+}
+
+.white-text{
+	color: white;
+}
+
+.font-size-sm{
+	font-size: .8rem;
+}
+
+.no-display{
+	display: none;
+}
+
+.margin-27{
+	margin-top:2.7rem;
+}
+
+.greenText{
+	color: green;
+}
+
+.grey{
+	background-color: #F1F1F1;
+}
+
+.red{
+	background-color: #f3d8da;
+}
+
+.orange{
+	background-color: #f7d9a4;
+}
+
+.yellow{
+	background-color: #fdf3d1;
+}
+
+.green{
+	background-color: #d9ecdb;
+}
+
+.blue{
+	background-color: #A4EDF7;
+}
+
+.indigo{
+	background-color: #A4A8F7;
+}
+
+.violet{
+	background-color: #C8A4F7;
+}
+
+.purple{
+	background-color: #5206B5;
+}
+
+
+
+
+
+
+

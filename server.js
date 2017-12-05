@@ -13,24 +13,77 @@ app.use(bodyParser.json());
 app.use(express.static(__dirname))
 app.use(express.static(__dirname + '/public'))
 
-// var gymnasticsSchema = new mongoose.Schema({
+var gymnasticsSchema = new mongoose.Schema({
 
-// 	name: {type: String},			//'Handstand to L-sit',
-// 	description: {type: String},	//'From handstand lower to L-sit or stradle L-sit',
-// 	value: {type: },				//this.floor.group1.A,
-// 	valuePoints: {type: },			//this.floor.group1.A.AValue,									
-// 	group:{type: String},			//'Group I',
-// 	groupDescription: {type: },		//this.floor.group1.description, 	
-// 	groupPoints: {type: },			//this.floor.group1.group1points,								
-// 	totalPoints: {type: Number},	//0,															
-// 	pic: {type: },
-// 	reference: {type: },
-// 	connection: {type: Boolean},	//true
-// })
+	name: {type: String},			
+	description: {type: String},	
+	value: {type: String},				
+	valuePoints: {type: Number},												
+	group:{type: String},			
+	groupDescription: {type: String},		 	
+	groupPoints: {type: Number},										
+	totalPoints: {type: Number},															
+	pic: {type: String},
+	reference: {type: String},
+	connection: {type: Boolean},
+	double: {type: Boolean}	
+})
 
-// var gymnasticsModel = mongoose.model('gymnastics', gymnasticsSchema)
+var GymnasticsModel = mongoose.model('gymnastics', gymnasticsSchema)
+
 app.get('/', function(request, response){
 	response.sendFile(__dirname + '/gymnastics.html')
+})
+
+
+
+
+app.post('/select', function(req, res){
+	console.log('body? ', req.body)
+
+	var newGymnasticsSelection = new GymnasticsModel(req.body.skill)
+	console.log(newGymnasticsSelection)
+	newGymnasticsSelection.save(function(err, createdSelection){
+
+		if (err){
+			console.log(err)
+			res.send('POST Selection: oops, something went wrong.')
+		}
+		else {
+			res.send(createdSelection)
+			// console.log(createdTodo)
+		}
+	})
+})
+
+
+//retrieving fresh data t
+app.get('/select', function(req, res){
+	GymnasticsModel.find({}, function(err, docs){   ///study syntax changes. TodoModel is how we access database
+		if (err) {
+			console.log(err)
+			res.send('GET Selections: oops, something went wrong.')
+		}
+		else {
+			res.send(docs)
+		}
+	}) 
+})
+
+app.post('/deleteSelection', function(req, res){
+	console.log('delete selection', req.body.id)
+
+	GymnasticsModel.findByIdAndRemove({_id: req.body.id}, function(err, deletedSelection){
+
+		if (err){
+			console.log('err', err)
+			res.send('POST DELETE SELECTION: oops, something went wrong.')
+		}
+		else {
+			res.send(deletedSelection)
+			console.log('success', deletedSelection)
+		}
+	})
 })
 
 app.listen(8080, function(){
