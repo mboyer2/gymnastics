@@ -24,7 +24,7 @@
             
             <div class="row">
                 <div v-for="(selection, index) in selections" class="padding-40 border-bottom mb-3 col-lg-12">
-                    <div class="red">
+                    <div v-bind:class="color(selection.value)">
                         <div class="name"><b>Name:&nbsp;</b>{{selection.name}}</div>
                     </div>
                     <div class="font-size-sm">
@@ -45,36 +45,28 @@
                             <div class="total-points grey row"><b>Total Points:&nbsp;</b>{{selection.totalPoints}}</div>
                             <div class="reference row"><b>Reference:&nbsp;</b><a v-bind:href="selection.reference" target="_blank">{{selection.reference}}</a></div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-10"></div>
-                        <div>
-                            <button v-on:click="deleter($event, selection)" type="button" class="btn btn-danger">delete</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div v-for="(selection, index) in selections" class="col-lg-2">
-                    <div class="red">
-                        <div class="no-display">Points</div>
-                    </div>
-                    <div class="no-display">
-                        <div class="description">-</div>
-                    </div>
-                    <br>
-                    <div class="margin-27 row">
-                        <div class="padding-34 font-size-sm py-2 col-lg-8">
+                        <div class="padding-34 font-size-sm py-2 col-lg-1">
                             <div class="grey row">-</div>
                             <div class="selection-points greenText row"><b>+{{selection.valuePoints}}</b></div>
                             <div class="grey row">-</div>
                             <div class="row">-</div>
                             <div class="selection-group-points greenText grey row"><b>+{{selection.groupPoints}}</b></div>
                             <div class="skill-points greenText row"><b>+{{skillNumberPoints}}</b></div>
-                            <div class="total-points greenText grey row"><b>+{{selection.totalPoints}}</b></div>
+                            <div class="total-points greenText grey row"><b>+{{calculated(selection.valuePoints, selection.groupPoints, skillNumberPoints)}}</b></div>
+                        </div>
+                    </div>
+                     <div class="row">
+                        <div class="col-lg-11"></div>
+                        <div>
+                            <button v-on:click="deleter($event, selection)" type="button" class="btn btn-danger">delete</button>
                         </div>
                     </div>
                 </div>
             </div>
+                   
+                
+             
+   
 
 
 
