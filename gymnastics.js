@@ -2,7 +2,6 @@ var mainVm = new Vue({
     el: '#app',
     data: {
         selections: [],
-        skillNumberPoints: 0,
         floor: {
             group1:{ 
                 description: 'Non-Acrobatic Skills',
@@ -2279,11 +2278,22 @@ var mainVm = new Vue({
             else if (value === 'H'){
                 return 'purple'
             }
+        },
+        mkPoint: function(index) {
+            switch(index) {
+                case 0: return 2;
+                case 1: return 0;
+                case 2: return 2;
+                case 3: return 0;
+                case 4: return 2;
+                case 5: return 0;
+                case 6: return 4;
+                case 7: return 0;
+                case 8: return 0;
+                case 9: return 0;
+            }
         }
-    },
-    computed:{
-
         
-
-    }
+    },
+    
 })
