@@ -39,7 +39,7 @@
                             <div class="value-points row"><b>Value Points:&nbsp;</b>{{selection.valuePoints}}</div>
                             <div class="group grey row"><b>Group:&nbsp;</b>{{selection.group}}</div>
                             <div class="group-description row"><b>Group Description:&nbsp;</b>{{selection.groupDescription}}</div>
-                            <div class="group-points grey row"><b>Group Points:&nbsp;</b>{{selection.groupPoints}}</div>
+                            <div class="group-points grey row"><b>Group Points:&nbsp;</b>{{selection.groupDisplayedPts}}</div>
                             <div class="skill-points row"><b>Skill Number Points:&nbsp;</b>{{mkPoint(index)}}</div>
                             <div class="total-points grey row"><b>Total Points:&nbsp;</b></div>
                             <div class="reference row"><b>Reference:&nbsp;</b><a v-bind:href="selection.reference" target="_blank">{{selection.reference}}</a></div>
@@ -49,11 +49,11 @@
                             <div class="selection-points greenText row"><b>+{{selection.valuePoints}}</b></div>
                             <div class="grey row">-</div>
                             <div class="row">-</div>
-                            <div class="selection-group-points greenText grey row"><b>+{{selection.groupPoints}}</b></div>
+                            <div class="selection-group-points greenText grey row"><b>+{{selection.groupDisplayedPts}}</b></div>
 
                             <div class="skill-points greenText row"><b>+{{mkPoint(index)}}
                             </b></div>
-                            <div class="total-points greenText grey row"><b>+{{calculated(selection.valuePoints, selection.groupPoints, mkPoint(index))}}</b></div>
+                            <div class="total-points greenText grey row"><b>+{{calculated(selection.valuePoints, floor.group1.groupPoints, mkPoint(index))}}</b></div>
                         </div>
 <!-- V-if -->               <div class="padding-34 font-size-sm py-2 col-lg-3">
                                 <div v-if="groupOneRequirement" class="greenText grey row">Group I Requirement Complete</div>
