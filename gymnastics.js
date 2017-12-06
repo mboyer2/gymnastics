@@ -1681,6 +1681,10 @@ var mainVm = new Vue({
                         groupIV: false
                     }]
                 }
+            },
+            group4:{ 
+                description: 'Dismount',
+                groupPoints:0
             }
         }
         // horse: {
@@ -2417,7 +2421,7 @@ var mainVm = new Vue({
            var totalPoints = 0
            
           
-           totalPoints = valuePoints + groupPoints + skillNumberPoints
+           totalPoints = valuePoints + groupPoints + skillNumberPoints 
            return totalPoints
         },
 
@@ -2490,13 +2494,15 @@ var mainVm = new Vue({
        
 
         addTotal: function(){
+            for (var i = 0; i < this.selections.length; i++){
+
+            }
             // console.log(this.selections.reduce((accumulator, currentValue) => {
             //     return accumulator + parseInt(currentValue.totalPoints)
             // }, 0))
             // for (var i = 0; i < this.selections.length; i++){
             //     this.selections[i].totalPoints
             // }
-
         },
 
         groupIVComplete: function(){
@@ -2513,10 +2519,37 @@ var mainVm = new Vue({
 
         groupFourUpdate: function(){
             this.selections[9].group = 'group IV'
-            this.selections[9]['groupDisplayedPts'] = .5
+            this.selections[9].groupDescription = 'group IV'
 
+            if (this.selections[9].value ==='A'){
+                this.selections[9]['groupDisplayedPts'] = 0
+                this.floor.group4.groupPoints = 0
+            } else if 
+                (this.selections[9].value ==='B'){
+                this.selections[9]['groupDisplayedPts'] = 0
+                this.floor.group4.groupPoints = 0
+            } else if 
+                (this.selections[9].value ==='C'){
+                this.selections[9]['groupDisplayedPts'] = .3
+                this.floor.group4.groupPoints = .3
+            } else if 
+                (this.selections[9].value ==='D'){
+                this.selections[9]['groupDisplayedPts'] = .5
+                this.floor.group4.groupPoints = 0
+            } else if 
+                (this.selections[9].value ==='E'){
+                this.selections[9]['groupDisplayedPts'] = .5
+                this.floor.group4.groupPoints = .3
+            } else if 
+                (this.selections[9].value ==='F'){
+                this.selections[9]['groupDisplayedPts'] = .5
+                this.floor.group4.groupPoints = 0
+            } else if 
+                (this.selections[9].value ==='G'){
+                this.selections[9]['groupDisplayedPts'] = .5
+                this.floor.group4.groupPoints = .3
+            }
         }
-
     },
     computed: {
 
