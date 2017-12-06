@@ -21,6 +21,10 @@
 	font-size: .8rem;
 }
 
+.font-size-xsm{
+	font-size: .6rem;
+}
+
 .no-display{
 	display: none;
 }
@@ -31,6 +35,10 @@
 
 .greenText{
 	color: green;
+}
+
+.redText{
+	color: red;
 }
 
 .grey{

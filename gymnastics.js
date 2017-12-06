@@ -15,7 +15,7 @@ var mainVm = new Vue({
                         value:'A',
                         valuePoints:.1,                                 //all the same for A
                         group:'Group I',
-                        // groupI:true,
+                        // groupIV:false,
                         groupDescription:'Non-Acrobatic Skills',     
                         groupPoints:.5,                             //all same: If (groupPoints){groupPoints = groupoints + 0} else {groupPoints = .5}
                         totalPoints:'',                                                         //valuePoints + groupPoints
@@ -23,7 +23,8 @@ var mainVm = new Vue({
                         reference:'No Video Available',
                         connection: false,
                         double: false,
-                        subtotalPoints: 0
+                        subtotalPoints: 0,
+                        groupIV: false
 
                     },
                     {   name:'Press handstand from stand',
@@ -38,7 +39,8 @@ var mainVm = new Vue({
                         reference:"https://www.youtube.com/watch?v=IOV3PNxBGvk",
                         connection: false,
                         double: false,
-                        subtotalPoints: 0
+                        subtotalPoints: 0,
+                        groupIV: false
                     },
                     {   name:'Handstand',
                         description:'Handstand (2 s.)',
@@ -52,7 +54,8 @@ var mainVm = new Vue({
                         reference:'No Video Available',
                         connection: false,
                         double: false,
-                        subtotalPoints: 0
+                        subtotalPoints: 0,
+                        groupIV: false
                     },
                     {   name:'Stradle Planche',
                         description:'Support lever, legs straddle (2 s.)',
@@ -66,7 +69,8 @@ var mainVm = new Vue({
                         reference:'https://www.youtube.com/watch?v=17LM51miUFA',
                         connection: false,
                         double: false,
-                        subtotalPoints: 0
+                        subtotalPoints: 0,
+                        groupIV: false
                     },
                     {   name:'Handstand Pirouette',
                         description:'1/2 or 1/1 turn in handstand or to handstand',
@@ -80,7 +84,8 @@ var mainVm = new Vue({
                         reference:'https://www.youtube.com/watch?v=ZMgzZazouCI',
                         connection: false,
                         double: false,
-                        subtotalPoints: 0
+                        subtotalPoints: 0,
+                        groupIV: false
                     },
                     {   name:'From L-sit, etc., turn over backward to stand',
                         description:'From L-sit, etc., turn over backward to stand',
@@ -94,7 +99,8 @@ var mainVm = new Vue({
                         reference:'No Video Available',
                         connection: false,
                         double: false,
-                        subtotalPoints: 0
+                        subtotalPoints: 0,
+                        groupIV: false
                     },
                     {   name:'Back Walkover',
                         description:'From stand or rear support, push off 1 foot through handstand',
@@ -108,7 +114,8 @@ var mainVm = new Vue({
                         reference:'https://www.youtube.com/watch?v=mF4F1Xvg1Bg',
                         connection: false,
                         double: false,
-                        subtotalPoints: 0
+                        subtotalPoints: 0,
+                        groupIV: false
                     },
                     {   name:'Forward Walkover',
                         description:'Front Walkover',
@@ -122,7 +129,8 @@ var mainVm = new Vue({
                         reference:'https://www.youtube.com/watch?v=AKNAXpBQu1E',
                         connection: false,
                         double: false,
-                        subtotalPoints: 0
+                        subtotalPoints: 0,
+                        groupIV: false
                     },
                     {   name:'Splits',
                         description:'Cross or side split (stop required)',
@@ -136,7 +144,8 @@ var mainVm = new Vue({
                         reference:'https://vimeo.com/151238496',
                         connection: false,
                         double: false,
-                        subtotalPoints: 0
+                        subtotalPoints: 0,
+                        groupIV: false
                     },
                     {   name:'Scale',
                         description:'Any Standing Scale (2 s.)',
@@ -150,7 +159,8 @@ var mainVm = new Vue({
                         reference:'https://www.youtube.com/watch?v=hkqKmq-Y76w',
                         connection: false,
                         double: false,
-                        subtotalPoints: 0
+                        subtotalPoints: 0,
+                        groupIV: false
                     },
                     {   name:'Jump backward to front support',
                         description:'Jump backward to front support',
@@ -164,7 +174,8 @@ var mainVm = new Vue({
                         reference:'No Video Available',
                         connection: false,
                         double: false,
-                        subtotalPoints: 0
+                        subtotalPoints: 0,
+                        groupIV: false
                     },
                     {   name:'Butterfly',
                         description:'Butterfly',
@@ -178,7 +189,8 @@ var mainVm = new Vue({
                         reference:'https://youtu.be/vbefem-b8p8',
                         connection: false,
                         double: false,
-                        subtotalPoints: 0
+                        subtotalPoints: 0,
+                        groupIV: false
                     },
                     {   name:'Breakdance Variation',
                         description:'Breakdance Variation',
@@ -192,7 +204,8 @@ var mainVm = new Vue({
                         reference:"https://www.youtube.com/embed/FXMkknrEF1k",
                         connection: false,
                         double: false,
-                        subtotalPoints: 0
+                        subtotalPoints: 0,
+                        groupIV: false
                     },
                     {   name:'Flair with 1/2 Spindle',
                         description:'Flair with 1/2 Spindle',
@@ -206,7 +219,8 @@ var mainVm = new Vue({
                         reference:"https://www.youtube.com/embed/_N158yVNXMM",
                         connection: false,
                         double: false,
-                        subtotalPoints: 0
+                        subtotalPoints: 0,
+                        groupIV: false
                     },
                     {   name:'Russian',
                         description:'Russian wendeswing with 360 or 540',
@@ -220,7 +234,8 @@ var mainVm = new Vue({
                         reference:'https://youtu.be/QL5gCiOT54I',
                         connection: false,
                         double: false,
-                        subtotalPoints: 0
+                        subtotalPoints: 0,
+                        groupIV: false
                     },
                     {   name:'Backward Roll 1/2 turn',
                         description:'Roll bwd. through handstand with 1/2 turn',
@@ -234,7 +249,8 @@ var mainVm = new Vue({
                         reference:'No Video Available',
                         connection: false,
                         double: false,
-                        subtotalPoints: 0
+                        subtotalPoints: 0,
+                        groupIV: false
                     }]
                 },
                 B:{
@@ -253,7 +269,8 @@ var mainVm = new Vue({
                         reference:'https://www.youtube.com/watch?v=0f6zcS48Bqg',
                         connection: false,
                         double: false,
-                        subtotalPoints: 0
+                        subtotalPoints: 0,
+                        groupIV: false
                     },
                     {   name:'Press Handstand',
                         description:'Piked body straight arm or straight body, bent arm press to handstand with legs together',
@@ -267,7 +284,8 @@ var mainVm = new Vue({
                         reference:'https://www.youtube.com/watch?v=1SpW7Mr4AgA',
                         connection: false,
                         double: false,
-                        subtotalPoints: 0
+                        subtotalPoints: 0,
+                        groupIV: false
                     },
                     {   name:'Press Handstand',
                         description:'Swiss press from split, L-sit, stradle L-sit or front support (2 s.)',
@@ -281,7 +299,8 @@ var mainVm = new Vue({
                         reference:'https://www.youtube.com/watch?v=OW_ljV5CBKk',
                         connection: false,
                         double: false,
-                        subtotalPoints: 0
+                        subtotalPoints: 0,
+                        groupIV: false
                     },
                     {   name:'Japanese Handstand',
                         description:'Press or lower or swing to Japanese handstand',
@@ -295,7 +314,8 @@ var mainVm = new Vue({
                         reference:'https://www.youtube.com/watch?v=ygym5oXlRWo',
                         connection: false,
                         double: false,
-                        subtotalPoints: 0
+                        subtotalPoints: 0,
+                        groupIV: false
                     },
                     {   name:'Planche',
                         description:'Support lever (2 s.)',
@@ -309,7 +329,8 @@ var mainVm = new Vue({
                         reference:'https://www.youtube.com/watch?v=w_gB_KOeZNI',
                         connection: false,
                         double: false,
-                        subtotalPoints: 0
+                        subtotalPoints: 0,
+                        groupIV: false
                     },
                     {   name:'Straddle Planche Press Handstand',
                         description:'From straddled support lever (2 s.) press handstand (2 s.)',
@@ -323,7 +344,8 @@ var mainVm = new Vue({
                         reference:'https://www.youtube.com/watch?v=5qR6SMzGbPs',
                         connection: false,
                         double: false,
-                        subtotalPoints: 0
+                        subtotalPoints: 0,
+                        groupIV: false
                     },
                     {   name:'Stalder Roll Press Handstand',
                         description:'Endo Roll to handstand (2 s.)',
@@ -337,7 +359,8 @@ var mainVm = new Vue({
                         reference:'https://www.youtube.com/watch?v=yAlX43vn3oc',
                         connection: false,
                         double: false,
-                        subtotalPoints: 0
+                        subtotalPoints: 0,
+                        groupIV: false
                     },
                     {   name:'Scale',
                         description:'Any standing scale with 180 straddle, no hand. hold (2 s.)',
@@ -351,7 +374,8 @@ var mainVm = new Vue({
                         reference:'No Video Available',
                         connection: false,
                         double: false,
-                        subtotalPoints: 0
+                        subtotalPoints: 0,
+                        groupIV: false
                     },
                     {   name:'Endo',
                         description:'Jump backward with pike-stretch or with 1/1 turn to front support',
@@ -365,7 +389,8 @@ var mainVm = new Vue({
                         reference:'https://www.youtube.com/watch?v=FpgMpM6Awps',
                         connection: false,
                         double: false,
-                        subtotalPoints: 0
+                        subtotalPoints: 0,
+                        groupIV: false
                     },
                     {   name:'Tong Fei',
                         description:'Butterfly with 1/1 twist forward or backward',
@@ -379,7 +404,8 @@ var mainVm = new Vue({
                         reference:'https://www.youtube.com/watch?v=7Kjq1CbswFk',
                         connection: false,
                         double: false,
-                        subtotalPoints: 0
+                        subtotalPoints: 0,
+                        groupIV: false
                     },
                     {   name:'Flair handstand',
                         description:'Circles or flair to handstand',
@@ -393,7 +419,8 @@ var mainVm = new Vue({
                         reference:'https://www.youtube.com/watch?v=xf-dmkFutNE',
                         connection: false,
                         double: false,
-                        subtotalPoints: 0
+                        subtotalPoints: 0,
+                        groupIV: false
                     },
                     {   name:'Handstand to flair',
                         description:'Lower from handstand to flair or circle',
@@ -407,7 +434,8 @@ var mainVm = new Vue({
                         reference:'https://www.youtube.com/watch?v=vwcToYbWsTw',
                         connection: false,
                         double: false,
-                        subtotalPoints: 0
+                        subtotalPoints: 0,
+                        groupIV: false
                     },
                     {   name:'Spindle Flair',
                         description:'Flair with 1/1 spindle (in 2 circles)',
@@ -421,7 +449,8 @@ var mainVm = new Vue({
                         reference:'https://www.youtube.com/watch?v=-XIthLkD3qA',
                         connection: false,
                         double: false,
-                        subtotalPoints: 0
+                        subtotalPoints: 0,
+                        groupIV: false
                     },
                     {   name:'Flair 1/2 spindle to handstand',
                         description:'Flair with 1/2 spindle to handstand',
@@ -435,7 +464,8 @@ var mainVm = new Vue({
                         reference:'https://www.youtube.com/watch?v=iTYjHesijLQ',
                         connection: false,
                         double: false,
-                        subtotalPoints: 0
+                        subtotalPoints: 0,
+                        groupIV: false
                     },
                     {   name:'Russian',
                         description:'Russian wendeswing with 720 or 900',
@@ -449,7 +479,8 @@ var mainVm = new Vue({
                         reference:'https://www.youtube.com/watch?v=BtwkcidJTfY',
                         connection: false,
                         double: false,
-                        subtotalPoints: 0
+                        subtotalPoints: 0,
+                        groupIV: false
                     },
                     {   name:'Roll backward with full turn through handstand',
                         description:'Roll backward with 1/1 turn through handstand',
@@ -463,7 +494,8 @@ var mainVm = new Vue({
                         reference:'No Video Available',
                         connection: false,
                         double: false,
-                        subtotalPoints: 0
+                        subtotalPoints: 0,
+                        groupIV: false
                     }]
                 },
                 C:{
@@ -482,7 +514,8 @@ var mainVm = new Vue({
                         reference:'https://www.youtube.com/watch?v=Tk8ZRf5xIdY',
                         connection: false,
                         double: false,
-                        subtotalPoints: 0
+                        subtotalPoints: 0,
+                        groupIV: false
                     },
                     {
                         name:'V straddle press handstand',
@@ -497,7 +530,8 @@ var mainVm = new Vue({
                         reference:'https://www.youtube.com/watch?v=qebeJexc3Ms',
                         connection: false,
                         double: false,
-                        subtotalPoints: 0
+                        subtotalPoints: 0,
+                        groupIV: false
                     },
                     {
                         name:'Press Japanese handstand',
@@ -512,7 +546,8 @@ var mainVm = new Vue({
                         reference:'floor split press japanese handstand  gymnastics',
                         connection: false,
                         double: false,
-                        subtotalPoints: 0
+                        subtotalPoints: 0,
+                        groupIV: false
                     },
                     {
                         name:'Swallow',
@@ -527,7 +562,8 @@ var mainVm = new Vue({
                         reference:'https://www.youtube.com/watch?v=zGoMHGZocoI',
                         connection: false,
                         double: false,
-                        subtotalPoints: 0
+                        subtotalPoints: 0,
+                        groupIV: false
                     },
                     {
                         name:'Planche Press handstand',
@@ -542,7 +578,8 @@ var mainVm = new Vue({
                         reference:'https://www.youtube.com/watch?v=yYCVsC-2E08',
                         connection: false,
                         double: false,
-                        subtotalPoints: 0
+                        subtotalPoints: 0,
+                        groupIV: false
                     },
                     {
                         name:'Stadler roll press handstand',
@@ -557,7 +594,8 @@ var mainVm = new Vue({
                         reference:'No Video Available',
                         connection: false,
                         double: false,
-                        subtotalPoints: 0
+                        subtotalPoints: 0,
+                        groupIV: false
                     },
                     {
                         name:'Butterfly',
@@ -572,7 +610,8 @@ var mainVm = new Vue({
                         reference:'https://www.youtube.com/watch?v=di0ihPN5o-c',
                         connection: false,
                         double: false,
-                        subtotalPoints: 0
+                        subtotalPoints: 0,
+                        groupIV: false
                     },
                     {
                         name:'Gogoladze',
@@ -587,7 +626,8 @@ var mainVm = new Vue({
                         reference:'https://www.youtube.com/watch?v=4Mq6yrezuRA',
                         connection: false,
                         double: false,
-                        subtotalPoints: 0
+                        subtotalPoints: 0,
+                        groupIV: false
                     },
                     {
                         name:'Spindle Flair to handstand',
@@ -602,7 +642,8 @@ var mainVm = new Vue({
                         reference:'https://www.youtube.com/watch?v=WZqevELmaLE',
                         connection: false,
                         double: false,
-                        subtotalPoints: 0
+                        subtotalPoints: 0,
+                        groupIV: false
                     },
                     {
                         name:'Fedorchenko',
@@ -617,7 +658,8 @@ var mainVm = new Vue({
                         reference:'https://www.youtube.com/watch?v=BtwkcidJTfY',
                         connection: false,
                         double: false,
-                        subtotalPoints: 0
+                        subtotalPoints: 0,
+                        groupIV: false
                     }]
                 },
                 D:{
@@ -636,7 +678,8 @@ var mainVm = new Vue({
                         reference:'https://www.youtube.com/watch?v=fuGpGvr-8Bc',
                         connection: false,
                         double: false,
-                        subtotalPoints: 0
+                        subtotalPoints: 0,
+                        groupIV: false
                     },
                     {
                         name:'Manna dislocate to handstand',
@@ -651,7 +694,8 @@ var mainVm = new Vue({
                         reference:'https://www.youtube.com/watch?v=KAp8aEmPSfE',
                         connection: false,
                         double: false,
-                        subtotalPoints: 0
+                        subtotalPoints: 0,
+                        groupIV: false
                     },
                     {
                         name:'Alvarino',
@@ -666,7 +710,8 @@ var mainVm = new Vue({
                         reference:'https://www.youtube.com/watch?v=zJ4kJ8ZamDQ',
                         connection: false,
                         double: false,
-                        subtotalPoints: 0
+                        subtotalPoints: 0,
+                        groupIV: false
                     },
                     {
                         name:'Air Flair',
@@ -681,7 +726,8 @@ var mainVm = new Vue({
                         reference:'https://www.youtube.com/watch?v=MBXxXPR40O0',
                         connection: false,
                         double: false,
-                        subtotalPoints: 0
+                        subtotalPoints: 0,
+                        groupIV: false
                     },
                     {
                         name:'Spindle flair to handstand to flair',
@@ -696,7 +742,8 @@ var mainVm = new Vue({
                         reference:'https://www.youtube.com/watch?v=-XIthLkD3qA',
                         connection: false,
                         double: false,
-                        subtotalPoints: 0
+                        subtotalPoints: 0,
+                        groupIV: false
                     }]
                 }
             },
@@ -719,7 +766,8 @@ var mainVm = new Vue({
                         reference:'No Video Available',
                         connection: false,
                         double: false,
-                        subtotalPoints: 0
+                        subtotalPoints: 0,
+                        groupIV: false
                     },
                     {
                         name:'Front handspring or flyspring',
@@ -734,7 +782,8 @@ var mainVm = new Vue({
                         reference:'https://www.youtube.com/watch?v=zjewNdgEq90',
                         connection: false,
                         double: false,
-                        subtotalPoints: 0
+                        subtotalPoints: 0,
+                        groupIV: false
                     },
                     {
                         name:'Dive roll',
@@ -749,7 +798,8 @@ var mainVm = new Vue({
                         reference:'https://www.youtube.com/watch?v=ueWNFDCiJ8Q',
                         connection: false,
                         double: false,
-                        subtotalPoints: 0
+                        subtotalPoints: 0,
+                        groupIV: false
                     },
                     {
                         name:'Front tuck or pike',
@@ -764,7 +814,8 @@ var mainVm = new Vue({
                         reference:'https://www.youtube.com/watch?v=md23mspiJbQ',
                         connection: false,
                         double: false,
-                        subtotalPoints: 0
+                        subtotalPoints: 0,
+                        groupIV: false
                     },
                     {
                         name:'Aerial walkover forward',
@@ -779,7 +830,8 @@ var mainVm = new Vue({
                         reference:'https://www.youtube.com/watch?v=32MlKbw_OnA',
                         connection: false,
                         double: false,
-                        subtotalPoints: 0
+                        subtotalPoints: 0,
+                        groupIV: false
                     },
                     {
                         name:'Front flip 1/2 turn',
@@ -794,7 +846,8 @@ var mainVm = new Vue({
                         reference:'No Video Available',
                         connection: false,
                         double: false,
-                        subtotalPoints: 0
+                        subtotalPoints: 0,
+                        groupIV: false
                     }]
                 },
                 B:{
@@ -813,7 +866,8 @@ var mainVm = new Vue({
                         reference:'No Video Available',
                         connection: true,
                         double: false,
-                        subtotalPoints: 0
+                        subtotalPoints: 0,
+                        groupIV: false
                     },
                     {
                         name:'Front layout',
@@ -828,7 +882,8 @@ var mainVm = new Vue({
                         reference:'https://www.youtube.com/watch?v=aBSOSwDWArs',
                         connection: true,
                         double: false,
-                        subtotalPoints: 0
+                        subtotalPoints: 0,
+                        groupIV: false
                     },
                     {
                         name:'Front full',
@@ -843,7 +898,8 @@ var mainVm = new Vue({
                         reference:'https://www.youtube.com/watch?v=vxdr4vY_QnQ',
                         connection: true,
                         double: false,
-                        subtotalPoints: 0
+                        subtotalPoints: 0,
+                        groupIV: false
                     },
                     {
                         name:'Branny layout',
@@ -858,7 +914,8 @@ var mainVm = new Vue({
                         reference:'https://www.youtube.com/watch?v=vxdr4vY_QnQ',
                         connection: true,
                         double: false,
-                        subtotalPoints: 0
+                        subtotalPoints: 0,
+                        groupIV: false
                     },
                     {
                         name:'Rudy tucked',
@@ -873,7 +930,8 @@ var mainVm = new Vue({
                         reference:'https://www.youtube.com/watch?v=vxdr4vY_QnQ',
                         connection: true,
                         double: false,
-                        subtotalPoints: 0
+                        subtotalPoints: 0,
+                        groupIV: false
                     },
                     {
                         name:'Front 1 and 1/4',
@@ -888,7 +946,8 @@ var mainVm = new Vue({
                         reference:'No Video Available',
                         connection: true,
                         double: false,
-                        subtotalPoints: 0
+                        subtotalPoints: 0,
+                        groupIV: false
                     }]
                 },
                 C:{
@@ -907,7 +966,8 @@ var mainVm = new Vue({
                         reference:'No Video Available',
                         connection: true,
                         double: false,
-                        subtotalPoints: 0
+                        subtotalPoints: 0,
+                        groupIV: false
                     },
                     {
                         name:'Front full layout',
@@ -922,7 +982,8 @@ var mainVm = new Vue({
                         reference:'https://www.youtube.com/watch?v=vxdr4vY_QnQ',
                         connection: true,
                         double: false,
-                        subtotalPoints: 0
+                        subtotalPoints: 0,
+                        groupIV: false
                     },
                     {
                         name:'Layout Rudy',
@@ -937,7 +998,8 @@ var mainVm = new Vue({
                         reference:'https://www.youtube.com/watch?v=vxdr4vY_QnQ',
                         connection: true,
                         double: false,
-                        subtotalPoints: 0
+                        subtotalPoints: 0,
+                        groupIV: false
                     },
                     {
                         name:'Front full 1 and 1/4',
@@ -952,7 +1014,8 @@ var mainVm = new Vue({
                         reference:'No Video Available',
                         connection: true,
                         double: false,
-                        subtotalPoints: 0
+                        subtotalPoints: 0,
+                        groupIV: false
                     }]
                 },
                 D:{
@@ -971,7 +1034,8 @@ var mainVm = new Vue({
                         reference:'https://www.youtube.com/watch?v=3SCznCNqc0g',
                         connection: true,
                         double: false,
-                        subtotalPoints: 0
+                        subtotalPoints: 0,
+                        groupIV: false
                     },
                     {
                         name:'Double front',
@@ -986,7 +1050,8 @@ var mainVm = new Vue({
                         reference:'https://www.youtube.com/watch?v=z6L51SiNtbY',
                         connection: true,
                         double: true,
-                        subtotalPoints: 0
+                        subtotalPoints: 0,
+                        groupIV: false
                     },
                     {
                         name:'Front double full',
@@ -1001,7 +1066,8 @@ var mainVm = new Vue({
                         reference:'https://www.youtube.com/watch?v=_XrtUJ81t6w',
                         connection: true,
                         double: false,
-                        subtotalPoints: 0
+                        subtotalPoints: 0,
+                        groupIV: false
                     },
                     {
                         name:'Defer',
@@ -1016,7 +1082,8 @@ var mainVm = new Vue({
                         reference:'No Video Available',
                         connection: true,
                         double: true,
-                        subtotalPoints: 0
+                        subtotalPoints: 0,
+                        groupIV: false
                     }]
                 },
                 E:{
@@ -1035,7 +1102,8 @@ var mainVm = new Vue({
                         reference:'https://www.youtube.com/watch?v=0s5Gz_UM8KU',
                         connection: true,
                         double: true,
-                        subtotalPoints: 0
+                        subtotalPoints: 0,
+                        groupIV: false
                     },
                     {
                         name:'Double front half',
@@ -1050,7 +1118,8 @@ var mainVm = new Vue({
                         reference:'https://www.youtube.com/watch?v=OFK3qiXrJL8',
                         connection: true,
                         double: true,
-                        subtotalPoints: 0
+                        subtotalPoints: 0,
+                        groupIV: false
                     },
                     {
                         name:'Randy',
@@ -1065,7 +1134,8 @@ var mainVm = new Vue({
                         reference:'https://www.youtube.com/watch?v=3us9h2H3Lzg',
                         connection: true,
                         double: true,
-                        subtotalPoints: 0
+                        subtotalPoints: 0,
+                        groupIV: false
                     }]
                 },
                 F:{
@@ -1084,7 +1154,8 @@ var mainVm = new Vue({
                         reference:'https://www.youtube.com/watch?v=eSITioQT3NU',
                         connection: true,
                         double: true,
-                        subtotalPoints: 0
+                        subtotalPoints: 0,
+                        groupIV: false
                     },
                     {
                         name:'Shirai 2',
@@ -1099,7 +1170,8 @@ var mainVm = new Vue({
                         reference:'https://www.youtube.com/watch?v=sTfbicZoE8g',
                         connection: true,
                         double: false,
-                        subtotalPoints: 0
+                        subtotalPoints: 0,
+                        groupIV: false
                     },
                     {
                         name:'Full twisting double front',
@@ -1114,7 +1186,8 @@ var mainVm = new Vue({
                         reference:'https://www.youtube.com/watch?v=bPxncXWWu7o',
                         connection: true,
                         double: true,
-                        subtotalPoints: 0
+                        subtotalPoints: 0,
+                        groupIV: false
                     }]
                 }
             },
@@ -1137,7 +1210,8 @@ var mainVm = new Vue({
                         reference:'https://www.youtube.com/watch?v=WD1h2bSH1eY',
                         connection: false,
                         double: false,
-                        subtotalPoints: 0
+                        subtotalPoints: 0,
+                        groupIV: false
 
                     },
                     {
@@ -1153,7 +1227,8 @@ var mainVm = new Vue({
                         reference:'https://www.youtube.com/watch?v=rMle2G5AOdQ',
                         connection: false,
                         double: false,
-                        subtotalPoints: 0
+                        subtotalPoints: 0,
+                        groupIV: false
                     },
                     {
                         name:'Back handspring',
@@ -1168,7 +1243,8 @@ var mainVm = new Vue({
                         reference:'https://www.youtube.com/watch?v=TZTevhiE5BI',
                         connection: false,
                         double: false,
-                        subtotalPoints: 0
+                        subtotalPoints: 0,
+                        groupIV: false
                     },
                     {
                         name:'Arabian dive roll',
@@ -1183,7 +1259,8 @@ var mainVm = new Vue({
                         reference:'https://www.youtube.com/watch?v=8KtmqP3Ouq4',
                         connection: false,
                         double: false,
-                        subtotalPoints: 0
+                        subtotalPoints: 0,
+                        groupIV: false
                     },
                     {
                         name:'Arabian front handspring',
@@ -1198,7 +1275,8 @@ var mainVm = new Vue({
                         reference:'https://www.youtube.com/watch?v=jzVIICSVLdM',
                         connection: false,
                         double: false,
-                        subtotalPoints: 0
+                        subtotalPoints: 0,
+                        groupIV: false
                     }]
                 },
                 B:{
@@ -1215,7 +1293,10 @@ var mainVm = new Vue({
                         totalPoints:'',                                     
                         pic:'public/Floor/floor3_BackSalto_B/1.png',
                         reference:'https://www.youtube.com/watch?v=3v0rgdehz3k',
-                        connection: true
+                        connection: true,
+                        double: false,
+                        subtotalPoints: 0,
+                        groupIV: false
                     },
                     {
                         name:'Back Layout half',
@@ -1230,7 +1311,8 @@ var mainVm = new Vue({
                         reference:'https://www.youtube.com/watch?v=8Dau9AJsP2U',
                         connection: true,
                         double: false,
-                        subtotalPoints: 0
+                        subtotalPoints: 0,
+                        groupIV: false
                     },
                     {
                         name:'Whip',
@@ -1243,7 +1325,10 @@ var mainVm = new Vue({
                         totalPoints:'',                                     
                         pic:'public/Floor/floor3_BackSalto_B/3.png',
                         reference:'https://www.youtube.com/watch?v=xTgRpkpapuI',
-                        connection: true
+                        connection: true,
+                        double: false,
+                        subtotalPoints: 0,
+                        groupIV: false
                     },
                     {
                         name:'Back 3/2 tucked',
@@ -1258,7 +1343,8 @@ var mainVm = new Vue({
                         reference:'https://www.youtube.com/watch?v=0um2RsXyUyg',
                         connection: true,
                         double: false,
-                        subtotalPoints: 0
+                        subtotalPoints: 0,
+                        groupIV: false
                     },
                     {
                         name:'Layout full',
@@ -1273,7 +1359,8 @@ var mainVm = new Vue({
                         reference:'https://www.youtube.com/watch?v=JsLvr4D1AwU',
                         connection: true,
                         double: false,
-                        subtotalPoints: 0
+                        subtotalPoints: 0,
+                        groupIV: false
                     },
                     {
                         name:'Arabian 1 and 1/4',
@@ -1288,7 +1375,8 @@ var mainVm = new Vue({
                         reference:'No Video Available',
                         connection: true,
                         double: false,
-                        subtotalPoints: 0
+                        subtotalPoints: 0,
+                        groupIV: false
                     }]
                 },
                 C:{
@@ -1307,7 +1395,8 @@ var mainVm = new Vue({
                         reference:'https://www.youtube.com/watch?v=f2C6UexLu8A',
                         connection: true,
                         double: true,
-                        subtotalPoints: 0
+                        subtotalPoints: 0,
+                        groupIV: false
                     },
                     {
                         name:'Double back pike',
@@ -1322,7 +1411,8 @@ var mainVm = new Vue({
                         reference:'https://www.youtube.com/watch?v=kEwVLRqHRA8',
                         connection: true,
                         double: true,
-                        subtotalPoints: 0
+                        subtotalPoints: 0,
+                        groupIV: false
                     },
                     {
                         name:'Back 3/2 layout',
@@ -1337,7 +1427,8 @@ var mainVm = new Vue({
                         reference:'https://www.youtube.com/watch?v=G55M_P35xSA',
                         connection: true,
                         double: false,
-                        subtotalPoints: 0
+                        subtotalPoints: 0,
+                        groupIV: false
                     },
                     {
                         name:'Double full layout',
@@ -1352,7 +1443,8 @@ var mainVm = new Vue({
                         reference:'https://www.youtube.com/watch?v=hpsgwGvBdW8&t=12s',
                         connection: true,
                         double: false,
-                        subtotalPoints: 0
+                        subtotalPoints: 0,
+                        groupIV: false
                     }]
                 },
                 D:{
@@ -1371,7 +1463,8 @@ var mainVm = new Vue({
                         reference:'https://www.youtube.com/watch?v=RKuCY_I9HQs',
                         connection: true,
                         double: true,
-                        subtotalPoints: 0
+                        subtotalPoints: 0,
+                        groupIV: false
                     },
                     {
                         name:'Arabian double',
@@ -1386,7 +1479,8 @@ var mainVm = new Vue({
                         reference:'https://www.youtube.com/watch?v=E_c-Dylz9aI',
                         connection: true,
                         double: true,
-                        subtotalPoints: 0
+                        subtotalPoints: 0,
+                        groupIV: false
                     },
                     {
                         name:'Back two and a half layout',
@@ -1401,7 +1495,8 @@ var mainVm = new Vue({
                         reference:'https://www.youtube.com/watch?v=2AMx2podVhM',
                         connection: true,
                         double: false,
-                        subtotalPoints: 0
+                        subtotalPoints: 0,
+                        groupIV: false
                     },
                     {                   
                         name:'Back triple full',
@@ -1416,7 +1511,8 @@ var mainVm = new Vue({
                         reference:'https://www.youtube.com/watch?v=z805keIFnV4',
                         connection: true,
                         double: false,
-                        subtotalPoints: 0
+                        subtotalPoints: 0,
+                        groupIV: false
                     },
                     {                   
                         name:'Double layout',
@@ -1431,7 +1527,8 @@ var mainVm = new Vue({
                         reference:'https://www.youtube.com/watch?v=1USTwc5lD6s',
                         connection: true,
                         double: true,
-                        subtotalPoints: 0
+                        subtotalPoints: 0,
+                        groupIV: false
                     }]
                 },
                 E:{
@@ -1450,7 +1547,8 @@ var mainVm = new Vue({
                         reference:'https://www.youtube.com/watch?v=zlj2n97OjO4',
                         connection: true,
                         double: true,
-                        subtotalPoints: 0
+                        subtotalPoints: 0,
+                        groupIV: false
                     },
                     {
                         name:'Double back 3/2',
@@ -1465,7 +1563,8 @@ var mainVm = new Vue({
                         reference:'https://www.youtube.com/watch?v=KPTv7BSD5ts',
                         connection: true,
                         double: true,
-                        subtotalPoints: 0
+                        subtotalPoints: 0,
+                        groupIV: false
                     },
                     {
                         name:'Back 7/2',
@@ -1480,7 +1579,8 @@ var mainVm = new Vue({
                         reference:'https://www.youtube.com/watch?v=KPTv7BSD5ts',
                         connection: true,
                         double: false,
-                        subtotalPoints: 0
+                        subtotalPoints: 0,
+                        groupIV: false
                     },
                     {
                         name:'Lou Yun',
@@ -1495,7 +1595,8 @@ var mainVm = new Vue({
                         reference:'https://www.youtube.com/watch?v=uSp8ysQhBBM',
                         connection: true,
                         double: true,
-                        subtotalPoints: 0
+                        subtotalPoints: 0,
+                        groupIV: false
                     },
                     {
                         name:'Tamayo',
@@ -1510,7 +1611,8 @@ var mainVm = new Vue({
                         reference:'https://www.youtube.com/watch?v=vQilnlEoP6g',
                         connection: true,
                         double: true,
-                        subtotalPoints: 0
+                        subtotalPoints: 0,
+                        groupIV: false
                     },
                     {
                         name:'Full twisting double layout',
@@ -1525,7 +1627,8 @@ var mainVm = new Vue({
                         reference:'Full twisting double layout mens floor',
                         connection: true,
                         double: true,
-                        subtotalPoints: 0
+                        subtotalPoints: 0,
+                        groupIV: false
                     }]
                 },
                 F:{
@@ -1544,7 +1647,8 @@ var mainVm = new Vue({
                         reference:'https://www.youtube.com/watch?v=2yuAn-OwdeA',
                         connection: true,
                         double: true,
-                        subtotalPoints: 0
+                        subtotalPoints: 0,
+                        groupIV: false
                     },
                     {
                         name:'Shirai or Nguyen',
@@ -1559,7 +1663,8 @@ var mainVm = new Vue({
                         reference:'https://www.youtube.com/watch?v=p5d_esUdrjo',
                         connection: true,
                         double: false,
-                        subtotalPoints: 0
+                        subtotalPoints: 0,
+                        groupIV: false
                     },
                     {
                         name:'Kolyvanov',
@@ -1574,7 +1679,8 @@ var mainVm = new Vue({
                         reference:'https://www.youtube.com/watch?v=yzDL_rBOj_4',
                         connection: true,
                         double: true,
-                        subtotalPoints: 0
+                        subtotalPoints: 0,
+                        groupIV: false
                     },
                     {
                         name:'Arabian double layout full',
@@ -1589,7 +1695,8 @@ var mainVm = new Vue({
                         reference:'https://www.youtube.com/watch?v=KPTv7BSD5ts',
                         connection: true,
                         double: true,
-                        subtotalPoints: 0
+                        subtotalPoints: 0,
+                        groupIV: false
                     },
                     {
                         name:'Double double layout',
@@ -1604,7 +1711,8 @@ var mainVm = new Vue({
                         reference:'https://www.youtube.com/watch?v=4MyCbj8hocQ',
                         connection: true,
                         double: true,
-                        subtotalPoints: 0
+                        subtotalPoints: 0,
+                        groupIV: false
                     }]
                 },
                 G:{
@@ -1623,7 +1731,8 @@ var mainVm = new Vue({
                         reference:'https://www.youtube.com/watch?v=_cTTdJxsgAI',
                         connection: true,
                         double: true,
-                        subtotalPoints: 0
+                        subtotalPoints: 0,
+                        groupIV: false
                     },
                     {
                         name:'Double 5/2 layout',
@@ -1638,7 +1747,8 @@ var mainVm = new Vue({
                         reference:'https://www.youtube.com/watch?v=_cTTdJxsgAI',
                         connection: true,
                         double: true,
-                        subtotalPoints: 0
+                        subtotalPoints: 0,
+                        groupIV: false
                     }]
                 },
                 H:{
@@ -1657,7 +1767,8 @@ var mainVm = new Vue({
                         reference:'https://www.youtube.com/watch?v=of68F9RLt5Y',
                         connection: true,
                         double: true,
-                        subtotalPoints: 0
+                        subtotalPoints: 0,
+                        groupIV: false
                     },
                     {
                         name:'Liukin',
@@ -1672,7 +1783,8 @@ var mainVm = new Vue({
                         reference:'https://www.youtube.com/watch?v=pTiPZmp_drI',
                         connection: true,
                         double: true,
-                        subtotalPoints: 0
+                        subtotalPoints: 0,
+                        groupIV: false
                     }]
                 }
             }
@@ -2404,6 +2516,10 @@ var mainVm = new Vue({
                 console.log('$POST',data)
                 mainVm.selections.push(data)
                 //mainVm.getFreshData()
+
+            if (mainVm.selections.length === 10){
+                mainVm.groupIVComplete()
+            }
             })
         },
 
@@ -2479,18 +2595,69 @@ var mainVm = new Vue({
             // }
 
         },
-        groupOneRequirement: function(){
-        //     for (var i = 0; i < this.selections.length; i++){
-        //         if (this.selections.group ==='Group I'){
-        //             return 'completed group I requirement'
-        //         }
-        //         else {
-        //             return 'missing group I requirement'
-        //         }
-        //     }
-        // }
-        }
-        
+
+        groupIVComplete: function(){
+            if (this.selections[9] && this.selections[9].group !=='Group I'){
+                this.selections = this.selections.map(function(element){
+                    element.groupIV = true
+                    return element
+                })     
+
+                // this.selections.forEach(function(element){
+                //     element.groupIV = true
+                //     console.log('groupIVComplete')
+                // })
+            }
+        },
+
     },
+    computed: {
+
+        groupOneRequirement: function(){
+            for (var i = 0; i < this.selections.length; i++){
+                if (this.selections[i].group ==='Group I'){
+                    return true
+                }
+            }
+            return false   
+        },
+
+        groupTwoRequirement: function(){
+            for (var i = 0; i < this.selections.length; i++){
+                if (this.selections[i].group ==='Group II'){
+                    return true
+                }
+            }
+            return false     
+        },
+
+        groupThreeRequirement: function(){
+            for (var i = 0; i < this.selections.length; i++){
+                if (this.selections[i].group ==='Group III'){
+                    return true
+                }
+            }
+            return false     
+        },
+
+        groupFourRequirement: function(){
+            
+            if (this.selections[9] && this.selections[9].groupIV === true){
+                console.log('group IV requirement true')
+                return true
+            }
+            
+            return false     
+        },
+
+        doubleRequirement: function(){
+            for (var i = 0; i < this.selections.length; i++){
+                if (this.selections[i].double === true){
+                    return true
+                }
+            }
+            return false     
+        },
+    }
     
 })

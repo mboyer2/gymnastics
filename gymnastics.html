@@ -55,10 +55,19 @@
                             </b></div>
                             <div class="total-points greenText grey row"><b>+{{calculated(selection.valuePoints, selection.groupPoints, mkPoint(index))}}</b></div>
                         </div>
-<!-- V-if -->               <div v-for="selection in selections" class="padding-34 font-size-sm py-2 col-lg-3">
-                                <div v-if="selection.group==='Group I'" class="greenText grey row">Group I Requirement Complete</div>
-                                <div v-else class=" grey row"></div>
+<!-- V-if -->               <div class="padding-34 font-size-sm py-2 col-lg-3">
+                                <div v-if="groupOneRequirement" class="greenText grey row">Group I Requirement Complete</div>
+                                <div v-else class="redText grey row">Group I Requirement Incomplete</div>
+                                <div v-if="groupTwoRequirement" class="greenText row">Group II Requirement Complete</div>
+                                <div v-else class="redText row">Group II Requirement Incomplete</div>
+                                <div v-if="groupThreeRequirement" class="greenText grey row">Group III Requirement Complete</div>
+                                <div v-else class="redText grey row">Group III Requirement Incomplete</div>
+                                <div v-if="groupFourRequirement" class="greenText row">Group IV Requirement Complete</div>
+                                <div v-else class="redText row">Group IV Requirement Incomplete</div>
+                                <div v-if="doubleRequirement" class="greenText grey row">Double Flip Requirement Complete</div>
+                                <div v-else class="redText grey row">Double flip Requirement Incomplete</div>
                             </div>
+
                         </div>
                      <div class="row">
                         <div class="col-lg-11"></div>
