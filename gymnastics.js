@@ -2705,6 +2705,7 @@ var mainVm = new Vue({
                 this.groupFourUpdate()  
             } else if (this.selections[9] && this.selections[9].group === 'Group I'){
                 alert('You cannot end your routine with a Group I skill')
+                return
             }
         },
 //+
@@ -2752,6 +2753,7 @@ var mainVm = new Vue({
                 this.floor.group4.groupPoints = .5
                 this.calculated()
                 return .5
+            }
         },
 //+
         connection: function() {
