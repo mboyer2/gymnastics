@@ -2585,16 +2585,18 @@ var mainVm = new Vue({
                 return
             } 
             //pommel/strength max 2
-            if (skill.group === 'Group I'){
+            
                 var result2 = this.selections.filter((sel) => {
-                    return sel.groupIStyle === skill.groupIStyle   
+                    return sel.groupIStyle === skill.groupIStyle
                 })
                 console.log('result2', result2)
                 if (result2.length > 1){
                     alert('You cannot have more than 2 group One Strength elements or more than 2 Pommel elements per routine')
                     return
                 } 
-            }
+            
+
+
             if (this.selections.length > 9){
                 alert('You are allowed only 10 skills per routine')
                 mainVm.connection()
