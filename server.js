@@ -27,7 +27,19 @@ var gymnasticsSchema = new mongoose.Schema({
 	pic: {type: String},
 	reference: {type: String},
 	connection: {type: Boolean},
-	double: {type: Boolean}	
+	bigConnection: {type: Boolean},
+	double: {type: Boolean},
+	subtotalPoints: {type: Number},
+	groupIV: {type: Boolean},
+	totalBonus: {type: Number},
+	bonusPoints: {type: Array},
+	skillNumberPoints: {type: Number},
+	selections: {type: Array},
+	totalPoints: {type: Array},
+	startValue: {type: Number},
+	floor: {type: Object},
+
+
 })
 
 var GymnasticsModel = mongoose.model('gymnastics', gymnasticsSchema)
