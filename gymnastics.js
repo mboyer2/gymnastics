@@ -1,11 +1,67 @@
 var mainVm = new Vue({
     el: '#app',
     data: {
+        totalBonus:0,
+        bonusPoints: [],
+        skillNumberPoints:0,
         selections: [],
+        totalPoints: [],
+        startValue: 0 ,
         floor: {
+            smallBonus:{
+                BD: false,
+                BE: false,
+                BF: false,
+                BG: false,
+                BH: false,
+                CD: false,
+                CE: false,
+                CF: false,
+                CG: false,
+                CH: false,
+                DB: false,
+                DC: false,
+                EB: false,
+                EC: false,
+                FB: false,
+                FC: false,
+                GB: false,
+                GC: false,
+                HB: false,
+                HC: false,
+            },
+            largeBonus:{
+                DD: false,
+                DE: false,
+                DF: false,
+                DG: false,
+                DH: false,
+                ED: false,
+                EE: false,
+                EF: false,
+                EG: false,
+                EH: false,
+                FD: false,
+                FE: false,
+                FF: false,
+                FG: false,
+                FH: false,
+                GD: false,
+                GE: false,
+                GF: false,
+                GH: false,
+                HD: false,
+                HE: false,
+                HF: false,
+                HG: false,
+                HH: false,
+            },
             groupICompleted: false,
             groupIICompleted: false,
             groupIIICompleted: false,
+            groupIVCompleted: false,
+            doubleRequirement: false,
+            deduction: 0,
             group1:{ 
                 description: 'Non-Acrobatic Skills',
                 groupPoints:0,
@@ -16,13 +72,15 @@ var mainVm = new Vue({
                         name:'Handstand to L-sit',
                         description:'From handstand lower to L-sit or stradle L-sit',
                         value:'A',
-                        valuePoints:.1,                                 //all the same for A
+                        valuePoints:.1,                                
                         group:'Group I',
-                        groupDescription:'Non-Acrobatic Skills',                                  //all same: If (groupPoints){groupPoints = groupoints + 0} else {groupPoints = .5}
-                        totalPoints:'',                                                         //valuePoints + groupPoints
+                        groupIStyle: 'strength',
+                        groupDescription:'Non-Acrobatic Skills',                                 
+                        totalPoints:'',                                                        
                         pic:'public/Floor/floor1_NonAcrobatic_A/1.png',
                         reference:'No Video Available',
                         connection: false,
+                        bigConnection: false,
                         double: false,
                         subtotalPoints: 0,
                         groupIV: false
@@ -33,11 +91,13 @@ var mainVm = new Vue({
                         value:'A',
                         valuePoints:.1,                                 
                         group:'Group I',
+                        groupIStyle: 'strength',
                         groupDescription:'Non-Acrobatic Skills',                                      
                         totalPoints:'',                                 
                         pic:'public/Floor/floor1_NonAcrobatic_A/2.png',
                         reference:"https://www.youtube.com/watch?v=IOV3PNxBGvk",
                         connection: false,
+                        bigConnection: false,
                         double: false,
                         subtotalPoints: 0,
                         groupIV: false
@@ -47,11 +107,13 @@ var mainVm = new Vue({
                         value:'A',
                         valuePoints:.1,                                 
                         group:'Group I',
+                        groupIStyle: 'a',
                         groupDescription:'Non-Acrobatic Skills',                                      
                         totalPoints:'',                                     
                         pic:'public/Floor/floor1_NonAcrobatic_A/3.png',
                         reference:'No Video Available',
                         connection: false,
+                        bigConnection: false,
                         double: false,
                         subtotalPoints: 0,
                         groupIV: false
@@ -61,11 +123,13 @@ var mainVm = new Vue({
                         value:'A',
                         valuePoints:.1,                                 
                         group:'Group I',
+                        groupIStyle: 'strength',
                         groupDescription:'Non-Acrobatic Skills',                                      
                         totalPoints:'',                                     
                         pic:'public/Floor/floor1_NonAcrobatic_A/4.png',
                         reference:'https://www.youtube.com/watch?v=17LM51miUFA',
                         connection: false,
+                        bigConnection: false,
                         double: false,
                         subtotalPoints: 0,
                         groupIV: false
@@ -75,11 +139,13 @@ var mainVm = new Vue({
                         value:'A',
                         valuePoints:.1,                                 
                         group:'Group I',
+                        groupIStyle: 'b',
                         groupDescription:'Non-Acrobatic Skills',                                      
                         totalPoints:'',                                     
                         pic:'public/Floor/floor1_NonAcrobatic_A/5.png',
                         reference:'https://www.youtube.com/watch?v=ZMgzZazouCI',
                         connection: false,
+                        bigConnection: false,
                         double: false,
                         subtotalPoints: 0,
                         groupIV: false
@@ -89,11 +155,13 @@ var mainVm = new Vue({
                         value:'A',
                         valuePoints:.1,                                 
                         group:'Group I',
+                        groupIStyle: 'strength',
                         groupDescription:'Non-Acrobatic Skills',                                      
                         totalPoints:'',                                     
                         pic:'public/Floor/floor1_NonAcrobatic_A/6.png',
                         reference:'No Video Available',
                         connection: false,
+                        bigConnection: false,
                         double: false,
                         subtotalPoints: 0,
                         groupIV: false
@@ -103,11 +171,13 @@ var mainVm = new Vue({
                         value:'A',
                         valuePoints:.1,                                 
                         group:'Group I',
+                        groupIStyle: 'c',
                         groupDescription:'Non-Acrobatic Skills',                                      
                         totalPoints:'',                                     
                         pic:'public/Floor/floor1_NonAcrobatic_A/7.png',
                         reference:'https://www.youtube.com/watch?v=mF4F1Xvg1Bg',
                         connection: false,
+                        bigConnection: false,
                         double: false,
                         subtotalPoints: 0,
                         groupIV: false
@@ -117,11 +187,13 @@ var mainVm = new Vue({
                         value:'A',
                         valuePoints:.1,                                 
                         group:'Group I',
+                        groupIStyle: 'd',
                         groupDescription:'Non-Acrobatic Skills',                                      
                         totalPoints:'',                                     
                         pic:'public/Floor/floor1_NonAcrobatic_A/8.png',
                         reference:'https://www.youtube.com/watch?v=AKNAXpBQu1E',
                         connection: false,
+                        bigConnection: false,
                         double: false,
                         subtotalPoints: 0,
                         groupIV: false
@@ -131,11 +203,13 @@ var mainVm = new Vue({
                         value:'A',
                         valuePoints:.1,                                 
                         group:'Group I',
+                        groupIStyle: 'e',
                         groupDescription:'Non-Acrobatic Skills',                                      
                         totalPoints:'',                                     
                         pic:'public/Floor/floor1_NonAcrobatic_A/9.png',
                         reference:'https://vimeo.com/151238496',
                         connection: false,
+                        bigConnection: false,
                         double: false,
                         subtotalPoints: 0,
                         groupIV: false
@@ -145,11 +219,13 @@ var mainVm = new Vue({
                         value:'A',
                         valuePoints:.1,                                 
                         group:'Group I',
+                        groupIStyle: 'f',
                         groupDescription:'Non-Acrobatic Skills',                                      
                         totalPoints:'',                                     
                         pic:'public/Floor/floor1_NonAcrobatic_A/10.png',
                         reference:'https://www.youtube.com/watch?v=hkqKmq-Y76w',
                         connection: false,
+                        bigConnection: false,
                         double: false,
                         subtotalPoints: 0,
                         groupIV: false
@@ -159,11 +235,13 @@ var mainVm = new Vue({
                         value:'A',
                         valuePoints:.1,                                 
                         group:'Group I',
+                        groupIStyle: 'g',
                         groupDescription:'Non-Acrobatic Skills',                                      
                         totalPoints:'',                                     
                         pic:'public/Floor/floor1_NonAcrobatic_A/11.png',
                         reference:'No Video Available',
                         connection: false,
+                        bigConnection: false,
                         double: false,
                         subtotalPoints: 0,
                         groupIV: false
@@ -173,11 +251,13 @@ var mainVm = new Vue({
                         value:'A',
                         valuePoints:.1,                                 
                         group:'Group I',
+                        groupIStyle: 'h',
                         groupDescription:'Non-Acrobatic Skills',                                      
                         totalPoints:'',                                     
                         pic:'public/Floor/floor1_NonAcrobatic_A/12.png',
                         reference:'https://youtu.be/vbefem-b8p8',
                         connection: false,
+                        bigConnection: false,
                         double: false,
                         subtotalPoints: 0,
                         groupIV: false
@@ -187,11 +267,13 @@ var mainVm = new Vue({
                         value:'A',
                         valuePoints:.1,                                 
                         group:'Group I',
+                        groupIStyle: 'pommel',
                         groupDescription:'Non-Acrobatic Skills',                                      
                         totalPoints:'',                                     
                         pic:'public/Floor/floor1_NonAcrobatic_A/13.png',
                         reference:"https://www.youtube.com/embed/FXMkknrEF1k",
                         connection: false,
+                        bigConnection: false,
                         double: false,
                         subtotalPoints: 0,
                         groupIV: false
@@ -201,11 +283,13 @@ var mainVm = new Vue({
                         value:'A',
                         valuePoints:.1,                                 
                         group:'Group I',
+                        groupIStyle: 'pommel',
                         groupDescription:'Non-Acrobatic Skills',                                      
                         totalPoints:'',                                     
                         pic:'public/Floor/floor1_NonAcrobatic_A/14.png',
                         reference:"https://www.youtube.com/embed/_N158yVNXMM",
                         connection: false,
+                        bigConnection: false,
                         double: false,
                         subtotalPoints: 0,
                         groupIV: false
@@ -215,11 +299,13 @@ var mainVm = new Vue({
                         value:'A',
                         valuePoints:.1,                                 
                         group:'Group I',
+                        groupIStyle: 'pommel',
                         groupDescription:'Non-Acrobatic Skills',                                      
                         totalPoints:'',                                     
                         pic:'public/Floor/floor1_NonAcrobatic_A/15.png',
                         reference:'https://youtu.be/QL5gCiOT54I',
                         connection: false,
+                        bigConnection: false,
                         double: false,
                         subtotalPoints: 0,
                         groupIV: false
@@ -229,11 +315,13 @@ var mainVm = new Vue({
                         value:'A',
                         valuePoints:.1,                                 
                         group:'Group I',
+                        groupIStyle: 'i',
                         groupDescription:'Non-Acrobatic Skills',                                      
                         totalPoints:'',                                     
                         pic:'public/Floor/floor1_NonAcrobatic_A/16.png',
                         reference:'No Video Available',
                         connection: false,
+                        bigConnection: false,
                         double: false,
                         subtotalPoints: 0,
                         groupIV: false
@@ -248,11 +336,13 @@ var mainVm = new Vue({
                         value:'B',
                         valuePoints:.2,                                 
                         group:'Group I',
+                        groupIStyle: 'strength',
                         groupDescription:'Non-Acrobatic Skills',                                      
                         totalPoints:'',                                     
                         pic:'public/Floor/floor1_NonAcrobatic_B/1.png',
                         reference:'https://www.youtube.com/watch?v=0f6zcS48Bqg',
                         connection: false,
+                        bigConnection: false,
                         double: false,
                         subtotalPoints: 0,
                         groupIV: false
@@ -262,25 +352,29 @@ var mainVm = new Vue({
                         value:'B',
                         valuePoints:.2,                                 
                         group:'Group I',
+                        groupIStyle: 'strength',
                         groupDescription:'Non-Acrobatic Skills',                                      
                         totalPoints:'',                                     
                         pic:'public/Floor/floor1_NonAcrobatic_B/2.png',
                         reference:'https://www.youtube.com/watch?v=1SpW7Mr4AgA',
                         connection: false,
+                        bigConnection: false,
                         double: false,
                         subtotalPoints: 0,
                         groupIV: false
                     },
-                    {   name:'Press Handstand',
+                    {   name:'Swiss Press Handstand',
                         description:'Swiss press from split, L-sit, stradle L-sit or front support (2 s.)',
                         value:'B',
                         valuePoints:.2,                                 
                         group:'Group I',
+                        groupIStyle: 'strength',
                         groupDescription:'Non-Acrobatic Skills',                                      
                         totalPoints:'',                                     
                         pic:'public/Floor/floor1_NonAcrobatic_B/3.png',
                         reference:'https://www.youtube.com/watch?v=OW_ljV5CBKk',
                         connection: false,
+                        bigConnection: false,
                         double: false,
                         subtotalPoints: 0,
                         groupIV: false
@@ -290,11 +384,13 @@ var mainVm = new Vue({
                         value:'B',
                         valuePoints:.2,                                 
                         group:'Group I',
+                        groupIStyle: 'strength',
                         groupDescription:'Non-Acrobatic Skills',                                      
                         totalPoints:'',                                     
                         pic:'public/Floor/floor1_NonAcrobatic_B/4.png',
                         reference:'https://www.youtube.com/watch?v=ygym5oXlRWo',
                         connection: false,
+                        bigConnection: false,
                         double: false,
                         subtotalPoints: 0,
                         groupIV: false
@@ -304,11 +400,13 @@ var mainVm = new Vue({
                         value:'B',
                         valuePoints:.2,                                 
                         group:'Group I',
+                        groupIStyle: 'strength',
                         groupDescription:'Non-Acrobatic Skills',                                      
                         totalPoints:'',                                     
                         pic:'public/Floor/floor1_NonAcrobatic_B/5.png',
                         reference:'https://www.youtube.com/watch?v=w_gB_KOeZNI',
                         connection: false,
+                        bigConnection: false,
                         double: false,
                         subtotalPoints: 0,
                         groupIV: false
@@ -318,11 +416,13 @@ var mainVm = new Vue({
                         value:'B',
                         valuePoints:.2,                                 
                         group:'Group I',
+                        groupIStyle: 'strength',
                         groupDescription:'Non-Acrobatic Skills',                                      
                         totalPoints:'',                                     
                         pic:'public/Floor/floor1_NonAcrobatic_B/6.png',
                         reference:'https://www.youtube.com/watch?v=5qR6SMzGbPs',
                         connection: false,
+                        bigConnection: false,
                         double: false,
                         subtotalPoints: 0,
                         groupIV: false
@@ -332,25 +432,29 @@ var mainVm = new Vue({
                         value:'B',
                         valuePoints:.2,                                 
                         group:'Group I',
+                        groupIStyle: 'strength',
                         groupDescription:'Non-Acrobatic Skills',                                      
                         totalPoints:'',                                     
                         pic:'public/Floor/floor1_NonAcrobatic_B/7.png',
                         reference:'https://www.youtube.com/watch?v=yAlX43vn3oc',
                         connection: false,
+                        bigConnection: false,
                         double: false,
                         subtotalPoints: 0,
                         groupIV: false
                     },
-                    {   name:'Scale',
+                    {   name:'B Scale',
                         description:'Any standing scale with 180 straddle, no hand. hold (2 s.)',
                         value:'B',
                         valuePoints:.2,                                 
                         group:'Group I',
+                        groupIStyle: 'j',
                         groupDescription:'Non-Acrobatic Skills',                                      
                         totalPoints:'',                                     
                         pic:'public/Floor/floor1_NonAcrobatic_B/8.png',
                         reference:'No Video Available',
                         connection: false,
+                        bigConnection: false,
                         double: false,
                         subtotalPoints: 0,
                         groupIV: false
@@ -360,11 +464,13 @@ var mainVm = new Vue({
                         value:'B',
                         valuePoints:.2,                                 
                         group:'Group I',
+                        groupIStyle: 'k',
                         groupDescription:'Non-Acrobatic Skills',                                      
                         totalPoints:'',                                     
                         pic:'public/Floor/floor1_NonAcrobatic_B/9.png',
                         reference:'https://www.youtube.com/watch?v=FpgMpM6Awps',
                         connection: false,
+                        bigConnection: false,
                         double: false,
                         subtotalPoints: 0,
                         groupIV: false
@@ -374,11 +480,13 @@ var mainVm = new Vue({
                         value:'B',
                         valuePoints:.2,                                 
                         group:'Group I',
+                        groupIStyle: 'l',
                         groupDescription:'Non-Acrobatic Skills',                                      
                         totalPoints:'',                                     
                         pic:'public/Floor/floor1_NonAcrobatic_B/10.png',
                         reference:'https://www.youtube.com/watch?v=7Kjq1CbswFk',
                         connection: false,
+                        bigConnection: false,
                         double: false,
                         subtotalPoints: 0,
                         groupIV: false
@@ -388,11 +496,13 @@ var mainVm = new Vue({
                         value:'B',
                         valuePoints:.2,                                 
                         group:'Group I',
+                        groupIStyle: 'pommel',
                         groupDescription:'Non-Acrobatic Skills',                                      
                         totalPoints:'',                                     
                         pic:'public/Floor/floor1_NonAcrobatic_B/11.png',
                         reference:'https://www.youtube.com/watch?v=xf-dmkFutNE',
                         connection: false,
+                        bigConnection: false,
                         double: false,
                         subtotalPoints: 0,
                         groupIV: false
@@ -402,11 +512,13 @@ var mainVm = new Vue({
                         value:'B',
                         valuePoints:.2,                                 
                         group:'Group I',
+                        groupIStyle: 'pommel',
                         groupDescription:'Non-Acrobatic Skills',                                      
                         totalPoints:'',                                     
                         pic:'public/Floor/floor1_NonAcrobatic_B/12.png',
                         reference:'https://www.youtube.com/watch?v=vwcToYbWsTw',
                         connection: false,
+                        bigConnection: false,
                         double: false,
                         subtotalPoints: 0,
                         groupIV: false
@@ -416,11 +528,13 @@ var mainVm = new Vue({
                         value:'B',
                         valuePoints:.2,                                 
                         group:'Group I',
+                        groupIStyle: 'pommel',
                         groupDescription:'Non-Acrobatic Skills',                                      
                         totalPoints:'',                                     
                         pic:'public/Floor/floor1_NonAcrobatic_B/13.png',
                         reference:'https://www.youtube.com/watch?v=-XIthLkD3qA',
                         connection: false,
+                        bigConnection: false,
                         double: false,
                         subtotalPoints: 0,
                         groupIV: false
@@ -430,11 +544,13 @@ var mainVm = new Vue({
                         value:'B',
                         valuePoints:.2,                                 
                         group:'Group I',
+                        groupIStyle: 'pommel',
                         groupDescription:'Non-Acrobatic Skills',                                      
                         totalPoints:'',                                     
                         pic:'public/Floor/floor1_NonAcrobatic_B/14.png',
                         reference:'https://www.youtube.com/watch?v=iTYjHesijLQ',
                         connection: false,
+                        bigConnection: false,
                         double: false,
                         subtotalPoints: 0,
                         groupIV: false
@@ -444,11 +560,13 @@ var mainVm = new Vue({
                         value:'B',
                         valuePoints:.2,                                 
                         group:'Group I',
+                        groupIStyle: 'pommel',
                         groupDescription:'Non-Acrobatic Skills',                                      
                         totalPoints:'',                                     
                         pic:'public/Floor/floor1_NonAcrobatic_B/15.png',
                         reference:'https://www.youtube.com/watch?v=BtwkcidJTfY',
                         connection: false,
+                        bigConnection: false,
                         double: false,
                         subtotalPoints: 0,
                         groupIV: false
@@ -458,11 +576,13 @@ var mainVm = new Vue({
                         value:'B',
                         valuePoints:.2,                                 
                         group:'Group I',
+                        groupIStyle: 'm',
                         groupDescription:'Non-Acrobatic Skills',                                      
                         totalPoints:'',                                     
                         pic:'public/Floor/floor1_NonAcrobatic_B/16.png',
                         reference:'No Video Available',
                         connection: false,
+                        bigConnection: false,
                         double: false,
                         subtotalPoints: 0,
                         groupIV: false
@@ -477,11 +597,13 @@ var mainVm = new Vue({
                         value:'C',
                         valuePoints:.3,                                 
                         group:'Group I',
+                        groupIStyle: 'strength',
                         groupDescription:'Non-Acrobatic Skills',                                      
                         totalPoints:'',                                     
                         pic:'public/Floor/floor1_NonAcrobatic_C/1.png',
                         reference:'https://www.youtube.com/watch?v=Tk8ZRf5xIdY',
                         connection: false,
+                        bigConnection: false,
                         double: false,
                         subtotalPoints: 0,
                         groupIV: false
@@ -492,11 +614,13 @@ var mainVm = new Vue({
                         value:'C',
                         valuePoints:.3,                                 
                         group:'Group I',
+                        groupIStyle: 'strength',
                         groupDescription:'Non-Acrobatic Skills',                                      
                         totalPoints:'',                                     
                         pic:'public/Floor/floor1_NonAcrobatic_C/2.png',
                         reference:'https://www.youtube.com/watch?v=qebeJexc3Ms',
                         connection: false,
+                        bigConnection: false,
                         double: false,
                         subtotalPoints: 0,
                         groupIV: false
@@ -507,11 +631,13 @@ var mainVm = new Vue({
                         value:'C',
                         valuePoints:.3,                                 
                         group:'Group I',
+                        groupIStyle: 'strength',
                         groupDescription:'Non-Acrobatic Skills',                                      
                         totalPoints:'',                                     
                         pic:'public/Floor/floor1_NonAcrobatic_C/3.png',
                         reference:'floor split press japanese handstand  gymnastics',
                         connection: false,
+                        bigConnection: false,
                         double: false,
                         subtotalPoints: 0,
                         groupIV: false
@@ -522,11 +648,13 @@ var mainVm = new Vue({
                         value:'C',
                         valuePoints:.3,                                 
                         group:'Group I',
+                        groupIStyle: 'strength',
                         groupDescription:'Non-Acrobatic Skills',                                      
                         totalPoints:'',                                     
                         pic:'public/Floor/floor1_NonAcrobatic_C/4.png',
                         reference:'https://www.youtube.com/watch?v=zGoMHGZocoI',
                         connection: false,
+                        bigConnection: false,
                         double: false,
                         subtotalPoints: 0,
                         groupIV: false
@@ -537,11 +665,13 @@ var mainVm = new Vue({
                         value:'C',
                         valuePoints:.3,                                 
                         group:'Group I',
+                        groupIStyle: 'strength',
                         groupDescription:'Non-Acrobatic Skills',                                      
                         totalPoints:'',                                     
                         pic:'public/Floor/floor1_NonAcrobatic_C/5.png',
                         reference:'https://www.youtube.com/watch?v=yYCVsC-2E08',
                         connection: false,
+                        bigConnection: false,
                         double: false,
                         subtotalPoints: 0,
                         groupIV: false
@@ -552,26 +682,30 @@ var mainVm = new Vue({
                         value:'C',
                         valuePoints:.3,                                 
                         group:'Group I',
+                        groupIStyle: 'strength',
                         groupDescription:'Non-Acrobatic Skills',                                      
                         totalPoints:'',                                     
                         pic:'public/Floor/floor1_NonAcrobatic_C/6.png',
                         reference:'No Video Available',
                         connection: false,
+                        bigConnection: false,
                         double: false,
                         subtotalPoints: 0,
                         groupIV: false
                     },
                     {
-                        name:'Butterfly',
+                        name:'C Butterfly',
                         description:'Butterfly with 2/1 twist',
                         value:'C',
                         valuePoints:.3,                                 
                         group:'Group I',
+                        groupIStyle: 'n',
                         groupDescription:'Non-Acrobatic Skills',                                      
                         totalPoints:'',                                     
                         pic:'public/Floor/floor1_NonAcrobatic_C/7.png',
                         reference:'https://www.youtube.com/watch?v=di0ihPN5o-c',
                         connection: false,
+                        bigConnection: false,
                         double: false,
                         subtotalPoints: 0,
                         groupIV: false
@@ -582,11 +716,13 @@ var mainVm = new Vue({
                         value:'C',
                         valuePoints:.3,                                 
                         group:'Group I',
+                        groupIStyle: 'pommel',
                         groupDescription:'Non-Acrobatic Skills',                                      
                         totalPoints:'',                                     
                         pic:'public/Floor/floor1_NonAcrobatic_C/8.png',
                         reference:'https://www.youtube.com/watch?v=4Mq6yrezuRA',
                         connection: false,
+                        bigConnection: false,
                         double: false,
                         subtotalPoints: 0,
                         groupIV: false
@@ -597,11 +733,13 @@ var mainVm = new Vue({
                         value:'C',
                         valuePoints:.3,                                 
                         group:'Group I',
+                        groupIStyle: 'pommel',
                         groupDescription:'Non-Acrobatic Skills',                                      
                         totalPoints:'',                                     
                         pic:'public/Floor/floor1_NonAcrobatic_C/9.png',
                         reference:'https://www.youtube.com/watch?v=WZqevELmaLE',
                         connection: false,
+                        bigConnection: false,
                         double: false,
                         subtotalPoints: 0,
                         groupIV: false
@@ -612,11 +750,13 @@ var mainVm = new Vue({
                         value:'C',
                         valuePoints:.3,                                 
                         group:'Group I',
+                        groupIStyle: 'pommel',
                         groupDescription:'Non-Acrobatic Skills',                                      
                         totalPoints:'',                                     
                         pic:'public/Floor/floor1_NonAcrobatic_C/10.png',
                         reference:'https://www.youtube.com/watch?v=BtwkcidJTfY',
                         connection: false,
+                        bigConnection: false,
                         double: false,
                         subtotalPoints: 0,
                         groupIV: false
@@ -631,11 +771,13 @@ var mainVm = new Vue({
                         value:'D',
                         valuePoints:.4,                                 
                         group:'Group I',
+                        groupIStyle: 'strength',
                         groupDescription:'Non-Acrobatic Skills',                                      
                         totalPoints:'',                                     
                         pic:'public/Floor/floor1_NonAcrobatic_D/1.png',
                         reference:'https://www.youtube.com/watch?v=fuGpGvr-8Bc',
                         connection: false,
+                        bigConnection: false,
                         double: false,
                         subtotalPoints: 0,
                         groupIV: false
@@ -646,11 +788,13 @@ var mainVm = new Vue({
                         value:'D',
                         valuePoints:.4,                                 
                         group:'Group I',
+                        groupIStyle: 'strength',
                         groupDescription:'Non-Acrobatic Skills',                                      
                         totalPoints:'',                                     
                         pic:'public/Floor/floor1_NonAcrobatic_D/2.png',
                         reference:'https://www.youtube.com/watch?v=KAp8aEmPSfE',
                         connection: false,
+                        bigConnection: false,
                         double: false,
                         subtotalPoints: 0,
                         groupIV: false
@@ -661,11 +805,13 @@ var mainVm = new Vue({
                         value:'D',
                         valuePoints:.4,                                 
                         group:'Group I',
+                        groupIStyle: 'strength',
                         groupDescription:'Non-Acrobatic Skills',                                      
                         totalPoints:'',                                     
                         pic:'public/Floor/floor1_NonAcrobatic_D/3.png',
                         reference:'https://www.youtube.com/watch?v=zJ4kJ8ZamDQ',
                         connection: false,
+                        bigConnection: false,
                         double: false,
                         subtotalPoints: 0,
                         groupIV: false
@@ -676,11 +822,13 @@ var mainVm = new Vue({
                         value:'D',
                         valuePoints:.4,                                 
                         group:'Group 1',
+                        groupIStyle: 'pommel',
                         groupDescription:'Non-Acrobatic Skills',                                      
                         totalPoints:'',                                     
                         pic:'public/Floor/floor1_NonAcrobatic_D/4.png',
                         reference:'https://www.youtube.com/watch?v=MBXxXPR40O0',
                         connection: false,
+                        bigConnection: false,
                         double: false,
                         subtotalPoints: 0,
                         groupIV: false
@@ -691,11 +839,13 @@ var mainVm = new Vue({
                         value:'D',
                         valuePoints:.4,                                 
                         group:'Group I',
+                        groupIStyle: 'pommel',
                         groupDescription:'Non-Acrobatic Skills',                                      
                         totalPoints:'',                                     
                         pic:'public/Floor/floor1_NonAcrobatic_D/5.png',
                         reference:'https://www.youtube.com/watch?v=-XIthLkD3qA',
                         connection: false,
+                        bigConnection: false,
                         double: false,
                         subtotalPoints: 0,
                         groupIV: false
@@ -719,6 +869,7 @@ var mainVm = new Vue({
                         pic:'public/Floor/floor2_FrontSalto_A/1.png',
                         reference:'No Video Available',
                         connection: false,
+                        bigConnection: false,
                         double: false,
                         subtotalPoints: 0,
                         groupIV: false
@@ -734,6 +885,7 @@ var mainVm = new Vue({
                         pic:'public/Floor/floor2_FrontSalto_A/2.png',
                         reference:'https://www.youtube.com/watch?v=zjewNdgEq90',
                         connection: false,
+                        bigConnection: false,
                         double: false,
                         subtotalPoints: 0,
                         groupIV: false
@@ -749,6 +901,7 @@ var mainVm = new Vue({
                         pic:'public/Floor/floor2_FrontSalto_A/3.png',
                         reference:'https://www.youtube.com/watch?v=ueWNFDCiJ8Q',
                         connection: false,
+                        bigConnection: false,
                         double: false,
                         subtotalPoints: 0,
                         groupIV: false
@@ -764,6 +917,7 @@ var mainVm = new Vue({
                         pic:'public/Floor/floor2_FrontSalto_A/4.png',
                         reference:'https://www.youtube.com/watch?v=md23mspiJbQ',
                         connection: false,
+                        bigConnection: false,
                         double: false,
                         subtotalPoints: 0,
                         groupIV: false
@@ -779,6 +933,7 @@ var mainVm = new Vue({
                         pic:'public/Floor/floor2_FrontSalto_A/5.png',
                         reference:'https://www.youtube.com/watch?v=32MlKbw_OnA',
                         connection: false,
+                        bigConnection: false,
                         double: false,
                         subtotalPoints: 0,
                         groupIV: false
@@ -794,6 +949,7 @@ var mainVm = new Vue({
                         pic:'public/Floor/floor2_FrontSalto_A/6.png',
                         reference:'No Video Available',
                         connection: false,
+                        bigConnection: false,
                         double: false,
                         subtotalPoints: 0,
                         groupIV: false
@@ -812,7 +968,8 @@ var mainVm = new Vue({
                         totalPoints:'',                                     
                         pic:'public/Floor/floor2_FrontSalto_B/1.png',
                         reference:'No Video Available',
-                        connection: true,
+                        connection: false,
+                        bigConnection: false,
                         double: false,
                         subtotalPoints: 0,
                         groupIV: false
@@ -827,7 +984,8 @@ var mainVm = new Vue({
                         totalPoints:'',                                     
                         pic:'public/Floor/floor2_FrontSalto_B/2.png',
                         reference:'https://www.youtube.com/watch?v=aBSOSwDWArs',
-                        connection: true,
+                        connection: false,
+                        bigConnection: false,
                         double: false,
                         subtotalPoints: 0,
                         groupIV: false
@@ -842,7 +1000,8 @@ var mainVm = new Vue({
                         totalPoints:'',                                     
                         pic:'public/Floor/floor2_FrontSalto_B/3.png',
                         reference:'https://www.youtube.com/watch?v=vxdr4vY_QnQ',
-                        connection: true,
+                        connection: false,
+                        bigConnection: false,
                         double: false,
                         subtotalPoints: 0,
                         groupIV: false
@@ -857,7 +1016,8 @@ var mainVm = new Vue({
                         totalPoints:'',                                     
                         pic:'public/Floor/floor2_FrontSalto_B/4.png',
                         reference:'https://www.youtube.com/watch?v=vxdr4vY_QnQ',
-                        connection: true,
+                        connection: false,
+                        bigConnection: false,
                         double: false,
                         subtotalPoints: 0,
                         groupIV: false
@@ -872,7 +1032,8 @@ var mainVm = new Vue({
                         totalPoints:'',                                     
                         pic:'public/Floor/floor2_FrontSalto_B/5.png',
                         reference:'https://www.youtube.com/watch?v=vxdr4vY_QnQ',
-                        connection: true,
+                        connection: false,
+                        bigConnection: false,
                         double: false,
                         subtotalPoints: 0,
                         groupIV: false
@@ -887,7 +1048,8 @@ var mainVm = new Vue({
                         totalPoints:'',                                     
                         pic:'public/Floor/floor2_FrontSalto_B/6.png',
                         reference:'No Video Available',
-                        connection: true,
+                        connection: false,
+                        bigConnection: false,
                         double: false,
                         subtotalPoints: 0,
                         groupIV: false
@@ -906,7 +1068,8 @@ var mainVm = new Vue({
                         totalPoints:'',                                     
                         pic:'public/Floor/floor2_FrontSalto_C/1.png',
                         reference:'No Video Available',
-                        connection: true,
+                        connection: false,
+                        bigConnection: false,
                         double: false,
                         subtotalPoints: 0,
                         groupIV: false
@@ -921,7 +1084,8 @@ var mainVm = new Vue({
                         totalPoints:'',                                     
                         pic:'public/Floor/floor2_FrontSalto_C/2.png',
                         reference:'https://www.youtube.com/watch?v=vxdr4vY_QnQ',
-                        connection: true,
+                        connection: false,
+                        bigConnection: false,
                         double: false,
                         subtotalPoints: 0,
                         groupIV: false
@@ -936,7 +1100,8 @@ var mainVm = new Vue({
                         totalPoints:'',                                     
                         pic:'public/Floor/floor2_FrontSalto_C/3.png',
                         reference:'https://www.youtube.com/watch?v=vxdr4vY_QnQ',
-                        connection: true,
+                        connection: false,
+                        bigConnection: false,
                         double: false,
                         subtotalPoints: 0,
                         groupIV: false
@@ -951,7 +1116,8 @@ var mainVm = new Vue({
                         totalPoints:'',                                     
                         pic:'public/Floor/floor2_FrontSalto_C/4.png',
                         reference:'No Video Available',
-                        connection: true,
+                        connection: false,
+                        bigConnection: false,
                         double: false,
                         subtotalPoints: 0,
                         groupIV: false
@@ -970,7 +1136,8 @@ var mainVm = new Vue({
                         totalPoints:'',                                     
                         pic:'public/Floor/floor2_FrontSalto_D/1.png',
                         reference:'https://www.youtube.com/watch?v=3SCznCNqc0g',
-                        connection: true,
+                        connection: false,
+                        bigConnection: false,
                         double: false,
                         subtotalPoints: 0,
                         groupIV: false
@@ -985,7 +1152,8 @@ var mainVm = new Vue({
                         totalPoints:'',                                     
                         pic:'public/Floor/floor2_FrontSalto_D/2.png',
                         reference:'https://www.youtube.com/watch?v=z6L51SiNtbY',
-                        connection: true,
+                        connection: false,
+                        bigConnection: false,
                         double: true,
                         subtotalPoints: 0,
                         groupIV: false
@@ -1000,7 +1168,8 @@ var mainVm = new Vue({
                         totalPoints:'',                                     
                         pic:'public/Floor/floor2_FrontSalto_D/3.png',
                         reference:'https://www.youtube.com/watch?v=_XrtUJ81t6w',
-                        connection: true,
+                        connection: false,
+                        bigConnection: false,
                         double: false,
                         subtotalPoints: 0,
                         groupIV: false
@@ -1015,7 +1184,8 @@ var mainVm = new Vue({
                         totalPoints:'',                                     
                         pic:'public/Floor/floor2_FrontSalto_D/4.png',
                         reference:'No Video Available',
-                        connection: true,
+                        connection: false,
+                        bigConnection: false,
                         double: true,
                         subtotalPoints: 0,
                         groupIV: false
@@ -1034,7 +1204,8 @@ var mainVm = new Vue({
                         totalPoints:'',                                     
                         pic:'public/Floor/floor2_FrontSalto_E/1.png',
                         reference:'https://www.youtube.com/watch?v=0s5Gz_UM8KU',
-                        connection: true,
+                        connection: false,
+                        bigConnection: false,
                         double: true,
                         subtotalPoints: 0,
                         groupIV: false
@@ -1049,7 +1220,8 @@ var mainVm = new Vue({
                         totalPoints:'',                                     
                         pic:'public/Floor/floor2_FrontSalto_E/2.png',
                         reference:'https://www.youtube.com/watch?v=OFK3qiXrJL8',
-                        connection: true,
+                        connection: false,
+                        bigConnection: false,
                         double: true,
                         subtotalPoints: 0,
                         groupIV: false
@@ -1064,8 +1236,9 @@ var mainVm = new Vue({
                         totalPoints:'',                                     
                         pic:'public/Floor/floor2_FrontSalto_E/3.png',
                         reference:'https://www.youtube.com/watch?v=3us9h2H3Lzg',
-                        connection: true,
-                        double: true,
+                        connection: false,
+                        bigConnection: false,
+                        double: false,
                         subtotalPoints: 0,
                         groupIV: false
                     }]
@@ -1083,7 +1256,8 @@ var mainVm = new Vue({
                         totalPoints:'',                                     
                         pic:'public/Floor/floor2_FrontSalto_FGH/1.png',
                         reference:'https://www.youtube.com/watch?v=eSITioQT3NU',
-                        connection: true,
+                        connection: false,
+                        bigConnection: false,
                         double: true,
                         subtotalPoints: 0,
                         groupIV: false
@@ -1098,7 +1272,8 @@ var mainVm = new Vue({
                         totalPoints:'',                                     
                         pic:'public/Floor/floor2_FrontSalto_FGH/2.png',
                         reference:'https://www.youtube.com/watch?v=sTfbicZoE8g',
-                        connection: true,
+                        connection: false,
+                        bigConnection: false,
                         double: false,
                         subtotalPoints: 0,
                         groupIV: false
@@ -1113,7 +1288,8 @@ var mainVm = new Vue({
                         totalPoints:'',                                     
                         pic:'public/Floor/floor2_FrontSalto_FGH/3.png',
                         reference:'https://www.youtube.com/watch?v=bPxncXWWu7o',
-                        connection: true,
+                        connection: false,
+                        bigConnection: false,
                         double: true,
                         subtotalPoints: 0,
                         groupIV: false
@@ -1137,6 +1313,7 @@ var mainVm = new Vue({
                         pic:'public/Floor/floor3_BackSalto_A/1.png',
                         reference:'https://www.youtube.com/watch?v=WD1h2bSH1eY',
                         connection: false,
+                        bigConnection: false,
                         double: false,
                         subtotalPoints: 0,
                         groupIV: false
@@ -1153,6 +1330,7 @@ var mainVm = new Vue({
                         pic:'public/Floor/floor3_BackSalto_A/2.png',
                         reference:'https://www.youtube.com/watch?v=rMle2G5AOdQ',
                         connection: false,
+                        bigConnection: false,
                         double: false,
                         subtotalPoints: 0,
                         groupIV: false
@@ -1168,6 +1346,7 @@ var mainVm = new Vue({
                         pic:'public/Floor/floor3_BackSalto_A/3.png',
                         reference:'https://www.youtube.com/watch?v=TZTevhiE5BI',
                         connection: false,
+                        bigConnection: false,
                         double: false,
                         subtotalPoints: 0,
                         groupIV: false
@@ -1183,6 +1362,7 @@ var mainVm = new Vue({
                         pic:'public/Floor/floor3_BackSalto_A/4.png',
                         reference:'https://www.youtube.com/watch?v=8KtmqP3Ouq4',
                         connection: false,
+                        bigConnection: false,
                         double: false,
                         subtotalPoints: 0,
                         groupIV: false
@@ -1198,6 +1378,7 @@ var mainVm = new Vue({
                         pic:'public/Floor/floor3_BackSalto_A/5.png',
                         reference:'https://www.youtube.com/watch?v=jzVIICSVLdM',
                         connection: false,
+                        bigConnection: false,
                         double: false,
                         subtotalPoints: 0,
                         groupIV: false
@@ -1216,7 +1397,8 @@ var mainVm = new Vue({
                         totalPoints:'',                                     
                         pic:'public/Floor/floor3_BackSalto_B/1.png',
                         reference:'https://www.youtube.com/watch?v=3v0rgdehz3k',
-                        connection: true,
+                        connection: false,
+                        bigConnection: false,
                         double: false,
                         subtotalPoints: 0,
                         groupIV: false
@@ -1231,7 +1413,8 @@ var mainVm = new Vue({
                         totalPoints:'',                                     
                         pic:'public/Floor/floor3_BackSalto_B/2.png',
                         reference:'https://www.youtube.com/watch?v=8Dau9AJsP2U',
-                        connection: true,
+                        connection: false,
+                        bigConnection: false,
                         double: false,
                         subtotalPoints: 0,
                         groupIV: false
@@ -1246,7 +1429,8 @@ var mainVm = new Vue({
                         totalPoints:'',                                     
                         pic:'public/Floor/floor3_BackSalto_B/3.png',
                         reference:'https://www.youtube.com/watch?v=xTgRpkpapuI',
-                        connection: true,
+                        connection: false,
+                        bigConnection: false,
                         double: false,
                         subtotalPoints: 0,
                         groupIV: false
@@ -1261,7 +1445,8 @@ var mainVm = new Vue({
                         totalPoints:'',                                     
                         pic:'public/Floor/floor3_BackSalto_B/4.png',
                         reference:'https://www.youtube.com/watch?v=0um2RsXyUyg',
-                        connection: true,
+                        connection: false,
+                        bigConnection: false,
                         double: false,
                         subtotalPoints: 0,
                         groupIV: false
@@ -1276,7 +1461,8 @@ var mainVm = new Vue({
                         totalPoints:'',                                     
                         pic:'public/Floor/floor3_BackSalto_B/5.png',
                         reference:'https://www.youtube.com/watch?v=JsLvr4D1AwU',
-                        connection: true,
+                        connection: false,
+                        bigConnection: false,
                         double: false,
                         subtotalPoints: 0,
                         groupIV: false
@@ -1291,7 +1477,8 @@ var mainVm = new Vue({
                         totalPoints:'',                                     
                         pic:'public/Floor/floor3_BackSalto_B/6.png',
                         reference:'No Video Available',
-                        connection: true,
+                        connection: false,
+                        bigConnection: false,
                         double: false,
                         subtotalPoints: 0,
                         groupIV: false
@@ -1310,7 +1497,8 @@ var mainVm = new Vue({
                         totalPoints:'',                                     
                         pic:'public/Floor/floor3_BackSalto_C/1.png',
                         reference:'https://www.youtube.com/watch?v=f2C6UexLu8A',
-                        connection: true,
+                        connection: false,
+                        bigConnection: false,
                         double: true,
                         subtotalPoints: 0,
                         groupIV: false
@@ -1325,7 +1513,8 @@ var mainVm = new Vue({
                         totalPoints:'',                                     
                         pic:'public/Floor/floor3_BackSalto_C/2.png',
                         reference:'https://www.youtube.com/watch?v=kEwVLRqHRA8',
-                        connection: true,
+                        connection: false,
+                        bigConnection: false,
                         double: true,
                         subtotalPoints: 0,
                         groupIV: false
@@ -1340,7 +1529,8 @@ var mainVm = new Vue({
                         totalPoints:'',                                     
                         pic:'public/Floor/floor3_BackSalto_C/3.png',
                         reference:'https://www.youtube.com/watch?v=G55M_P35xSA',
-                        connection: true,
+                        connection: false,
+                        bigConnection: false,
                         double: false,
                         subtotalPoints: 0,
                         groupIV: false
@@ -1355,7 +1545,8 @@ var mainVm = new Vue({
                         totalPoints:'',                                     
                         pic:'public/Floor/floor3_BackSalto_C/4.png',
                         reference:'https://www.youtube.com/watch?v=hpsgwGvBdW8&t=12s',
-                        connection: true,
+                        connection: false,
+                        bigConnection: false,
                         double: false,
                         subtotalPoints: 0,
                         groupIV: false
@@ -1374,7 +1565,8 @@ var mainVm = new Vue({
                         totalPoints:'',                                     
                         pic:'public/Floor/floor3_BackSalto_D/1.png',
                         reference:'https://www.youtube.com/watch?v=RKuCY_I9HQs',
-                        connection: true,
+                        connection: false,
+                        bigConnection: false,
                         double: true,
                         subtotalPoints: 0,
                         groupIV: false
@@ -1389,7 +1581,8 @@ var mainVm = new Vue({
                         totalPoints:'',                                     
                         pic:'public/Floor/floor3_BackSalto_D/2.png',
                         reference:'https://www.youtube.com/watch?v=E_c-Dylz9aI',
-                        connection: true,
+                        connection: false,
+                        bigConnection: false,
                         double: true,
                         subtotalPoints: 0,
                         groupIV: false
@@ -1404,7 +1597,8 @@ var mainVm = new Vue({
                         totalPoints:'',                                     
                         pic:'public/Floor/floor3_BackSalto_D/3.png',
                         reference:'https://www.youtube.com/watch?v=2AMx2podVhM',
-                        connection: true,
+                        connection: false,
+                        bigConnection: false,
                         double: false,
                         subtotalPoints: 0,
                         groupIV: false
@@ -1419,7 +1613,8 @@ var mainVm = new Vue({
                         totalPoints:'',                                     
                         pic:'public/Floor/floor3_BackSalto_D/4.png',
                         reference:'https://www.youtube.com/watch?v=z805keIFnV4',
-                        connection: true,
+                        connection: false,
+                        bigConnection: false,
                         double: false,
                         subtotalPoints: 0,
                         groupIV: false
@@ -1434,7 +1629,8 @@ var mainVm = new Vue({
                         totalPoints:'',                                     
                         pic:'public/Floor/floor3_BackSalto_D/5.png',
                         reference:'https://www.youtube.com/watch?v=1USTwc5lD6s',
-                        connection: true,
+                        connection: false,
+                        bigConnection: false,
                         double: true,
                         subtotalPoints: 0,
                         groupIV: false
@@ -1453,7 +1649,8 @@ var mainVm = new Vue({
                         totalPoints:'',                                     
                         pic:'public/Floor/floor3_BackSalto_E/1.png',
                         reference:'https://www.youtube.com/watch?v=zlj2n97OjO4',
-                        connection: true,
+                        connection: false,
+                        bigConnection: false,
                         double: true,
                         subtotalPoints: 0,
                         groupIV: false
@@ -1468,7 +1665,8 @@ var mainVm = new Vue({
                         totalPoints:'',                                     
                         pic:'public/Floor/floor3_BackSalto_E/2.png',
                         reference:'https://www.youtube.com/watch?v=KPTv7BSD5ts',
-                        connection: true,
+                        connection: false,
+                        bigConnection: false,
                         double: true,
                         subtotalPoints: 0,
                         groupIV: false
@@ -1483,7 +1681,8 @@ var mainVm = new Vue({
                         totalPoints:'',                                     
                         pic:'public/Floor/floor3_BackSalto_E/3.png',
                         reference:'https://www.youtube.com/watch?v=KPTv7BSD5ts',
-                        connection: true,
+                        connection: false,
+                        bigConnection: false,
                         double: false,
                         subtotalPoints: 0,
                         groupIV: false
@@ -1498,7 +1697,8 @@ var mainVm = new Vue({
                         totalPoints:'',                                     
                         pic:'public/Floor/floor3_BackSalto_E/4.png',
                         reference:'https://www.youtube.com/watch?v=uSp8ysQhBBM',
-                        connection: true,
+                        connection: false,
+                        bigConnection: false,
                         double: true,
                         subtotalPoints: 0,
                         groupIV: false
@@ -1513,7 +1713,8 @@ var mainVm = new Vue({
                         totalPoints:'',                                     
                         pic:'public/Floor/floor3_BackSalto_E/5.png',
                         reference:'https://www.youtube.com/watch?v=vQilnlEoP6g',
-                        connection: true,
+                        connection: false,
+                        bigConnection: false,
                         double: true,
                         subtotalPoints: 0,
                         groupIV: false
@@ -1528,7 +1729,8 @@ var mainVm = new Vue({
                         totalPoints:'',                                     
                         pic:'public/Floor/floor3_BackSalto_E/6.png',
                         reference:'Full twisting double layout mens floor',
-                        connection: true,
+                        connection: false,
+                        bigConnection: false,
                         double: true,
                         subtotalPoints: 0,
                         groupIV: false
@@ -1547,7 +1749,8 @@ var mainVm = new Vue({
                         totalPoints:'',                                     
                         pic:'public/Floor/floor3_BackSalto_FGH/2.png',
                         reference:'https://www.youtube.com/watch?v=2yuAn-OwdeA',
-                        connection: true,
+                        connection: false,
+                        bigConnection: false,
                         double: true,
                         subtotalPoints: 0,
                         groupIV: false
@@ -1562,7 +1765,8 @@ var mainVm = new Vue({
                         totalPoints:'',                                     
                         pic:'public/Floor/floor3_BackSalto_FGH/4.png',
                         reference:'https://www.youtube.com/watch?v=p5d_esUdrjo',
-                        connection: true,
+                        connection: false,
+                        bigConnection: false,
                         double: false,
                         subtotalPoints: 0,
                         groupIV: false
@@ -1577,7 +1781,8 @@ var mainVm = new Vue({
                         totalPoints:'',                                     
                         pic:'public/Floor/floor3_BackSalto_FGH/5.png',
                         reference:'https://www.youtube.com/watch?v=yzDL_rBOj_4',
-                        connection: true,
+                        connection: false,
+                        bigConnection: false,
                         double: true,
                         subtotalPoints: 0,
                         groupIV: false
@@ -1592,7 +1797,8 @@ var mainVm = new Vue({
                         totalPoints:'',                                     
                         pic:'public/Floor/floor3_BackSalto_FGH/6.png',
                         reference:'https://www.youtube.com/watch?v=KPTv7BSD5ts',
-                        connection: true,
+                        connection: false,
+                        bigConnection: false,
                         double: true,
                         subtotalPoints: 0,
                         groupIV: false
@@ -1607,7 +1813,8 @@ var mainVm = new Vue({
                         totalPoints:'',                                     
                         pic:'public/Floor/floor3_BackSalto_FGH/7.png',
                         reference:'https://www.youtube.com/watch?v=4MyCbj8hocQ',
-                        connection: true,
+                        connection: false,
+                        bigConnection: false,
                         double: true,
                         subtotalPoints: 0,
                         groupIV: false
@@ -1626,7 +1833,8 @@ var mainVm = new Vue({
                         totalPoints:'',                                     
                         pic:'public/Floor/floor3_BackSalto_FGH/1.png',
                         reference:'https://www.youtube.com/watch?v=_cTTdJxsgAI',
-                        connection: true,
+                        connection: false,
+                        bigConnection: false,
                         double: true,
                         subtotalPoints: 0,
                         groupIV: false
@@ -1641,7 +1849,8 @@ var mainVm = new Vue({
                         totalPoints:'',                                     
                         pic:'public/Floor/floor3_BackSalto_FGH/8.png',
                         reference:'https://www.youtube.com/watch?v=_cTTdJxsgAI',
-                        connection: true,
+                        connection: false,
+                        bigConnection: false,
                         double: true,
                         subtotalPoints: 0,
                         groupIV: false
@@ -1660,7 +1869,8 @@ var mainVm = new Vue({
                         totalPoints:'',                                     
                         pic:'public/Floor/floor3_BackSalto_FGH/9.png',
                         reference:'https://www.youtube.com/watch?v=of68F9RLt5Y',
-                        connection: true,
+                        connection: false,
+                        bigConnection: false,
                         double: true,
                         subtotalPoints: 0,
                         groupIV: false
@@ -1675,7 +1885,8 @@ var mainVm = new Vue({
                         totalPoints:'',                                     
                         pic:'public/Floor/floor3_BackSalto_FGH/3.png',
                         reference:'https://www.youtube.com/watch?v=pTiPZmp_drI',
-                        connection: true,
+                        connection: false,
+                        bigConnection: false,
                         double: true,
                         subtotalPoints: 0,
                         groupIV: false
@@ -2351,39 +2562,54 @@ var mainVm = new Vue({
         //                 reference:'',
         //             }, 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     },
     methods: {
-        //sending request to server.js to store user input data in database
         select: function(event, skill){
             event.preventDefault()
-            
-                            //study this syntax,body is sent as an object, be explicit when sending  todo:this.newTodo 
+            //skill repeat
+            let isSelected = !!this.selections.find((sel) => {   //!! to convert to boolean .find finds selection in an array of objects then return the whole object if condition is true
+                return sel.name === skill.name
+            })
+            console.log(isSelected)
+            if (isSelected) {
+                alert('You cannot repeat skills')
+                return
+            }
+            //group maximum 5 skils
+            var result = this.selections.filter((sel) => {
+                return sel.group === skill.group
+            })
+            console.log('result', result)
+            if (result.length > 4){
+                alert('You cannot have more than 5 of the same element group in your routine')
+                return
+            } 
+            //pommel/strength max 2
+            if (skill.group === 'Group I'){
+                var result2 = this.selections.filter((sel) => {
+                    return sel.groupIStyle === skill.groupIStyle   
+                })
+                console.log('result2', result2)
+                if (result2.length > 1){
+                    alert('You cannot have more than 2 group One Strength elements or more than 2 Pommel elements per routine')
+                    return
+                } 
+            }
+            if (this.selections.length > 9){
+                alert('You are allowed only 10 skills per routine')
+                mainVm.connection()
+                return
+            }                  
             $.post('/select', {skill}, function(data){
                 console.log('$POST',data)
                 mainVm.selections.push(data)
                 //mainVm.getFreshData()
+                mainVm.connection()
 
             if (mainVm.selections.length === 10){
                 mainVm.groupIVComplete()
+                mainVm.connection()
             }
-            mainVm.groupCheck()
-            mainVm.calculated()
             })
         },
 
@@ -2403,67 +2629,89 @@ var mainVm = new Vue({
 
          mkPoint: function(index) {
             switch(index) {
-                case 0: return 2;
-                case 1: return 0;
-                case 2: return 2;
-                case 3: return 0;
-                case 4: return 2;
-                case 5: return 0;
-                case 6: return 4;
-                case 7: return 0;
-                case 8: return 0;
-                case 9: return 0;
+                case 0: {this.skillNumberPoints=2; return 2;}
+                case 1: {this.skillNumberPoints=2; return 0;}
+                case 2: {this.skillNumberPoints=4; return 2;}
+                case 3: {this.skillNumberPoints=4; return 0;}
+                case 4: {this.skillNumberPoints=6; return 2;}
+                case 5: {this.skillNumberPoints=6; return 0;}
+                case 6: {this.skillNumberPoints=10; return 4;}
+                case 7: {this.skillNumberPoints=10; return 0;}
+                case 8: {this.skillNumberPoints=10; return 0;}
+                case 9: {this.skillNumberPoints=10; return 0;}
             }
         },
 
 
-        calculated: function (valuePoints, groupPoints, skillNumberPoints){
-           var totalPoints = 0
-           
-          
-           totalPoints = valuePoints + groupPoints + skillNumberPoints 
-           return totalPoints
+        calculated: function (){
+            var subStartValue = 0
+            var skillTotalPoints = 0
+            var decimalStartValue = 0
+
+            for (var i  = 0; i < this.bonusPoints.length; i++){
+                this.totalBonus  += this.bonusPoints[i]
+                console.log('bonus', this.totalBonus)
+            }
+            for (var i = 0; i < this.selections.length; i ++){
+                skillTotalPoints = this.selections[i].valuePoints 
+                mainVm.totalPoints.push(skillTotalPoints)
+                console.log('skillTotalPoints', skillTotalPoints)
+                console.log('totalPoints', this.totalPoints)
+            }
+            for (var i  = 0; i < this.totalPoints.length; i++){
+                subStartValue  += this.totalPoints[i]
+                console.log('subStartValue', subStartValue)
+            }
+                decimalStartValue = subStartValue + this.floor.group1.groupPoints + this.floor.group2.groupPoints + this.floor.group3.groupPoints + this.floor.group4.groupPoints + this.skillNumberPoints + this.deduction + this.totalBonus
+
+                this.startValue = Math.round(100*decimalStartValue)/100
+                    
         },
 
-        groupCheck: function(){
-            this.floor.groupICompleted = false    
-            this.floor.groupIICompleted = false 
-            this.floor.groupIIICompleted = false 
-            for (var i = 0; i < this.selections.length; i++){
-                if (this.selections[i].group === 'Group I') {     
 
-                    if (!this.floor.groupICompleted) {
-                        this.floor.groupICompleted = true    
-                        this.selections[i]['groupDisplayedPts'] = .5
-                    } else {
-                        this.selections[i]['groupDisplayedPts'] = 0
-                    }
+        // groupCheck: function(){
+            
+        //     for (var i = 0; i < this.selections.length; i++){
+        //         if (this.selections[i].group === 'Group I') {     
+
+        //             if (!this.floor.groupICompleted) {
+        //                 this.floor.groupICompleted = true    
+        //                 this.selections[i]['groupDisplayedPts'] = .5
+        //                 this.floor.group1.groupPoints = .5
+        //             } else {
+        //                 this.selections[i]['groupDisplayedPts'] = 0
+        //                 this.floor.group1.groupPoints = 0
+        //             }
                     
                     
-                }
-                if (this.selections[i].group === 'Group II') {     
+        //         }
+        //         if (this.selections[i].group === 'Group II') {     
 
-                    if (!this.floor.groupIICompleted) {
-                        this.floor.groupIICompleted = true    
-                        this.selections[i]['groupDisplayedPts'] = .5
-                    } else {
-                        this.selections[i]['groupDisplayedPts'] = 0
-                    }
+        //             if (!this.floor.groupIICompleted) {
+        //                 this.floor.groupIICompleted = true    
+        //                 this.selections[i]['groupDisplayedPts'] = .5
+        //                 this.floor.group1.groupPoints = .5
+        //             } else {
+        //                 this.selections[i]['groupDisplayedPts'] = 0
+        //                 this.floor.group1.groupPoints = 0
+        //             }
                 
 
-                } 
-                if (this.selections[i].group === 'Group III') {     
+        //         } 
+        //         if (this.selections[i].group === 'Group III') {     
 
-                    if (!this.floor.groupIIICompleted) {
-                        this.floor.groupIIICompleted = true    
-                        this.selections[i]['groupDisplayedPts'] = .5
-                    } else {
-                        this.selections[i]['groupDisplayedPts'] = 0
-                    }   
+        //             if (!this.floor.groupIIICompleted) {
+        //                 this.floor.groupIIICompleted = true    
+        //                 this.selections[i]['groupDisplayedPts'] = .5
+        //                 this.floor.group1.groupPoints = .5
+        //             } else {
+        //                 this.selections[i]['groupDisplayedPts'] = 0
+        //                 this.floor.group1.groupPoints = 0
+        //             }   
                 
-                }    
-            }  
-        },
+        //         }    
+        //     }  
+        // },
         
         color: function(value){
             if (value === 'A'){
@@ -2491,29 +2739,18 @@ var mainVm = new Vue({
                 return 'purple'
             }
         },
-       
-
-        addTotal: function(){
-            for (var i = 0; i < this.selections.length; i++){
-
-            }
-            // console.log(this.selections.reduce((accumulator, currentValue) => {
-            //     return accumulator + parseInt(currentValue.totalPoints)
-            // }, 0))
-            // for (var i = 0; i < this.selections.length; i++){
-            //     this.selections[i].totalPoints
-            // }
-        },
 
         groupIVComplete: function(){
             if (this.selections[9] && this.selections[9].group !=='Group I'){
                 this.selections = this.selections.map(function(element){
                     element.groupIV = true
+                    mainVm.floor.groupIVCompleted = true
                     return element
-                })     
+                }) 
+               
             this.groupFourUpdate()
+
             console.log('Updating Group Four')
-                
             }
         },
 
@@ -2524,38 +2761,73 @@ var mainVm = new Vue({
             if (this.selections[9].value ==='A'){
                 this.selections[9]['groupDisplayedPts'] = 0
                 this.floor.group4.groupPoints = 0
+                this.calculated() 
+                return 0
             } else if 
                 (this.selections[9].value ==='B'){
                 this.selections[9]['groupDisplayedPts'] = 0
                 this.floor.group4.groupPoints = 0
+                this.calculated() 
+                return 0
             } else if 
                 (this.selections[9].value ==='C'){
                 this.selections[9]['groupDisplayedPts'] = .3
                 this.floor.group4.groupPoints = .3
+                this.calculated() 
+                return .3
             } else if 
                 (this.selections[9].value ==='D'){
                 this.selections[9]['groupDisplayedPts'] = .5
-                this.floor.group4.groupPoints = 0
+                this.floor.group4.groupPoints = .5
+                this.calculated() 
+                return .5
             } else if 
                 (this.selections[9].value ==='E'){
                 this.selections[9]['groupDisplayedPts'] = .5
-                this.floor.group4.groupPoints = .3
-            } else if 
+                this.floor.group4.groupPoints = .5
+                this.calculated() 
+                return .5
+            } else if
                 (this.selections[9].value ==='F'){
                 this.selections[9]['groupDisplayedPts'] = .5
-                this.floor.group4.groupPoints = 0
+                this.floor.group4.groupPoints = .5
+                this.calculated() 
+                return .5
             } else if 
                 (this.selections[9].value ==='G'){
                 this.selections[9]['groupDisplayedPts'] = .5
-                this.floor.group4.groupPoints = .3
+                this.floor.group4.groupPoints = .5
+                this.calculated() 
+                return .5
+            }
+        },
+        connection: function(){
+            var bonus = 0
+            for (var i = 1; i < this.selections.length; i++){
+                if (this.selections[i].value === 'B' && this.selections[i-1].value ==='D'){
+                    console.log('connection function running')
+                    this.selections[i].connection = true
+                    this.selections[i-1].connection = false
+                    bonus = .1
+                    mainVm.bonusPoints.push(bonus)
+
+                }
+                if (this.selections[i].value === 'D' && this.selections[i-1].value ==='D'){
+                    console.log('connection function running')
+                    this.selections[i].bigConnection = true
+                    this.selections[i-1].connection = false
+                    bonus = .2
+                    mainVm.bonusPoints.push(bonus)
+                }
             }
         }
     },
     computed: {
-
         groupOneRequirement: function(){
             for (var i = 0; i < this.selections.length; i++){
                 if (this.selections[i].group ==='Group I'){
+                    groupICompleted = true
+                    this.floor.group1.groupPoints = .5
                     return true
                 }
             }
@@ -2565,6 +2837,8 @@ var mainVm = new Vue({
         groupTwoRequirement: function(){
             for (var i = 0; i < this.selections.length; i++){
                 if (this.selections[i].group ==='Group II'){
+                    groupIICompleted = true
+                    this.floor.group2.groupPoints = .5
                     return true
                 }
             }
@@ -2574,6 +2848,8 @@ var mainVm = new Vue({
         groupThreeRequirement: function(){
             for (var i = 0; i < this.selections.length; i++){
                 if (this.selections[i].group ==='Group III'){
+                    groupIIICompleted = true
+                    this.floor.group3.groupPoints = .5
                     return true
                 }
             }
@@ -2581,12 +2857,10 @@ var mainVm = new Vue({
         },
 
         groupFourRequirement: function(){
-            
             if (this.selections[9] && this.selections[9].groupIV === true){
                 console.log('group IV requirement true')
                 return true
-            }
-            
+            } 
             return false     
         },
 
@@ -2596,6 +2870,7 @@ var mainVm = new Vue({
                     return true
                 }
             }
+            this.deduction = -0.3
             return false     
         },
     }
