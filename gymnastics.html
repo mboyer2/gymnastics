@@ -14,117 +14,149 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
     <link rel="stylesheet" href="css/main.css">
 </head>
-
 <body>
     <div id="app">
         <div class="container">
-            <h1 class="px-2 row">Floor</h1>
+            <h1 class="">Floor</h1>
             <br>
-           
 
-            
-            <div class="row">
-                <div v-for="(selection, index) in selections" class="padding-40 border-bottom mb-1 col-lg-12">
-                    <div v-bind:class="color(selection.value)">
-                        <div class="name"><b>Name:&nbsp;</b>{{selection.name}}</div>
-                    </div>
-                    <div class="font-size-sm">
-                        <div class="description"><b>Description:&nbsp;</b>{{selection.description}}</div>
-                    </div>
+            <div class="mx-0 century whiteText row">
+                <div v-for="(selection, index) in selections" v-bind:class="color(selection.value)" class="radius borders col-lg-2 mb-3 mr-4">
+                    <div class="m-space"></div>
                     <div class="row">
-                        <div class="py-2 col-lg-2">
-                            <div class="pic"><img width="100%" v-bind:src="selection.pic" /></div>
-                        </div>
-                        <div class="padding-34 font-size-sm py-2 col-lg-3">
-                            <div class="value grey row"><b>Value:&nbsp;</b>{{selection.value}}</div>
-                            <div class="value-points row"><b>Value Points:&nbsp;</b>{{selection.valuePoints}}</div>
-                            <div class="group grey row"><b>Group:&nbsp;</b>{{selection.group}}</div>
-                            <div class="group-description row"><b>Group Description:&nbsp;</b>{{selection.groupDescription}}</div>
-                            <!-- <div class="group-points grey row"><b>Group Points:&nbsp;</b>{{selection.groupDisplayedPts}}</div> -->
-                            <div class="skill-points grey row"><b>Skill Number Points:&nbsp;</b>{{mkPoint(index)}}</div>
-                            <!-- <div class="total-points row"><b>Total Points:&nbsp;</b></div> -->
-                            <div class="reference row"><b>Reference:&nbsp;</b><a v-bind:href="selection.reference" target="_blank">{{selection.reference}}</a></div>
-                        </div>
-                        <div class="padding-34 font-size-sm py-2 col-lg-1">
-                            <div class="grey row">-</div>
-                            <div class="selection-points greenText row"><b>+{{selection.valuePoints}}</b></div>
-                            <div class="grey row">-</div>
-                            <div class="row">-</div>
-                            <div class="skill-points greenText grey row"><b>+{{mkPoint(index)}}
-                            </b></div>
-                        </div>
-<!-- V-if -->               <div class="padding-34 font-size-sm py-2 col-lg-3">
-                                <div v-if="groupOneRequirement" class="greenText grey row">Group I Requirement Complete</div>
-                                <div v-else class="redText grey row">Group I Requirement Incomplete</div>
-                                <div v-if="groupTwoRequirement" class="greenText row">Group II Requirement Complete</div>
-                                <div v-else class="redText row">Group II Requirement Incomplete</div>
-                                <div v-if="groupThreeRequirement" class="greenText grey row">Group III Requirement Complete</div>
-                                <div v-else class="redText grey row">Group III Requirement Incomplete</div>
-                                <div v-if="groupFourRequirement" class="greenText row">Group IV Requirement Complete</div>
-                                <div v-else class="redText row">Group IV Requirement Incomplete</div>
-                                <div v-if="doubleRequirement" class="greenText grey row">Double Flip Requirement Complete</div>
-                                <div v-else class="redText grey row">Double flip Requirement Incomplete</div>
-                                <div class="row">&nbsp;</div>
-                                <div v-if="selection.connection" class="greenText row">
-                                    <div class="form-check">
-                                      <label class="form-check-label">
-                                        <input v-model="selection.bonus" class="form-check-input" type="checkbox" value="">
-                                        <b>Is this skill connected with the previous skill?</b>
-                                      </label>
+                        <div class="px-0 col-lg-1"></div>                
+                        <div class=" px-0 width100 borders col-lg-10">
+                            <div class="borders-bottom borders name">{{selection.name}}</div>
+                            <div class="borders m-space"></div>
+                            <div class="white p-1 borders radius pic"><img width="100%" v-bind:src="selection.pic"></div>
+                            <div class="borders m-space"></div>
+                            <div class="mx-0 row">
+                                <div class="radius-left opacity-2 borders px-0 col-lg-1"></div>
+                                <div class=" opacity-2 borders px-0 col-lg-10">
+                                    <div class="borders m-space"></div>
+                                    <div class="borders-bottom borders value">VALUE</div>
+                                    <div class="borders m-space"></div>
+                                    <div class="mx-0 row">
+                                        <div class="opacity radius box-height px-0 borders col-lg-5">
+                                            <div class="m-text greenText pos value">{{selection.value}}</div>
+                                        </div> 
+                                        <div class="box-height px-0 borders col-lg-2"></div>
+                                        <div class="opacity radius box-height px-0 borders col-lg-5">
+                                            <div class="m-text greenText pos value">+{{selection.valuePoints}}</div>
+                                        </div>
                                     </div>
-                                </div>
-                                <div v-if="selection.bigConnection" class="greenText row">
-                                    <div class="form-check">
-                                      <label class="form-check-label">
-                                        <input v-model="selection.bigbonus" class="form-check-input" type="checkbox" value="">
-                                        <b>Is this skill connected with the previous skill?</b>
-                                      </label>
+                                    <div class="borders m-space"></div>
+                                    <div class="borders-bottom borders skill-number">SKILL NUMBER</div>
+                                    <div class="borders m-space"></div>
+                                    <div class="mx-0 row">
+                                        <div class="opacity radius box-height px-0 borders col-lg-5">
+ <!--skill number-->                         <div class="m-text greenText pos value">1</div>
+                                        </div> 
+                                        <div class="box-height px-0 borders col-lg-2"></div>
+                                        <div class="opacity radius box-height px-0 borders col-lg-5">
+                                            <div class="m-text greenText pos value">+{{mkPoint(index)}}.0</div>
+                                        </div>
                                     </div>
+                                    <div class="borders m-space"></div>
+                                    <div class="borders-bottom borders group">GROUP REQUIREMENTS</div>
+                                    <div class="borders m-space"></div>
+                                    <div class="mx-0 row">
+                                        <div class="radius box-height px-0 borders col-lg-5 opacity">
+                                            <div v-if="groupOneRequirement" class="greenText m-text pos value">G I</div>
+                                            <div v-else class="m-text pos value">GI</div>
+                                        </div> 
+                                        <div class="box-height px-0 borders col-lg-2"></div>
+                                        <div class="radius box-height px-0 borders col-lg-5 opacity">
+                                            <div v-if="groupOneRequirement" class="m-text greenText pos value">+0.5</div>
+                                            <div v-else class="m-text pos value">+0</div>
+                                        </div>
+                                    </div>
+                                    <div class="borders sm-space"></div>
+                                    <div class="mx-0 row">
+                                        <div class="radius box-height px-0 borders col-lg-5 opacity">
+                                            <div v-if="groupTwoRequirement" class="greenText m-text pos value">GII</div>
+                                            <div v-else class="m-text pos value">GII</div>
+                                        </div> 
+                                        <div class="box-height px-0 borders col-lg-2"></div>
+                                        <div class="radius box-height px-0 borders col-lg-5 opacity">
+                                            <div v-if="groupTwoRequirement" class="greenText m-text pos value">+0.5</div>
+                                            <div v-else class="m-text pos value">+0</div>
+                                        </div>
+                                    </div>
+                                    <div class="borders sm-space"></div>
+                                    <div class="mx-0 row">
+                                        <div class="radius box-height px-0 borders col-lg-5 opacity">
+                                            <div v-if="groupThreeRequirement" class="greenText m-text pos value">GIII</div>
+                                            <div v-else class="m-text pos value">GIII</div>
+                                        </div> 
+                                        <div class="box-height px-0 borders col-lg-2"></div>
+                                        <div class="radius box-height px-0 borders col-lg-5 opacity">
+                                            <div v-if="groupThreeRequirement" class="greenText m-text pos value">+0.5</div>
+                                            <div v-else class="m-text pos value">+0</div>
+                                        </div>
+                                    </div>
+                                    <div class="borders sm-space"></div>
+                                    <div class="mx-0 row">
+                                        <div class="radius box-height px-0 borders col-lg-5 opacity">
+                                            <div v-if="groupFourRequirement" class="greenText m-text pos value">GIV</div>
+                                            <div v-else class="m-text pos value">GIV</div>
+                                        </div> 
+                                        <div class="box-height px-0 borders col-lg-2"></div>
+                                        <div class="radius box-height px-0 borders col-lg-5 opacity">
+                                            <div v-if="groupFourRequirement" class="greenText m-text pos value">+{{floor.group4.groupPoints}}</div>
+                                            <div v-else class="m-text pos value">+0</div>
+                                        </div>
+                                    </div>
+                                    <div class="borders sm-space"></div>
+                                    <div class="mx-0 row">
+                                        <div class="radius box-height px-0 borders col-lg-5 opacity">
+                                            <div v-if="doubleRequirement"  class="greenText m-text pos value">DBL</div>
+                                            <div v-else class="m-text pos value">DBL</div>
+                                        </div> 
+                                        <div class="box-height px-0 borders col-lg-2"></div>
+                                        <div class="radius box-height px-0 borders col-lg-5 opacity">
+                                            <div v-if="doubleRequirement" class="greenText m-text pos value">+0</div>
+                                            <div v-else class="m-text pos value">-0.3</div>
+                                        </div>
+                                    </div>
+                                    <div class="borders m-space"></div>
+                                    <div class="opacity rel box-height borders radius">
+
+<!--NOT WORKING connection-->
+                                        <div v-if="selection.connection" class="greenText pos">
+                                            <div class="form-check">
+                                                <label class="form-check-label">
+                                                    <input class="form-check-input" type="checkbox" value="CONNECTION">
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div else class="pos">CONNECTION</div>
+                                    </div>
+
+
+                                    <div class="borders m-space"></div>
+                                    <div class="opacity rel box-height borders radius link">
+                                        <div class="videoLink pos"><a v-bind:href="selection.reference" target="_blank" class="whiteText" >VIDEO LINK</a></div>
+                                    </div>
+                                    <div class="borders m-space"></div>
+                                    <div class="opacity rel box-height borders radius link">
+                                        <div v-on:click="deleter($event, selection)" class="hover pos">DELETE</div>
+                                    </div>
+                                    <div class="borders m-space"></div>
                                 </div>
+                                <div class="radius-right opacity-2 borders px-0 col-lg-1"></div>
                             </div>
-                            <div class="padding-34 font-size-sm py-2 col-lg-2">
-                                <div v-if="groupOneRequirement" class="greenText grey row"><b>+0.5&nbsp;</b> (once)</div>
-                                <div v-else class="redText grey row">-</div>
-                                <div v-if="groupTwoRequirement" class="greenText row"><b>+0.5&nbsp;</b> (once)</div>
-                                <div v-else class="redText row">-</div>
-                                <div v-if="groupThreeRequirement" class="greenText grey row"><b>+0.5&nbsp;</b> (once)</div>
-                                <div v-else class="redText grey row">-</div>
-                                <div v-if="groupFourRequirement" class="greenText row"><b>+{{floor.group4.groupPoints}}&nbsp;</b> (once)</div>
-                                <div v-else class="redText row">-</div>
-                                <div v-if="doubleRequirement" class="greenText grey row"><b>+0</b></div>
-                                <div v-else class="redText grey row"><b>-0.5&nbsp;</b> (once)</div>
-                                <div class="row">&nbsp;</div>
-                                <div v-if="selection.bonus" class="greenText grey row" ><b>+0.1&nbsp;</b> (once)</div>
-                                <div v-if="selection.bigbonus" class="greenText grey row" ><b>+0.2  &nbsp;</b> (once)</div>
-
-                            </div>
-
+                            <div class="col-lg-1"></div>      
                         </div>
-                     <div class="row">
-                        <div class="col-lg-11"></div>
-                        <div>
-                            <button v-on:click="deleter($event, selection)" type="button" class="btn btn-danger">delete</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="green row">
-                <div class="col-lg-12">
-                    <h1 v-if="floor.groupIVCompleted" class="start-value">Your Start Value is:&nbsp;<b>{{startValue}}</b></h1>
+                    </div> 
+                    <div class="m-space"></div>   
                 </div>
             </div>
             <br>
-                   
-                
-             
-   
 
 
 
-
-
-
-            <h2 class="px-2 row"> Group I: Non-Acrobatic Skill</h2>
+                        <h2 class="px-2 row"> Group I: Non-Acrobatic Skill</h2>
             <h3 class="px-2 row red"></h3>
             <div id="accordion" role="tablist" aria-multiselectable="true">
                 <!-- Group 1 A -->
@@ -141,7 +173,7 @@
                             <div class="row">
                                 <div v-for="skill in floor.group1.A.skills" class="padding-40 border-bottom mb-3 col-lg-6">
                                     <div class="red">
-                                        <div class="name"><b>Name:&nbsp;</b>{{skill.name}}</div>
+                                        <div class="whiteText name"><b>Name:&nbsp;</b>{{skill.name}}</div>
                                     </div>
                                     <div class="font-size-sm">
                                         <div class="description"><b>Description:&nbsp;</b>{{skill.description}}</div>
@@ -187,7 +219,7 @@
                             <div class="row">
                                 <div v-for="skill in floor.group1.B.skills" class="padding-40 border-bottom mb-3 col-lg-6">
                                     <div class="orange">
-                                        <div class="name"><b>Name:&nbsp;</b>{{skill.name}}</div>
+                                        <div class="whiteText name"><b>Name:&nbsp;</b>{{skill.name}}</div>
                                     </div>
                                     <div class="font-size-sm">
                                         <div class="description"><b>Description:&nbsp;</b>{{skill.description}}</div>
@@ -233,7 +265,7 @@
                             <div class="row">
                                 <div v-for="skill in floor.group1.C.skills" class="padding-40 border-bottom mb-3 col-lg-6">
                                     <div class="yellow">
-                                        <div class="name"><b>Name:&nbsp;</b>{{skill.name}}</div>
+                                        <div class="whiteText name"><b>Name:&nbsp;</b>{{skill.name}}</div>
                                     </div>
                                     <div class="font-size-sm">
                                         <div class="description"><b>Description:&nbsp;</b>{{skill.description}}</div>
@@ -279,7 +311,7 @@
                             <div class="row">
                                 <div v-for="skill in floor.group1.D.skills" class="padding-40 border-bottom mb-3 col-lg-6">
                                     <div class="green">
-                                        <div class="name"><b>Name:&nbsp;</b>{{skill.name}}</div>
+                                        <div class="whiteText name"><b>Name:&nbsp;</b>{{skill.name}}</div>
                                     </div>
                                     <div class="font-size-sm">
                                         <div class="description"><b>Description:&nbsp;</b>{{skill.description}}</div>
@@ -328,7 +360,7 @@
                                 <div class="row">
                                     <div v-for="skill in floor.group2.A.skills" class="padding-40 border-bottom mb-3 col-lg-6">
                                         <div class="red">
-                                            <div class="name"><b>Name:&nbsp;</b>{{skill.name}}</div>
+                                            <div class="whiteText name"><b>Name:&nbsp;</b>{{skill.name}}</div>
                                         </div>
                                         <div class="font-size-sm">
                                             <div class="description"><b>Description:&nbsp;</b>{{skill.description}}</div>
@@ -374,7 +406,7 @@
                                 <div class="row">
                                     <div v-for="skill in floor.group2.B.skills" class="padding-40 border-bottom mb-3 col-lg-6">
                                         <div class="orange">
-                                            <div class="name"><b>Name:&nbsp;</b>{{skill.name}}</div>
+                                            <div class="whiteText name"><b>Name:&nbsp;</b>{{skill.name}}</div>
                                         </div>
                                         <div class="font-size-sm">
                                             <div class="description"><b>Description:&nbsp;</b>{{skill.description}}</div>
@@ -420,7 +452,7 @@
                                 <div class="row">
                                     <div v-for="skill in floor.group2.C.skills" class="padding-40 border-bottom mb-3 col-lg-6">
                                         <div class="yellow">
-                                            <div class="name"><b>Name:&nbsp;</b>{{skill.name}}</div>
+                                            <div class="whiteText name"><b>Name:&nbsp;</b>{{skill.name}}</div>
                                         </div>
                                         <div class="font-size-sm">
                                             <div class="description"><b>Description:&nbsp;</b>{{skill.description}}</div>
@@ -466,7 +498,7 @@
                                 <div class="row">
                                     <div v-for="skill in floor.group2.D.skills" class="padding-40 border-bottom mb-3 col-lg-6">
                                         <div class="green">
-                                            <div class="name"><b>Name:&nbsp;</b>{{skill.name}}</div>
+                                            <div class="whiteText name"><b>Name:&nbsp;</b>{{skill.name}}</div>
                                         </div>
                                         <div class="font-size-sm">
                                             <div class="description"><b>Description:&nbsp;</b>{{skill.description}}</div>
@@ -512,7 +544,7 @@
                                 <div class="row">
                                     <div v-for="skill in floor.group2.E.skills" class="padding-40 border-bottom mb-3 col-lg-6">
                                         <div class="blue">
-                                            <div class="name"><b>Name:&nbsp;</b>{{skill.name}}</div>
+                                            <div class="whiteText name"><b>Name:&nbsp;</b>{{skill.name}}</div>
                                         </div>
                                         <div class="font-size-sm">
                                             <div class="description"><b>Description:&nbsp;</b>{{skill.description}}</div>
@@ -558,7 +590,7 @@
                                 <div class="row">
                                     <div v-for="skill in floor.group2.F.skills" class="padding-40 border-bottom mb-3 col-lg-6">
                                         <div class="indigo">
-                                            <div class="name"><b>Name:&nbsp;</b>{{skill.name}}</div>
+                                            <div class="whiteText name"><b>Name:&nbsp;</b>{{skill.name}}</div>
                                         </div>
                                         <div class="font-size-sm">
                                             <div class="description"><b>Description:&nbsp;</b>{{skill.description}}</div>
@@ -608,7 +640,7 @@
                                 <div class="row">
                                     <div v-for="skill in floor.group3.A.skills" class="padding-40 border-bottom mb-3 col-lg-6">
                                         <div class="red">
-                                            <div class="name"><b>Name:&nbsp;</b>{{skill.name}}</div>
+                                            <div class="whiteText name"><b>Name:&nbsp;</b>{{skill.name}}</div>
                                         </div>
                                         <div class="font-size-sm">
                                             <div class="description"><b>Description:&nbsp;</b>{{skill.description}}</div>
@@ -654,7 +686,7 @@
                                 <div class="row">
                                     <div v-for="skill in floor.group3.B.skills" class="padding-40 border-bottom mb-3 col-lg-6">
                                         <div class="orange">
-                                            <div class="name"><b>Name:&nbsp;</b>{{skill.name}}</div>
+                                            <div class="whiteText name"><b>Name:&nbsp;</b>{{skill.name}}</div>
                                         </div>
                                         <div class="font-size-sm">
                                             <div class="description"><b>Description:&nbsp;</b>{{skill.description}}</div>
@@ -700,7 +732,7 @@
                                 <div class="row">
                                     <div v-for="skill in floor.group3.C.skills" class="padding-40 border-bottom mb-3 col-lg-6">
                                         <div class="yellow">
-                                            <div class="name"><b>Name:&nbsp;</b>{{skill.name}}</div>
+                                            <div class="whiteText name"><b>Name:&nbsp;</b>{{skill.name}}</div>
                                         </div>
                                         <div class="font-size-sm">
                                             <div class="description"><b>Description:&nbsp;</b>{{skill.description}}</div>
@@ -746,7 +778,7 @@
                                 <div class="row">
                                     <div v-for="skill in floor.group3.D.skills" class="padding-40 border-bottom mb-3 col-lg-6">
                                         <div class="green">
-                                            <div class="name"><b>Name:&nbsp;</b>{{skill.name}}</div>
+                                            <div class="whiteText name"><b>Name:&nbsp;</b>{{skill.name}}</div>
                                         </div>
                                         <div class="font-size-sm">
                                             <div class="description"><b>Description:&nbsp;</b>{{skill.description}}</div>
@@ -792,7 +824,7 @@
                                 <div class="row">
                                     <div v-for="skill in floor.group3.E.skills" class="padding-40 border-bottom mb-3 col-lg-6">
                                         <div class="blue">
-                                            <div class="name"><b>Name:&nbsp;</b>{{skill.name}}</div>
+                                            <div class="whiteText name"><b>Name:&nbsp;</b>{{skill.name}}</div>
                                         </div>
                                         <div class="font-size-sm">
                                             <div class="description"><b>Description:&nbsp;</b>{{skill.description}}</div>
@@ -838,7 +870,7 @@
                                 <div class="row">
                                     <div v-for="skill in floor.group3.F.skills" class="padding-40 border-bottom mb-3 col-lg-6">
                                         <div class="indigo">
-                                            <div class="name"><b>Name:&nbsp;</b>{{skill.name}}</div>
+                                            <div class="whiteText name"><b>Name:&nbsp;</b>{{skill.name}}</div>
                                         </div>
                                         <div class="font-size-sm">
                                             <div class="description"><b>Description:&nbsp;</b>{{skill.description}}</div>
@@ -884,7 +916,7 @@
                                 <div class="row">
                                     <div v-for="skill in floor.group3.G.skills" class="padding-40 border-bottom mb-3 col-lg-6">
                                         <div class="violet">
-                                            <div class="name"><b>Name:&nbsp;</b>{{skill.name}}</div>
+                                            <div class="whiteText name"><b>Name:&nbsp;</b>{{skill.name}}</div>
                                         </div>
                                         <div class="font-size-sm">
                                             <div class="description"><b>Description:&nbsp;</b>{{skill.description}}</div>
@@ -930,7 +962,7 @@
                                 <div class="row">
                                     <div v-for="skill in floor.group3.H.skills" class="padding-40 border-bottom mb-3 col-lg-6">
                                         <div class="purple">
-                                            <div class="white-text name"><b>Name:&nbsp;</b>{{skill.name}}</div>
+                                            <div class="whiteText white-text name"><b>Name:&nbsp;</b>{{skill.name}}</div>
                                         </div>
                                         <div class="font-size-sm">
                                             <div class="description"><b>Description:&nbsp;</b>{{skill.description}}</div>
@@ -966,8 +998,27 @@
             </div>
         </div>
     </div>
+        </div>
+    </div>
+    
+
+            
+           
 <script src="gymnastics.js"></script>
 </body>
 
 </html>
 <!-- <iframe v-bind:src="floor.group1.A.skills[1].reference"></iframe> -->
+
+
+
+
+
+
+
+
+
+
+
+
+

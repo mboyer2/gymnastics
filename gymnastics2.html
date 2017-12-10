@@ -1,0 +1,991 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <script src="https://unpkg.com/vue"></script>
+    <script src="https://unpkg.com/vue-scrollto"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous">
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous">
+    </script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+    <div id="app">
+        <div class="container">
+            <h1 class="px-2 row">Floor</h1>
+            <br>
+           
+
+            
+            <div class="row">
+                <div v-for="(selection, index) in selections" class="padding-40 border-bottom mb-1 col-lg-12">
+                    <div v-bind:class="color(selection.value)">
+                        <div class="name"><b>Name:&nbsp;</b>{{selection.name}}</div>
+                    </div>
+                    <div class="font-size-sm">
+                        <div class="description"><b>Description:&nbsp;</b>{{selection.description}}</div>
+                    </div>
+                    <div class="row">
+                        <div class="py-2 col-lg-2">
+                            <div class="pic"><img width="100%" v-bind:src="selection.pic" /></div>
+                        </div>
+                        <div class="padding-34 font-size-sm py-2 col-lg-3">
+                            <div class="value grey row"><b>Value:&nbsp;</b>{{selection.value}}</div>
+                            <div class="value-points row"><b>Value Points:&nbsp;</b>{{selection.valuePoints}}</div>
+                            <div class="group grey row"><b>Group:&nbsp;</b>{{selection.group}}</div>
+                            <div class="group-description row"><b>Group Description:&nbsp;</b>{{selection.groupDescription}}</div>
+                            <div class="skill-points grey row"><b>Skill Number Points:&nbsp;</b>{{mkPoint(index)}}</div>
+                            <div class="reference row"><b>Reference:&nbsp;</b><a v-bind:href="selection.reference" target="_blank">{{selection.reference}}</a></div>
+                        </div>
+                        <div class="padding-34 font-size-sm py-2 col-lg-1">
+                            <div class="grey row">-</div>
+                            <div class="selection-points greenText row"><b>+{{selection.valuePoints}}</b></div>
+                            <div class="grey row">-</div>
+                            <div class="row">-</div>
+                            <div class="skill-points greenText grey row"><b>+{{mkPoint(index)}}
+                            </b></div>
+                        </div>
+<!-- V-if -->               <div class="padding-34 font-size-sm py-2 col-lg-3">
+                                <div v-if="groupOneRequirement" class="greenText grey row">Group I Requirement Complete</div>
+                                <div v-else class="redText grey row">Group I Requirement Incomplete</div>
+                                <div v-if="groupTwoRequirement" class="greenText row">Group II Requirement Complete</div>
+                                <div v-else class="redText row">Group II Requirement Incomplete</div>
+                                <div v-if="groupThreeRequirement" class="greenText grey row">Group III Requirement Complete</div>
+                                <div v-else class="redText grey row">Group III Requirement Incomplete</div>
+                                <div v-if="groupFourRequirement" class="greenText row">Group IV Requirement Complete</div>
+                                <div v-else class="redText row">Group IV Requirement Incomplete</div>
+                                <div v-if="doubleRequirement" class="greenText grey row">Double Flip Requirement Complete</div>
+                                <div v-else class="redText grey row">Double flip Requirement Incomplete</div>
+                                <div class="row">&nbsp;</div>
+<!--not working -->                                
+                                <div v-if="selection.connection" class="greenText row">
+                                    <div class="form-check">
+                                      <label class="form-check-label">
+                                        <input class="form-check-input" type="checkbox" value="">
+                                        <b>Is this skill connected with the previous skill?</b>
+                                      </label>
+                                    </div>
+                                </div>
+                                <div v-if="selection.bigConnection" class="greenText row">
+                                    <div class="form-check">
+                                      <label class="form-check-label">
+                                        <input class="form-check-input" type="checkbox" value="">
+                                        <b>Is this skill connected with the previous skill?</b>
+                                      </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="padding-34 font-size-sm py-2 col-lg-2">
+                                <div v-if="groupOneRequirement" class="greenText grey row"><b>+0.5&nbsp;</b> (once)</div>
+                                <div v-else class="redText grey row">-</div>
+                                <div v-if="groupTwoRequirement" class="greenText row"><b>+0.5&nbsp;</b> (once)</div>
+                                <div v-else class="redText row">-</div>
+                                <div v-if="groupThreeRequirement" class="greenText grey row"><b>+0.5&nbsp;</b> (once)</div>
+                                <div v-else class="redText grey row">-</div>
+                                <div v-if="groupFourRequirement" class="greenText row"><b>+{{floor.group4.groupPoints}}&nbsp;</b> (once)</div>
+                                <div v-else class="redText row">-</div>
+                                <div v-if="doubleRequirement" class="greenText grey row"><b>+0</b></div>
+                                <div v-else class="redText grey row"><b>-0.5&nbsp;</b> (once)</div>
+                                <div class="row">&nbsp;</div>
+                                <div v-if="selection.bonus" class="greenText grey row" ><b>+0.1&nbsp;</b> (once)</div>
+                                <div v-if="selection.bigbonus" class="greenText grey row" ><b>+0.2  &nbsp;</b> (once)</div>
+
+                            </div>
+
+                        </div>
+                     <div class="row">
+                        <div class="col-lg-11"></div>
+                        <div>
+                            <button v-on:click="deleter($event, selection)" type="button" class="btn btn-danger">delete</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-10"></div>
+                <div>
+                    <button v-on:click="calculated" type="button" class="btn btn-success">Calculate Start Value</button>
+                </div>
+            </div>
+            <br>
+            <div class="green row">
+                <div class="col-lg-12">
+                    <h1 v-if="floor.groupIVCompleted" class="start-value">Your Start Value is:&nbsp;<b>{{startValue}}</b></h1>
+                </div>
+            </div>
+            <br>
+                   
+                
+             
+   
+
+
+
+
+
+
+            <h2 class="px-2 row"> Group I: Non-Acrobatic Skill</h2>
+            <h3 class="px-2 row red"></h3>
+            <div id="accordion" role="tablist" aria-multiselectable="true">
+                <!-- Group 1 A -->
+                <div class="card">
+                    <div class="card-header" role="tab" id="headingOne">
+                        <h5 class="mb-0">
+                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                      A Skills (Group I)
+                    </a>
+                  </h5>
+                    </div>
+                    <div id="collapseOne" class="collapse" role="tabpanel" aria-labelledby="headingOne">
+                        <div class="card-block">
+                            <div class="row">
+                                <div v-for="skill in floor.group1.A.skills" class="padding-40 border-bottom mb-3 col-lg-6">
+                                    <div class="red">
+                                        <div class="name"><b>Name:&nbsp;</b>{{skill.name}}</div>
+                                    </div>
+                                    <div class="font-size-sm">
+                                        <div class="description"><b>Description:&nbsp;</b>{{skill.description}}</div>
+                                    </div>
+                                    <br>
+                                    <div class="row">
+                                        <div class="py-2 col-lg-4">
+                                            <div class="pic"><img width="100%" v-bind:src="skill.pic" /></div>
+                                        </div>
+                                        <div class="padding-34 font-size-sm py-2 col-lg-8">
+                                            <div class="value grey row"><b>Value:&nbsp;</b>{{skill.value}}</div>
+                                            <div class="value-points row"><b>Value Points:&nbsp;</b>{{skill.valuePoints}}</div>
+                                            <div class="group grey row"><b>Group:&nbsp;</b>{{skill.group}}</div>
+                                            <div class="group-description row"><b>Group Description:&nbsp;</b>{{skill.groupDescription}}</div>
+                                            <div class="group-points grey row"><b>Group Points:&nbsp;</b>0.5</div>
+                                            <!-- <div class="total-points row"><b>Total Points:&nbsp;</b>{{skill.totalPoints}}</div> -->
+                                            <div class="reference row"><b>Reference:&nbsp;</b><a v-bind:href="skill.reference" target="_blank">{{skill.reference}}</a></div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-10"></div>
+                                        <div>
+                                            <button v-on:click="select($event, skill)" type="button" class="btn btn-success">Select</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+                        </div>
+                    </div>
+                </div>
+                <!-- Group 1 B -->
+                <div class="card">
+                    <div class="card-header" role="tab" id="headingTwo">
+                        <h5 class="mb-0">
+                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                      B Skills (Group I)
+                    </a>
+                  </h5>
+                    </div>
+                    <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo">
+                        <div class="card-block">
+                            <div class="row">
+                                <div v-for="skill in floor.group1.B.skills" class="padding-40 border-bottom mb-3 col-lg-6">
+                                    <div class="orange">
+                                        <div class="name"><b>Name:&nbsp;</b>{{skill.name}}</div>
+                                    </div>
+                                    <div class="font-size-sm">
+                                        <div class="description"><b>Description:&nbsp;</b>{{skill.description}}</div>
+                                    </div>
+                                    <br>
+                                    <div class="row">
+                                        <div class="py-2 col-lg-4">
+                                            <div class="pic"><img width="100%" v-bind:src="skill.pic" /></div>
+                                        </div>
+                                        <div class="padding-34 font-size-sm py-2 col-lg-8">
+                                            <div class="value grey row"><b>Value:&nbsp;</b>{{skill.value}}</div>
+                                            <div class="value-points row"><b>Value Points:&nbsp;</b>{{skill.valuePoints}}</div>
+                                            <div class="group grey row"><b>Group:&nbsp;</b>{{skill.group}}</div>
+                                            <div class="group-description row"><b>Group Description:&nbsp;</b>{{skill.groupDescription}}</div>
+                                            <div class="group-points grey row"><b>Group Points:&nbsp;</b>0.5</div>
+                                            <!-- <div class="total-points row"><b>Total Points:&nbsp;</b>{{skill.totalPoints}}</div> -->
+                                            <div class="reference row"><b>Reference:&nbsp;</b><a v-bind:href="skill.reference" target="_blank">{{skill.reference}}</a></div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-10"></div>
+                                        <div>
+                                            <button v-on:click="select($event, skill)" type="button" class="btn btn-success">Select</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+                        </div>
+                    </div>
+                </div>
+                <!-- Group 1 C -->
+                <div class="card">
+                    <div class="card-header" role="tab" id="headingThree">
+                        <h5 class="mb-0">
+                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="colapseThree">
+                      C Skills (Group I)
+                    </a>
+                  </h5>
+                    </div>
+                    <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree">
+                        <div class="card-block">
+                            <div class="row">
+                                <div v-for="skill in floor.group1.C.skills" class="padding-40 border-bottom mb-3 col-lg-6">
+                                    <div class="yellow">
+                                        <div class="name"><b>Name:&nbsp;</b>{{skill.name}}</div>
+                                    </div>
+                                    <div class="font-size-sm">
+                                        <div class="description"><b>Description:&nbsp;</b>{{skill.description}}</div>
+                                    </div>
+                                    <br>
+                                    <div class="row">
+                                        <div class="py-2 col-lg-4">
+                                            <div class="pic"><img width="100%" v-bind:src="skill.pic" /></div>
+                                        </div>
+                                        <div class="padding-34 font-size-sm py-2 col-lg-8">
+                                            <div class="value grey row"><b>Value:&nbsp;</b>{{skill.value}}</div>
+                                            <div class="value-points row"><b>Value Points:&nbsp;</b>{{skill.valuePoints}}</div>
+                                            <div class="group grey row"><b>Group:&nbsp;</b>{{skill.group}}</div>
+                                            <div class="group-description row"><b>Group Description:&nbsp;</b>{{skill.groupDescription}}</div>
+                                            <div class="group-points grey row"><b>Group Points:&nbsp;</b>0.5</div>
+                                            <!-- <div class="total-points row"><b>Total Points:&nbsp;</b>{{skill.totalPoints}}</div> -->
+                                            <div class="reference row"><b>Reference:&nbsp;</b><a v-bind:href="skill.reference" target="_blank">{{skill.reference}}</a></div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-10"></div>
+                                        <div>
+                                            <button v-on:click="select($event, skill)" type="button" class="btn btn-success">Select</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+                        </div>
+                    </div>
+                </div>
+                <!-- Group I D -->
+                <div class="card">
+                    <div class="card-header" role="tab" id="headingFour">
+                        <h5 class="mb-0">
+                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                      D Skills (Group I)
+                    </a>
+                  </h5>
+                    </div>
+                    <div id="collapseFour" class="collapse" role="tabpanel" aria-labelledby="headingFour">
+                        <div class="card-block">
+                            <div class="row">
+                                <div v-for="skill in floor.group1.D.skills" class="padding-40 border-bottom mb-3 col-lg-6">
+                                    <div class="green">
+                                        <div class="name"><b>Name:&nbsp;</b>{{skill.name}}</div>
+                                    </div>
+                                    <div class="font-size-sm">
+                                        <div class="description"><b>Description:&nbsp;</b>{{skill.description}}</div>
+                                    </div>
+                                    <br>
+                                    <div class="row">
+                                        <div class="py-2 col-lg-4">
+                                            <div class="pic"><img width="100%" v-bind:src="skill.pic" /></div>
+                                        </div>
+                                        <div class="padding-34 font-size-sm py-2 col-lg-8">
+                                            <div class="value grey row"><b>Value:&nbsp;</b>{{skill.value}}</div>
+                                            <div class="value-points row"><b>Value Points:&nbsp;</b>{{skill.valuePoints}}</div>
+                                            <div class="group grey row"><b>Group:&nbsp;</b>{{skill.group}}</div>
+                                            <div class="group-description row"><b>Group Description:&nbsp;</b>{{skill.groupDescription}}</div>
+                                            <div class="group-points grey row"><b>Group Points:&nbsp;</b>0.5</div>
+                                            <!-- <div class="total-points row"><b>Total Points:&nbsp;</b>{{skill.totalPoints}}</div> -->
+                                            <div class="reference row"><b>Reference:&nbsp;</b><a v-bind:href="skill.reference" target="_blank">{{skill.reference}}</a></div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-10"></div>
+                                        <div>
+                                            <button v-on:click="select($event, skill)" type="button" class="btn btn-success">Select</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <h2 class="px-2 row"> Group II: Foward Flipping Skill</h2>
+                <div id="accordion" role="tablist" aria-multiselectable="true">
+                    <!-- Group II A -->
+                    <div class="card">
+                        <div class="card-header" role="tab" id="headingFive">
+                            <h5 class="mb-0">
+                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                      A Skills (Group II)
+                    </a>
+                  </h5>
+                        </div>
+                        <div id="collapseFive" class="collapse" role="tabpanel" aria-labelledby="headingFive">
+                            <div class="card-block">
+                                <div class="row">
+                                    <div v-for="skill in floor.group2.A.skills" class="padding-40 border-bottom mb-3 col-lg-6">
+                                        <div class="red">
+                                            <div class="name"><b>Name:&nbsp;</b>{{skill.name}}</div>
+                                        </div>
+                                        <div class="font-size-sm">
+                                            <div class="description"><b>Description:&nbsp;</b>{{skill.description}}</div>
+                                        </div>
+                                        <br>
+                                        <div class="row">
+                                            <div class="py-2 col-lg-4">
+                                                <div class="pic"><img width="100%" v-bind:src="skill.pic" /></div>
+                                            </div>
+                                            <div class="padding-34 font-size-sm py-2 col-lg-8">
+                                                <div class="value grey row"><b>Value:&nbsp;</b>{{skill.value}}</div>
+                                                <div class="value-points row"><b>Value Points:&nbsp;</b>{{skill.valuePoints}}</div>
+                                                <div class="group grey row"><b>Group:&nbsp;</b>{{skill.group}}</div>
+                                                <div class="group-description row"><b>Group Description:&nbsp;</b>{{skill.groupDescription}}</div>
+                                                <div class="group-points grey row"><b>Group Points:&nbsp;</b>0.5</div>
+                                                <!-- <div class="total-points row"><b>Total Points:&nbsp;</b>{{skill.totalPoints}}</div> -->
+                                                <div class="reference row"><b>Reference:&nbsp;</b><a v-bind:href="skill.reference" target="_blank">{{skill.reference}}</a></div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-10"></div>
+                                            <div>
+                                                <button v-on:click="select($event, skill)" type="button" class="btn btn-success">Select</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <br>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Group 1 B -->
+                    <div class="card">
+                        <div class="card-header" role="tab" id="headingSix">
+                            <h5 class="mb-0">
+                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                      B Skills (Group II)
+                    </a>
+                  </h5>
+                        </div>
+                        <div id="collapseSix" class="collapse" role="tabpanel" aria-labelledby="headingSix">
+                            <div class="card-block">
+                                <div class="row">
+                                    <div v-for="skill in floor.group2.B.skills" class="padding-40 border-bottom mb-3 col-lg-6">
+                                        <div class="orange">
+                                            <div class="name"><b>Name:&nbsp;</b>{{skill.name}}</div>
+                                        </div>
+                                        <div class="font-size-sm">
+                                            <div class="description"><b>Description:&nbsp;</b>{{skill.description}}</div>
+                                        </div>
+                                        <br>
+                                        <div class="row">
+                                            <div class="py-2 col-lg-4">
+                                                <div class="pic"><img width="100%" v-bind:src="skill.pic" /></div>
+                                            </div>
+                                            <div class="padding-34 font-size-sm py-2 col-lg-8">
+                                                <div class="value grey row"><b>Value:&nbsp;</b>{{skill.value}}</div>
+                                                <div class="value-points row"><b>Value Points:&nbsp;</b>{{skill.valuePoints}}</div>
+                                                <div class="group grey row"><b>Group:&nbsp;</b>{{skill.group}}</div>
+                                                <div class="group-description row"><b>Group Description:&nbsp;</b>{{skill.groupDescription}}</div>
+                                                <div class="group-points grey row"><b>Group Points:&nbsp;</b>0.5</div>
+                                                <!-- <div class="total-points row"><b>Total Points:&nbsp;</b>{{skill.totalPoints}}</div> -->
+                                                <div class="reference row"><b>Reference:&nbsp;</b><a v-bind:href="skill.reference" target="_blank">{{skill.reference}}</a></div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-10"></div>
+                                            <div>
+                                                <button v-on:click="select($event, skill)" type="button" class="btn btn-success">Select</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <br>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Group 1 C -->
+                    <div class="card">
+                        <div class="card-header" role="tab" id="headingSeven">
+                            <h5 class="mb-0">
+                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseSeven" aria-expanded="false" aria-controls="colapseSeven">
+                      C Skills (Group II)
+                    </a>
+                  </h5>
+                        </div>
+                        <div id="collapseSeven" class="collapse" role="tabpanel" aria-labelledby="headingSeven">
+                            <div class="card-block">
+                                <div class="row">
+                                    <div v-for="skill in floor.group2.C.skills" class="padding-40 border-bottom mb-3 col-lg-6">
+                                        <div class="yellow">
+                                            <div class="name"><b>Name:&nbsp;</b>{{skill.name}}</div>
+                                        </div>
+                                        <div class="font-size-sm">
+                                            <div class="description"><b>Description:&nbsp;</b>{{skill.description}}</div>
+                                        </div>
+                                        <br>
+                                        <div class="row">
+                                            <div class="py-2 col-lg-4">
+                                                <div class="pic"><img width="100%" v-bind:src="skill.pic" /></div>
+                                            </div>
+                                            <div class="padding-34 font-size-sm py-2 col-lg-8">
+                                                <div class="value grey row"><b>Value:&nbsp;</b>{{skill.value}}</div>
+                                                <div class="value-points row"><b>Value Points:&nbsp;</b>{{skill.valuePoints}}</div>
+                                                <div class="group grey row"><b>Group:&nbsp;</b>{{skill.group}}</div>
+                                                <div class="group-description row"><b>Group Description:&nbsp;</b>{{skill.groupDescription}}</div>
+                                                <div class="group-points grey row"><b>Group Points:&nbsp;</b>0.5</div>
+                                                <!-- <div class="total-points row"><b>Total Points:&nbsp;</b>{{skill.totalPoints}}</div> -->
+                                                <div class="reference row"><b>Reference:&nbsp;</b><a v-bind:href="skill.reference" target="_blank">{{skill.reference}}</a></div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-10"></div>
+                                            <div>
+                                                <button v-on:click="select($event, skill)" type="button" class="btn btn-success">Select</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <br>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Group II D -->
+                    <div class="card">
+                        <div class="card-header" role="tab" id="headingEight">
+                            <h5 class="mb-0">
+                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+                      D Skills (Group II)
+                    </a>
+                  </h5>
+                        </div>
+                        <div id="collapseEight" class="collapse" role="tabpanel" aria-labelledby="headingEight">
+                            <div class="card-block">
+                                <div class="row">
+                                    <div v-for="skill in floor.group2.D.skills" class="padding-40 border-bottom mb-3 col-lg-6">
+                                        <div class="green">
+                                            <div class="name"><b>Name:&nbsp;</b>{{skill.name}}</div>
+                                        </div>
+                                        <div class="font-size-sm">
+                                            <div class="description"><b>Description:&nbsp;</b>{{skill.description}}</div>
+                                        </div>
+                                        <br>
+                                        <div class="row">
+                                            <div class="py-2 col-lg-4">
+                                                <div class="pic"><img width="100%" v-bind:src="skill.pic" /></div>
+                                            </div>
+                                            <div class="padding-34 font-size-sm py-2 col-lg-8">
+                                                <div class="value grey row"><b>Value:&nbsp;</b>{{skill.value}}</div>
+                                                <div class="value-points row"><b>Value Points:&nbsp;</b>{{skill.valuePoints}}</div>
+                                                <div class="group grey row"><b>Group:&nbsp;</b>{{skill.group}}</div>
+                                                <div class="group-description row"><b>Group Description:&nbsp;</b>{{skill.groupDescription}}</div>
+                                                <div class="group-points grey row"><b>Group Points:&nbsp;</b>0.5</div>
+                                                <!-- <div class="total-points row"><b>Total Points:&nbsp;</b>{{skill.totalPoints}}</div> -->
+                                                <div class="reference row"><b>Reference:&nbsp;</b><a v-bind:href="skill.reference" target="_blank">{{skill.reference}}</a></div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-10"></div>
+                                            <div>
+                                                <button v-on:click="select($event, skill)" type="button" class="btn btn-success">Select</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <br>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Group II E -->
+                    <div class="card">
+                        <div class="card-header" role="tab" id="headingNine">
+                            <h5 class="mb-0">
+                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
+                      E Skills (Group II)
+                    </a>
+                  </h5>
+                        </div>
+                        <div id="collapseNine" class="collapse" role="tabpanel" aria-labelledby="headingNine">
+                            <div class="card-block">
+                                <div class="row">
+                                    <div v-for="skill in floor.group2.E.skills" class="padding-40 border-bottom mb-3 col-lg-6">
+                                        <div class="blue">
+                                            <div class="name"><b>Name:&nbsp;</b>{{skill.name}}</div>
+                                        </div>
+                                        <div class="font-size-sm">
+                                            <div class="description"><b>Description:&nbsp;</b>{{skill.description}}</div>
+                                        </div>
+                                        <br>
+                                        <div class="row">
+                                            <div class="py-2 col-lg-4">
+                                                <div class="pic"><img width="100%" v-bind:src="skill.pic" /></div>
+                                            </div>
+                                            <div class="padding-34 font-size-sm py-2 col-lg-8">
+                                                <div class="value grey row"><b>Value:&nbsp;</b>{{skill.value}}</div>
+                                                <div class="value-points row"><b>Value Points:&nbsp;</b>{{skill.valuePoints}}</div>
+                                                <div class="group grey row"><b>Group:&nbsp;</b>{{skill.group}}</div>
+                                                <div class="group-description row"><b>Group Description:&nbsp;</b>{{skill.groupDescription}}</div>
+                                                <div class="group-points grey row"><b>Group Points:&nbsp;</b>0.5</div>
+                                                <!-- <div class="total-points row"><b>Total Points:&nbsp;</b>{{skill.totalPoints}}</div> -->
+                                                <div class="reference row"><b>Reference:&nbsp;</b><a v-bind:href="skill.reference" target="_blank">{{skill.reference}}</a></div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-10"></div>
+                                            <div>
+                                                <button v-on:click="select($event, skill)" type="button" class="btn btn-success">Select</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <br>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Group II F -->
+                    <div class="card">
+                        <div class="card-header" role="tab" id="headingTen">
+                            <h5 class="mb-0">
+                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTen" aria-expanded="false" aria-controls="collapseTen">
+                      F Skills (Group II)
+                    </a>
+                  </h5>
+                        </div>
+                        <div id="collapseTen" class="collapse" role="tabpanel" aria-labelledby="headingTen">
+                            <div class="card-block">
+                                <div class="row">
+                                    <div v-for="skill in floor.group2.F.skills" class="padding-40 border-bottom mb-3 col-lg-6">
+                                        <div class="indigo">
+                                            <div class="name"><b>Name:&nbsp;</b>{{skill.name}}</div>
+                                        </div>
+                                        <div class="font-size-sm">
+                                            <div class="description"><b>Description:&nbsp;</b>{{skill.description}}</div>
+                                        </div>
+                                        <br>
+                                        <div class="row">
+                                            <div class="py-2 col-lg-4">
+                                                <div class="pic"><img width="100%" v-bind:src="skill.pic" /></div>
+                                            </div>
+                                            <div class="padding-34 font-size-sm py-2 col-lg-8">
+                                                <div class="value grey row"><b>Value:&nbsp;</b>{{skill.value}}</div>
+                                                <div class="value-points row"><b>Value Points:&nbsp;</b>{{skill.valuePoints}}</div>
+                                                <div class="group grey row"><b>Group:&nbsp;</b>{{skill.group}}</div>
+                                                <div class="group-description row"><b>Group Description:&nbsp;</b>{{skill.groupDescription}}</div>
+                                                <div class="group-points grey row"><b>Group Points:&nbsp;</b>0.5</div>
+                                                <!-- <div class="total-points row"><b>Total Points:&nbsp;</b>{{skill.totalPoints}}</div> -->
+                                                <div class="reference row"><b>Reference:&nbsp;</b><a v-bind:href="skill.reference" target="_blank">{{skill.reference}}</a></div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-10"></div>
+                                            <div>
+                                                <button v-on:click="select($event, skill)" type="button" class="btn btn-success">Select</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <br>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <h2 class="px-2 row"> Group III: Backward Flipping Skill</h2>
+                <div id="accordion" role="tablist" aria-multiselectable="true">
+                    <!-- Group III A -->
+                    <div class="card">
+                        <div class="card-header" role="tab" id="headingEleven">
+                            <h5 class="mb-0">
+                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseEleven" aria-expanded="false" aria-controls="collapseEleven">
+                      A Skills (Group III)
+                    </a>
+                  </h5>
+                        </div>
+                        <div id="collapseEleven" class="collapse" role="tabpanel" aria-labelledby="headingEleven">
+                            <div class="card-block">
+                                <div class="row">
+                                    <div v-for="skill in floor.group3.A.skills" class="padding-40 border-bottom mb-3 col-lg-6">
+                                        <div class="red">
+                                            <div class="name"><b>Name:&nbsp;</b>{{skill.name}}</div>
+                                        </div>
+                                        <div class="font-size-sm">
+                                            <div class="description"><b>Description:&nbsp;</b>{{skill.description}}</div>
+                                        </div>
+                                        <br>
+                                        <div class="row">
+                                            <div class="py-2 col-lg-4">
+                                                <div class="pic"><img width="100%" v-bind:src="skill.pic" /></div>
+                                            </div>
+                                            <div class="padding-34 font-size-sm py-2 col-lg-8">
+                                                <div class="value grey row"><b>Value:&nbsp;</b>{{skill.value}}</div>
+                                                <div class="value-points row"><b>Value Points:&nbsp;</b>{{skill.valuePoints}}</div>
+                                                <div class="group grey row"><b>Group:&nbsp;</b>{{skill.group}}</div>
+                                                <div class="group-description row"><b>Group Description:&nbsp;</b>{{skill.groupDescription}}</div>
+                                                <div class="group-points grey row"><b>Group Points:&nbsp;</b>0.5</div>
+                                                <!-- <div class="total-points row"><b>Total Points:&nbsp;</b>{{skill.totalPoints}}</div> -->
+                                                <div class="reference row"><b>Reference:&nbsp;</b><a v-bind:href="skill.reference" target="_blank">{{skill.reference}}</a></div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-10"></div>
+                                            <div>
+                                                <button v-on:click="select($event, skill)" type="button" class="btn btn-success">Select</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <br>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Group III B -->
+                    <div class="card">
+                        <div class="card-header" role="tab" id="headingTwelve">
+                            <h5 class="mb-0">
+                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwelve" aria-expanded="false" aria-controls="collapseTwelve">
+                      B Skills (Group III)
+                    </a>
+                  </h5>
+                        </div>
+                        <div id="collapseTwelve" class="collapse" role="tabpanel" aria-labelledby="headingTwelve">
+                            <div class="card-block">
+                                <div class="row">
+                                    <div v-for="skill in floor.group3.B.skills" class="padding-40 border-bottom mb-3 col-lg-6">
+                                        <div class="orange">
+                                            <div class="name"><b>Name:&nbsp;</b>{{skill.name}}</div>
+                                        </div>
+                                        <div class="font-size-sm">
+                                            <div class="description"><b>Description:&nbsp;</b>{{skill.description}}</div>
+                                        </div>
+                                        <br>
+                                        <div class="row">
+                                            <div class="py-2 col-lg-4">
+                                                <div class="pic"><img width="100%" v-bind:src="skill.pic" /></div>
+                                            </div>
+                                            <div class="padding-34 font-size-sm py-2 col-lg-8">
+                                                <div class="value grey row"><b>Value:&nbsp;</b>{{skill.value}}</div>
+                                                <div class="value-points row"><b>Value Points:&nbsp;</b>{{skill.valuePoints}}</div>
+                                                <div class="group grey row"><b>Group:&nbsp;</b>{{skill.group}}</div>
+                                                <div class="group-description row"><b>Group Description:&nbsp;</b>{{skill.groupDescription}}</div>
+                                                <div class="group-points grey row"><b>Group Points:&nbsp;</b>0.5</div>
+                                                <!-- <div class="total-points row"><b>Total Points:&nbsp;</b>{{skill.totalPoints}}</div> -->
+                                                <div class="reference row"><b>Reference:&nbsp;</b><a v-bind:href="skill.reference" target="_blank">{{skill.reference}}</a></div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-10"></div>
+                                            <div>
+                                                <button v-on:click="select($event, skill)" type="button" class="btn btn-success">Select</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <br>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Group III C -->
+                    <div class="card">
+                        <div class="card-header" role="tab" id="headingThirteen">
+                            <h5 class="mb-0">
+                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThirteen" aria-expanded="false" aria-controls="colapseThirteen">
+                      C Skills (Group III)
+                    </a>
+                  </h5>
+                        </div>
+                        <div id="collapseThirteen" class="collapse" role="tabpanel" aria-labelledby="headingThirteen">
+                            <div class="card-block">
+                                <div class="row">
+                                    <div v-for="skill in floor.group3.C.skills" class="padding-40 border-bottom mb-3 col-lg-6">
+                                        <div class="yellow">
+                                            <div class="name"><b>Name:&nbsp;</b>{{skill.name}}</div>
+                                        </div>
+                                        <div class="font-size-sm">
+                                            <div class="description"><b>Description:&nbsp;</b>{{skill.description}}</div>
+                                        </div>
+                                        <br>
+                                        <div class="row">
+                                            <div class="py-2 col-lg-4">
+                                                <div class="pic"><img width="100%" v-bind:src="skill.pic" /></div>
+                                            </div>
+                                            <div class="padding-34 font-size-sm py-2 col-lg-8">
+                                                <div class="value grey row"><b>Value:&nbsp;</b>{{skill.value}}</div>
+                                                <div class="value-points row"><b>Value Points:&nbsp;</b>{{skill.valuePoints}}</div>
+                                                <div class="group grey row"><b>Group:&nbsp;</b>{{skill.group}}</div>
+                                                <div class="group-description row"><b>Group Description:&nbsp;</b>{{skill.groupDescription}}</div>
+                                                <div class="group-points grey row"><b>Group Points:&nbsp;</b>0.5</div>
+                                                <!-- <div class="total-points row"><b>Total Points:&nbsp;</b>{{skill.totalPoints}}</div> -->
+                                                <div class="reference row"><b>Reference:&nbsp;</b><a v-bind:href="skill.reference" target="_blank">{{skill.reference}}</a></div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-10"></div>
+                                            <div>
+                                                <button v-on:click="select($event, skill)" type="button" class="btn btn-success">Select</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <br>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Group III D -->
+                    <div class="card">
+                        <div class="card-header" role="tab" id="headingFourteen">
+                            <h5 class="mb-0">
+                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFourteen" aria-expanded="false" aria-controls="collapseFourteen">
+                      D Skills (Group III)
+                    </a>
+                  </h5>
+                        </div>
+                        <div id="collapseFourteen" class="collapse" role="tabpanel" aria-labelledby="headingFourteen">
+                            <div class="card-block">
+                                <div class="row">
+                                    <div v-for="skill in floor.group3.D.skills" class="padding-40 border-bottom mb-3 col-lg-6">
+                                        <div class="green">
+                                            <div class="name"><b>Name:&nbsp;</b>{{skill.name}}</div>
+                                        </div>
+                                        <div class="font-size-sm">
+                                            <div class="description"><b>Description:&nbsp;</b>{{skill.description}}</div>
+                                        </div>
+                                        <br>
+                                        <div class="row">
+                                            <div class="py-2 col-lg-4">
+                                                <div class="pic"><img width="100%" v-bind:src="skill.pic" /></div>
+                                            </div>
+                                            <div class="padding-34 font-size-sm py-2 col-lg-8">
+                                                <div class="value grey row"><b>Value:&nbsp;</b>{{skill.value}}</div>
+                                                <div class="value-points row"><b>Value Points:&nbsp;</b>{{skill.valuePoints}}</div>
+                                                <div class="group grey row"><b>Group:&nbsp;</b>{{skill.group}}</div>
+                                                <div class="group-description row"><b>Group Description:&nbsp;</b>{{skill.groupDescription}}</div>
+                                                <div class="group-points grey row"><b>Group Points:&nbsp;</b>0.5</div>
+                                                <!-- <div class="total-points row"><b>Total Points:&nbsp;</b>{{skill.totalPoints}}</div> -->
+                                                <div class="reference row"><b>Reference:&nbsp;</b><a v-bind:href="skill.reference" target="_blank">{{skill.reference}}</a></div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-10"></div>
+                                            <div>
+                                                <button v-on:click="select($event, skill)" type="button" class="btn btn-success">Select</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <br>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Group III E -->
+                    <div class="card">
+                        <div class="card-header" role="tab" id="headingFifteen">
+                            <h5 class="mb-0">
+                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFifteen" aria-expanded="false" aria-controls="collapseFifteen">
+                      E Skills (Group III)
+                    </a>
+                  </h5>
+                        </div>
+                        <div id="collapseFifteen" class="collapse" role="tabpanel" aria-labelledby="headingFifteen">
+                            <div class="card-block">
+                                <div class="row">
+                                    <div v-for="skill in floor.group3.E.skills" class="padding-40 border-bottom mb-3 col-lg-6">
+                                        <div class="blue">
+                                            <div class="name"><b>Name:&nbsp;</b>{{skill.name}}</div>
+                                        </div>
+                                        <div class="font-size-sm">
+                                            <div class="description"><b>Description:&nbsp;</b>{{skill.description}}</div>
+                                        </div>
+                                        <br>
+                                        <div class="row">
+                                            <div class="py-2 col-lg-4">
+                                                <div class="pic"><img width="100%" v-bind:src="skill.pic" /></div>
+                                            </div>
+                                            <div class="padding-34 font-size-sm py-2 col-lg-8">
+                                                <div class="value grey row"><b>Value:&nbsp;</b>{{skill.value}}</div>
+                                                <div class="value-points row"><b>Value Points:&nbsp;</b>{{skill.valuePoints}}</div>
+                                                <div class="group grey row"><b>Group:&nbsp;</b>{{skill.group}}</div>
+                                                <div class="group-description row"><b>Group Description:&nbsp;</b>{{skill.groupDescription}}</div>
+                                                <div class="group-points grey row"><b>Group Points:&nbsp;</b>0.5</div>
+                                                <!-- <div class="total-points row"><b>Total Points:&nbsp;</b>{{skill.totalPoints}}</div> -->
+                                                <div class="reference row"><b>Reference:&nbsp;</b><a v-bind:href="skill.reference" target="_blank">{{skill.reference}}</a></div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-10"></div>
+                                            <div>
+                                                <button v-on:click="select($event, skill)" type="button" class="btn btn-success">Select</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <br>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Group III F -->
+                    <div class="card">
+                        <div class="card-header" role="tab" id="headingSixteen">
+                            <h5 class="mb-0">
+                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseSixteen" aria-expanded="false" aria-controls="collapseSixteen">
+                      F Skills (Group III)
+                    </a>
+                  </h5>
+                        </div>
+                        <div id="collapseSixteen" class="collapse" role="tabpanel" aria-labelledby="headingSixteen">
+                            <div class="card-block">
+                                <div class="row">
+                                    <div v-for="skill in floor.group3.F.skills" class="padding-40 border-bottom mb-3 col-lg-6">
+                                        <div class="indigo">
+                                            <div class="name"><b>Name:&nbsp;</b>{{skill.name}}</div>
+                                        </div>
+                                        <div class="font-size-sm">
+                                            <div class="description"><b>Description:&nbsp;</b>{{skill.description}}</div>
+                                        </div>
+                                        <br>
+                                        <div class="row">
+                                            <div class="py-2 col-lg-4">
+                                                <div class="pic"><img width="100%" v-bind:src="skill.pic" /></div>
+                                            </div>
+                                            <div class="padding-34 font-size-sm py-2 col-lg-8">
+                                                <div class="value grey row"><b>Value:&nbsp;</b>{{skill.value}}</div>
+                                                <div class="value-points row"><b>Value Points:&nbsp;</b>{{skill.valuePoints}}</div>
+                                                <div class="group grey row"><b>Group:&nbsp;</b>{{skill.group}}</div>
+                                                <div class="group-description row"><b>Group Description:&nbsp;</b>{{skill.groupDescription}}</div>
+                                                <div class="group-points grey row"><b>Group Points:&nbsp;</b>0.5</div>
+                                                <!-- <div class="total-points row"><b>Total Points:&nbsp;</b>{{skill.totalPoints}}</div> -->
+                                                <div class="reference row"><b>Reference:&nbsp;</b><a v-bind:href="skill.reference" target="_blank">{{skill.reference}}</a></div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-10"></div>
+                                            <div>
+                                                <button v-on:click="select($event, skill)" type="button" class="btn btn-success">Select</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <br>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Group III G -->
+                    <div class="card">
+                        <div class="card-header" role="tab" id="headingSeventeen">
+                            <h5 class="mb-0">
+                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseSeventeen" aria-expanded="false" aria-controls="collapseSeventeen">
+                      G Skills (Group III)
+                    </a>
+                  </h5>
+                        </div>
+                        <div id="collapseSeventeen" class="collapse" role="tabpanel" aria-labelledby="headingSeventeen">
+                            <div class="card-block">
+                                <div class="row">
+                                    <div v-for="skill in floor.group3.G.skills" class="padding-40 border-bottom mb-3 col-lg-6">
+                                        <div class="violet">
+                                            <div class="name"><b>Name:&nbsp;</b>{{skill.name}}</div>
+                                        </div>
+                                        <div class="font-size-sm">
+                                            <div class="description"><b>Description:&nbsp;</b>{{skill.description}}</div>
+                                        </div>
+                                        <br>
+                                        <div class="row">
+                                            <div class="py-2 col-lg-4">
+                                                <div class="pic"><img width="100%" v-bind:src="skill.pic" /></div>
+                                            </div>
+                                            <div class="padding-34 font-size-sm py-2 col-lg-8">
+                                                <div class="value grey row"><b>Value:&nbsp;</b>{{skill.value}}</div>
+                                                <div class="value-points row"><b>Value Points:&nbsp;</b>{{skill.valuePoints}}</div>
+                                                <div class="group grey row"><b>Group:&nbsp;</b>{{skill.group}}</div>
+                                                <div class="group-description row"><b>Group Description:&nbsp;</b>{{skill.groupDescription}}</div>
+                                                <div class="group-points grey row"><b>Group Points:&nbsp;</b>0.5</div>
+                                                <!-- <div class="total-points row"><b>Total Points:&nbsp;</b>{{skill.totalPoints}}</div> -->
+                                                <div class="reference row"><b>Reference:&nbsp;</b><a v-bind:href="skill.reference" target="_blank">{{skill.reference}}</a></div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-10"></div>
+                                            <div>
+                                                <button v-on:click="select($event, skill)" type="button" class="btn btn-success">Select</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <br>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Group III H -->
+                    <div class="card">
+                        <div class="card-header" role="tab" id="headingEighteen">
+                            <h5 class="mb-0">
+                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseEighteen" aria-expanded="false" aria-controls="collapseEighteen">
+                      H Skills (Group III)
+                    </a>
+                  </h5>
+                        </div>
+                        <div id="collapseEighteen" class="collapse" role="tabpanel" aria-labelledby="headingEighteen">
+                            <div class="card-block">
+                                <div class="row">
+                                    <div v-for="skill in floor.group3.H.skills" class="padding-40 border-bottom mb-3 col-lg-6">
+                                        <div class="purple">
+                                            <div class="white-text name"><b>Name:&nbsp;</b>{{skill.name}}</div>
+                                        </div>
+                                        <div class="font-size-sm">
+                                            <div class="description"><b>Description:&nbsp;</b>{{skill.description}}</div>
+                                        </div>
+                                        <br>
+                                        <div class="row">
+                                            <div class="py-2 col-lg-4">
+                                                <div class="pic"><img width="100%" v-bind:src="skill.pic" /></div>
+                                            </div>
+                                            <div class="padding-34 font-size-sm py-2 col-lg-8">
+                                                <div class="value grey row"><b>Value:&nbsp;</b>{{skill.value}}</div>
+                                                <div class="value-points row"><b>Value Points:&nbsp;</b>{{skill.valuePoints}}</div>
+                                                <div class="group grey row"><b>Group:&nbsp;</b>{{skill.group}}</div>
+                                                <div class="group-description row"><b>Group Description:&nbsp;</b>{{skill.groupDescription}}</div>
+                                                <div class="group-points grey row"><b>Group Points:&nbsp;</b>0.5</div>
+                                                <!-- <div class="total-points row"><b>Total Points:&nbsp;</b>{{skill.totalPoints}}</div> -->
+                                                <div class="reference row"><b>Reference:&nbsp;</b><a v-bind:href="skill.reference" target="_blank">{{skill.reference}}</a></div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-10"></div>
+                                            <div>
+                                                <button v-on:click="select($event, skill)" type="button" class="btn btn-success">Select</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <br>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<script src="gymnastics.js"></script>
+</body>
+
+</html>
+
+
+
+<!-- <iframe v-bind:src="floor.group1.A.skills[1].reference"></iframe> -->
+
+
+
+
+
+
+
+

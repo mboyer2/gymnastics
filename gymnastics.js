@@ -1,6 +1,8 @@
 var mainVm = new Vue({
     el: '#app',
     data: {
+        checked:false,
+        bigChecked:false,
         subStartValue:0,
         skillTotalPoints:0,
         decimalStartValue:0,
@@ -24,7 +26,7 @@ var mainVm = new Vue({
                     letterValue: 'A',
                     AValue: .1,
                     skills: [{
-                            name: 'Handstand to L-sit',
+                            name: 'HANDSTAND TO L-SIT',
                             description: 'From handstand lower to L-sit or stradle L-sit',
                             value: 'A',
                             valuePoints: .1,
@@ -42,7 +44,7 @@ var mainVm = new Vue({
 
                         },
                         {
-                            name: 'Press handstand from stand',
+                            name: 'STANDING PRESS HANDSTAND',
                             description: 'From stand, Swiss press to handstand (2s.)',
                             value: 'A',
                             valuePoints: .1,
@@ -59,7 +61,7 @@ var mainVm = new Vue({
                             groupIV: false
                         },
                         {
-                            name: 'Handstand',
+                            name: 'HANDSTAND',
                             description: 'Handstand (2 s.)',
                             value: 'A',
                             valuePoints: .1,
@@ -76,7 +78,7 @@ var mainVm = new Vue({
                             groupIV: false
                         },
                         {
-                            name: 'Stradle Planche',
+                            name: 'STRADLE PLANCHE',
                             description: 'Support lever, legs straddle (2 s.)',
                             value: 'A',
                             valuePoints: .1,
@@ -93,7 +95,7 @@ var mainVm = new Vue({
                             groupIV: false
                         },
                         {
-                            name: 'Handstand Pirouette',
+                            name: 'HANDSTAND PIROUETTE',
                             description: '1/2 or 1/1 turn in handstand or to handstand',
                             value: 'A',
                             valuePoints: .1,
@@ -110,7 +112,7 @@ var mainVm = new Vue({
                             groupIV: false
                         },
                         {
-                            name: 'From L-sit, etc., turn over backward to stand',
+                            name: 'L-SIT TO STAND',
                             description: 'From L-sit, etc., turn over backward to stand',
                             value: 'A',
                             valuePoints: .1,
@@ -127,7 +129,7 @@ var mainVm = new Vue({
                             groupIV: false
                         },
                         {
-                            name: 'Back Walkover',
+                            name: 'BACK WALKOVER',
                             description: 'From stand or rear support, push off 1 foot through handstand',
                             value: 'A',
                             valuePoints: .1,
@@ -144,7 +146,7 @@ var mainVm = new Vue({
                             groupIV: false
                         },
                         {
-                            name: 'Forward Walkover',
+                            name: 'FRONT WALKOVER',
                             description: 'Front Walkover',
                             value: 'A',
                             valuePoints: .1,
@@ -161,7 +163,7 @@ var mainVm = new Vue({
                             groupIV: false
                         },
                         {
-                            name: 'Splits',
+                            name: 'SPLITS',
                             description: 'Cross or side split (stop required)',
                             value: 'A',
                             valuePoints: .1,
@@ -178,7 +180,7 @@ var mainVm = new Vue({
                             groupIV: false
                         },
                         {
-                            name: 'Scale',
+                            name: 'SCALE',
                             description: 'Any Standing Scale (2 s.)',
                             value: 'A',
                             valuePoints: .1,
@@ -195,7 +197,7 @@ var mainVm = new Vue({
                             groupIV: false
                         },
                         {
-                            name: 'Jump backward to front support',
+                            name: 'JUMP TO FRONT SUPPORT',
                             description: 'Jump backward to front support',
                             value: 'A',
                             valuePoints: .1,
@@ -212,7 +214,7 @@ var mainVm = new Vue({
                             groupIV: false
                         },
                         {
-                            name: 'Butterfly',
+                            name: 'BUTTERFLY',
                             description: 'Butterfly',
                             value: 'A',
                             valuePoints: .1,
@@ -229,7 +231,7 @@ var mainVm = new Vue({
                             groupIV: false
                         },
                         {
-                            name: 'Breakdance Variation',
+                            name: 'HELICOPTER',
                             description: 'Breakdance Variation',
                             value: 'A',
                             valuePoints: .1,
@@ -246,7 +248,7 @@ var mainVm = new Vue({
                             groupIV: false
                         },
                         {
-                            name: 'Flair with 1/2 Spindle',
+                            name: 'FLAIR HALF SPINDLE',
                             description: 'Flair with 1/2 Spindle',
                             value: 'A',
                             valuePoints: .1,
@@ -263,7 +265,7 @@ var mainVm = new Vue({
                             groupIV: false
                         },
                         {
-                            name: 'Russian',
+                            name: 'RUSSIAN',
                             description: 'Russian wendeswing with 360 or 540',
                             value: 'A',
                             valuePoints: .1,
@@ -280,7 +282,7 @@ var mainVm = new Vue({
                             groupIV: false
                         },
                         {
-                            name: 'Backward Roll 1/2 turn',
+                            name: 'BACK ROLL 1/2 TURN',
                             description: 'Roll bwd. through handstand with 1/2 turn',
                             value: 'A',
                             valuePoints: .1,
@@ -302,7 +304,7 @@ var mainVm = new Vue({
                     letterValue: 'B',
                     BValue: .2,
                     skills: [{
-                            name: 'V-sit',
+                            name: 'V-SIT',
                             description: 'V-sit (2 s.)',
                             value: 'B',
                             valuePoints: .2,
@@ -319,7 +321,7 @@ var mainVm = new Vue({
                             groupIV: false
                         },
                         {
-                            name: 'Press Handstand',
+                            name: 'PRESS HANDSTAND',
                             description: 'Piked body straight arm or straight body, bent arm press to handstand with legs together',
                             value: 'B',
                             valuePoints: .2,
@@ -336,7 +338,7 @@ var mainVm = new Vue({
                             groupIV: false
                         },
                         {
-                            name: 'Swiss Press Handstand',
+                            name: 'SWISS PRESS HANDSTAND',
                             description: 'Swiss press from split, L-sit, stradle L-sit or front support (2 s.)',
                             value: 'B',
                             valuePoints: .2,
@@ -353,7 +355,7 @@ var mainVm = new Vue({
                             groupIV: false
                         },
                         {
-                            name: 'Japanese Handstand',
+                            name: 'JAPANESE HANDSTAND',
                             description: 'Press or lower or swing to Japanese handstand',
                             value: 'B',
                             valuePoints: .2,
@@ -370,7 +372,7 @@ var mainVm = new Vue({
                             groupIV: false
                         },
                         {
-                            name: 'Planche',
+                            name: 'PLANCHE',
                             description: 'Support lever (2 s.)',
                             value: 'B',
                             valuePoints: .2,
@@ -387,7 +389,7 @@ var mainVm = new Vue({
                             groupIV: false
                         },
                         {
-                            name: 'Straddle Planche Press Handstand',
+                            name: 'STR. PLANCHE HANDSTAND',
                             description: 'From straddled support lever (2 s.) press handstand (2 s.)',
                             value: 'B',
                             valuePoints: .2,
@@ -404,7 +406,7 @@ var mainVm = new Vue({
                             groupIV: false
                         },
                         {
-                            name: 'Stalder Roll Press Handstand',
+                            name: 'STALDER ROLL HANDSTAND',
                             description: 'Endo Roll to handstand (2 s.)',
                             value: 'B',
                             valuePoints: .2,
@@ -421,7 +423,7 @@ var mainVm = new Vue({
                             groupIV: false
                         },
                         {
-                            name: 'B Scale',
+                            name: 'B SCALE',
                             description: 'Any standing scale with 180 straddle, no hand. hold (2 s.)',
                             value: 'B',
                             valuePoints: .2,
@@ -438,7 +440,7 @@ var mainVm = new Vue({
                             groupIV: false
                         },
                         {
-                            name: 'Endo',
+                            name: 'ENDO',
                             description: 'Jump backward with pike-stretch or with 1/1 turn to front support',
                             value: 'B',
                             valuePoints: .2,
@@ -455,7 +457,7 @@ var mainVm = new Vue({
                             groupIV: false
                         },
                         {
-                            name: 'Tong Fei',
+                            name: 'TONG FEI',
                             description: 'Butterfly with 1/1 twist forward or backward',
                             value: 'B',
                             valuePoints: .2,
@@ -472,7 +474,7 @@ var mainVm = new Vue({
                             groupIV: false
                         },
                         {
-                            name: 'Flair handstand',
+                            name: 'FLAIR HANDSTAND',
                             description: 'Circles or flair to handstand',
                             value: 'B',
                             valuePoints: .2,
@@ -489,7 +491,7 @@ var mainVm = new Vue({
                             groupIV: false
                         },
                         {
-                            name: 'Handstand to flair',
+                            name: 'HANDSTAND TO FLAIR',
                             description: 'Lower from handstand to flair or circle',
                             value: 'B',
                             valuePoints: .2,
@@ -506,7 +508,7 @@ var mainVm = new Vue({
                             groupIV: false
                         },
                         {
-                            name: 'Spindle Flair',
+                            name: 'SPINDLE FLAIR',
                             description: 'Flair with 1/1 spindle (in 2 circles)',
                             value: 'B',
                             valuePoints: .2,
@@ -523,7 +525,7 @@ var mainVm = new Vue({
                             groupIV: false
                         },
                         {
-                            name: 'Flair 1/2 spindle to handstand',
+                            name: 'FLAIR 1/2 SPINDLE HANDSTAND',
                             description: 'Flair with 1/2 spindle to handstand',
                             value: 'B',
                             valuePoints: .2,
@@ -540,7 +542,7 @@ var mainVm = new Vue({
                             groupIV: false
                         },
                         {
-                            name: 'Russian',
+                            name: 'RUSSIANS',
                             description: 'Russian wendeswing with 720 or 900',
                             value: 'B',
                             valuePoints: .2,
@@ -557,7 +559,7 @@ var mainVm = new Vue({
                             groupIV: false
                         },
                         {
-                            name: 'Roll backward with full turn through handstand',
+                            name: 'BACK ROLL FULL TURN',
                             description: 'Roll backward with 1/1 turn through handstand',
                             value: 'B',
                             valuePoints: .2,
@@ -579,7 +581,7 @@ var mainVm = new Vue({
                     letterValue: 'C',
                     CValue: .3,
                     skills: [{
-                            name: 'Manna',
+                            name: 'MANNA',
                             description: 'V-sit with legs horiz (2 s.)',
                             value: 'C',
                             valuePoints: .3,
@@ -596,7 +598,7 @@ var mainVm = new Vue({
                             groupIV: false
                         },
                         {
-                            name: 'V straddle press handstand',
+                            name: 'V PRESS HANDSTAND',
                             description: 'V-sit (2 s.) and press to handstand (2 s.) also with straddle legs',
                             value: 'C',
                             valuePoints: .3,
@@ -613,7 +615,7 @@ var mainVm = new Vue({
                             groupIV: false
                         },
                         {
-                            name: 'Press Japanese handstand',
+                            name: 'JAPANESE PRESS',
                             description: 'From split press to Japanese handstand (2 s.)',
                             value: 'C',
                             valuePoints: .3,
@@ -630,7 +632,7 @@ var mainVm = new Vue({
                             groupIV: false
                         },
                         {
-                            name: 'Swallow',
+                            name: 'SWALLOW',
                             description: 'Swallow (2 s.)',
                             value: 'C',
                             valuePoints: .3,
@@ -647,7 +649,7 @@ var mainVm = new Vue({
                             groupIV: false
                         },
                         {
-                            name: 'Planche Press handstand',
+                            name: 'PLANCHE PRESS',
                             description: 'From support lever (2 s.) press handstand (2 s.)',
                             value: 'C',
                             valuePoints: .3,
@@ -664,7 +666,7 @@ var mainVm = new Vue({
                             groupIV: false
                         },
                         {
-                            name: 'Stadler roll press handstand',
+                            name: 'PIKED STALDER',
                             description: 'Endo roll piked to handstand (2 s.), also final phase with straddle',
                             value: 'C',
                             valuePoints: .3,
@@ -681,7 +683,7 @@ var mainVm = new Vue({
                             groupIV: false
                         },
                         {
-                            name: 'C Butterfly',
+                            name: 'C BUTTERFLY',
                             description: 'Butterfly with 2/1 twist',
                             value: 'C',
                             valuePoints: .3,
@@ -698,7 +700,7 @@ var mainVm = new Vue({
                             groupIV: false
                         },
                         {
-                            name: 'Gogoladze',
+                            name: 'GOGOLADZE',
                             description: 'Flair or circle to handstand continue to flair or circle',
                             value: 'C',
                             valuePoints: .3,
@@ -715,7 +717,7 @@ var mainVm = new Vue({
                             groupIV: false
                         },
                         {
-                            name: 'Spindle Flair to handstand',
+                            name: 'SPINDLE FLAIR HANDSTAND',
                             description: 'Flair with 270 spindle (in 2 circles) directly to handstand',
                             value: 'C',
                             valuePoints: .3,
@@ -732,7 +734,7 @@ var mainVm = new Vue({
                             groupIV: false
                         },
                         {
-                            name: 'Fedorchenko',
+                            name: 'FEDORCHENKO',
                             description: 'Russian wendeswing with 1080 or more',
                             value: 'C',
                             valuePoints: .3,
@@ -754,7 +756,7 @@ var mainVm = new Vue({
                     letterValue: 'D',
                     DValue: .4,
                     skills: [{
-                            name: 'Manna press handstand',
+                            name: 'MANNA PRESS HANDSTAND',
                             description: 'Manna (2 s.) and press to handstand (2 s.) also with straddle legs',
                             value: 'D',
                             valuePoints: .4,
@@ -771,7 +773,7 @@ var mainVm = new Vue({
                             groupIV: false
                         },
                         {
-                            name: 'Manna dislocate to handstand',
+                            name: 'MANNA TO HANDSTAND',
                             description: 'Manna (2 s.) turn over to handstand (2 s.)',
                             value: 'D',
                             valuePoints: .4,
@@ -788,7 +790,7 @@ var mainVm = new Vue({
                             groupIV: false
                         },
                         {
-                            name: 'Alvarino',
+                            name: 'ALVARINO',
                             description: 'From Swallow (2 s.) press to Japanese handstand (2 s.)',
                             value: 'D',
                             valuePoints: .4,
@@ -805,7 +807,7 @@ var mainVm = new Vue({
                             groupIV: false
                         },
                         {
-                            name: 'Air Flair',
+                            name: 'AIR FLAIR',
                             description: 'Flair hopping with 360 turn backwards through handstand and back to flair (2 hops)',
                             value: 'D',
                             valuePoints: .4,
@@ -822,7 +824,7 @@ var mainVm = new Vue({
                             groupIV: false
                         },
                         {
-                            name: 'Spindle flair to handstand to flair',
+                            name: 'SPINDLE FLAIR HANDSTAND FLAIR',
                             description: 'Flair with 270 spindle (in 2 circles) directly to handstand and continue to circle flair',
                             value: 'D',
                             valuePoints: .4,
@@ -848,7 +850,7 @@ var mainVm = new Vue({
                     letterValue: 'A',
                     AValue: .1,
                     skills: [{
-                            name: '',
+                            name: '-',
                             description: 'Neck or headspring with 1/2 turn to handstand or 1/1 turn to rear support',
                             value: 'A',
                             valuePoints: .1,
@@ -864,7 +866,7 @@ var mainVm = new Vue({
                             groupIV: false
                         },
                         {
-                            name: 'Front handspring or flyspring',
+                            name: 'FRONT HANDSPRING',
                             description: 'Front handspring or flyspring',
                             value: 'A',
                             valuePoints: .1,
@@ -880,7 +882,7 @@ var mainVm = new Vue({
                             groupIV: false
                         },
                         {
-                            name: 'Dive roll',
+                            name: 'DIVE ROLL',
                             description: 'Dive Roll',
                             value: 'A',
                             valuePoints: .1,
@@ -896,7 +898,7 @@ var mainVm = new Vue({
                             groupIV: false
                         },
                         {
-                            name: 'Front tuck or pike',
+                            name: 'FRONT TUCK/PIKE',
                             description: 'Salto forward tucked or piked',
                             value: 'A',
                             valuePoints: .1,
@@ -912,7 +914,7 @@ var mainVm = new Vue({
                             groupIV: false
                         },
                         {
-                            name: 'Aerial walkover forward',
+                            name: 'AERIAL WALKOVER',
                             description: 'Aerial Walkover forward',
                             value: 'A',
                             valuePoints: .1,
@@ -928,7 +930,7 @@ var mainVm = new Vue({
                             groupIV: false
                         },
                         {
-                            name: 'Front flip 1/2 turn',
+                            name: 'FRONT HALF',
                             description: 'Salto tucked and piked 1/2 turn',
                             value: 'A',
                             valuePoints: .1,
@@ -949,7 +951,7 @@ var mainVm = new Vue({
                     letterValue: 'B',
                     BValue: .2,
                     skills: [{
-                            name: '1/1 twisting forward handspring',
+                            name: '1/1 TURN HANDSTAND',
                             description: 'Jump with 1/1 twist to forward handspring',
                             value: 'B',
                             valuePoints: .2,
@@ -965,7 +967,7 @@ var mainVm = new Vue({
                             groupIV: false
                         },
                         {
-                            name: 'Front layout',
+                            name: 'FRONT LAYOUT',
                             description: 'Salto forward stretched',
                             value: 'B',
                             valuePoints: .2,
@@ -981,7 +983,7 @@ var mainVm = new Vue({
                             groupIV: false
                         },
                         {
-                            name: 'Front full',
+                            name: 'FRONT FULL',
                             description: 'Salto tucked with 1/1 turn',
                             value: 'B',
                             valuePoints: .2,
@@ -997,7 +999,7 @@ var mainVm = new Vue({
                             groupIV: false
                         },
                         {
-                            name: 'Branny layout',
+                            name: 'BRANNY LAYOUT',
                             description: 'Salto forward stretched with 1/2 turn',
                             value: 'B',
                             valuePoints: .2,
@@ -1013,7 +1015,7 @@ var mainVm = new Vue({
                             groupIV: false
                         },
                         {
-                            name: 'Rudy tucked',
+                            name: 'TUCKED RUDY',
                             description: 'Salto tucked 3/2 turn',
                             value: 'B',
                             valuePoints: .2,
@@ -1029,7 +1031,7 @@ var mainVm = new Vue({
                             groupIV: false
                         },
                         {
-                            name: 'Front 1 and 1/4',
+                            name: 'FRONT 1 AND 1/4',
                             description: 'Salto forward tucked or piked to front support',
                             value: 'B',
                             valuePoints: .2,
@@ -1050,7 +1052,7 @@ var mainVm = new Vue({
                     letterValue: 'C',
                     CValue: .3,
                     skills: [{
-                            name: 'Front 1 and 1/4 layout',
+                            name: 'FRONT 1 AND 1/4 LAYOUT',
                             description: 'Salto forward stretched to front support',
                             value: 'C',
                             valuePoints: .3,
@@ -1066,7 +1068,7 @@ var mainVm = new Vue({
                             groupIV: false
                         },
                         {
-                            name: 'Front full layout',
+                            name: 'FRONT FULL LAYOUT',
                             description: 'Salto forward stretched with 1/1 turn',
                             value: 'C',
                             valuePoints: .3,
@@ -1082,7 +1084,7 @@ var mainVm = new Vue({
                             groupIV: false
                         },
                         {
-                            name: 'Layout Rudy',
+                            name: 'RUDY LAYOUT',
                             description: 'Salto forward stretched with 3/2 turn',
                             value: 'C',
                             valuePoints: .3,
@@ -1098,7 +1100,7 @@ var mainVm = new Vue({
                             groupIV: false
                         },
                         {
-                            name: 'Front full 1 and 1/4',
+                            name: 'FRONT FULL 1 AND 1/4',
                             description: 'Salto forward in any position with full turn to front support',
                             value: 'C',
                             valuePoints: .3,
@@ -1119,7 +1121,7 @@ var mainVm = new Vue({
                     letterValue: 'D',
                     DValue: .4,
                     skills: [{
-                            name: 'Morandi',
+                            name: 'MORANDI',
                             description: 'Hanspring salto forward tucked (Marinich style)',
                             value: 'D',
                             valuePoints: .4,
@@ -1135,7 +1137,7 @@ var mainVm = new Vue({
                             groupIV: false
                         },
                         {
-                            name: 'Double front',
+                            name: 'DOUBLE FRONT',
                             description: 'Double salto forward tucked',
                             value: 'D',
                             valuePoints: .4,
@@ -1151,7 +1153,7 @@ var mainVm = new Vue({
                             groupIV: false
                         },
                         {
-                            name: 'Front double full',
+                            name: 'FRONT DOUBLE FULL',
                             description: 'Salto forward stretched with 2/1 turn',
                             value: 'D',
                             valuePoints: .4,
@@ -1167,7 +1169,7 @@ var mainVm = new Vue({
                             groupIV: false
                         },
                         {
-                            name: 'Defer',
+                            name: 'DEFER',
                             description: 'Jump forward with 1/2 turn to double salto backward tucked or piked',
                             value: 'D',
                             valuePoints: .4,
@@ -1188,7 +1190,7 @@ var mainVm = new Vue({
                     letterValue: 'E',
                     EValue: .5,
                     skills: [{
-                            name: 'Front double pike',
+                            name: 'FRONT DOUBLE PIKE',
                             description: 'Double salto forward piked',
                             value: 'E',
                             valuePoints: .6,
@@ -1204,7 +1206,7 @@ var mainVm = new Vue({
                             groupIV: false
                         },
                         {
-                            name: 'Double front half',
+                            name: 'DOUBLE FRONT HALF',
                             description: 'Double salto forward tucked with 1/2 turn',
                             value: 'E',
                             valuePoints: .6,
@@ -1220,7 +1222,7 @@ var mainVm = new Vue({
                             groupIV: false
                         },
                         {
-                            name: 'Randy',
+                            name: 'RANDY',
                             description: 'Double salto forward piked',
                             value: 'E',
                             valuePoints: .6,
@@ -1241,7 +1243,7 @@ var mainVm = new Vue({
                     letterValue: 'F',
                     FValue: .6,
                     skills: [{
-                            name: 'Double pike half',
+                            name: 'DOUBLE PIKE HALF',
                             description: 'Double salto forward piked with 1/2 turn',
                             value: 'F',
                             valuePoints: .6,
@@ -1257,7 +1259,7 @@ var mainVm = new Vue({
                             groupIV: false
                         },
                         {
-                            name: 'Shirai 2',
+                            name: 'SHIRAI 2',
                             description: 'Salto forward stretched with 3/1 turn',
                             value: 'F',
                             valuePoints: .6,
@@ -1273,7 +1275,7 @@ var mainVm = new Vue({
                             groupIV: false
                         },
                         {
-                            name: 'Full twisting double front',
+                            name: 'Full DOUBLE FRONT',
                             description: 'Double salto forward with 1/1 turn tucked',
                             value: 'F',
                             valuePoints: .6,
@@ -1298,7 +1300,7 @@ var mainVm = new Vue({
                     letterValue: 'A',
                     AValue: .1,
                     skills: [{
-                            name: 'Back tuck or pike',
+                            name: 'BACK TUCK/PIKE',
                             description: 'Salto backward tucked or piked',
                             value: 'A',
                             valuePoints: .1,
@@ -1315,7 +1317,7 @@ var mainVm = new Vue({
 
                         },
                         {
-                            name: 'Back half tuck or pike',
+                            name: 'BACK HALF TUCK/PIKE',
                             description: 'Salto backward tucked or piked with 1/2 turn',
                             value: 'A',
                             valuePoints: .1,
@@ -1331,7 +1333,7 @@ var mainVm = new Vue({
                             groupIV: false
                         },
                         {
-                            name: 'Back handspring',
+                            name: 'BACK HANDSPRING',
                             description: 'Back handspring',
                             value: 'A',
                             valuePoints: .1,
@@ -1347,7 +1349,7 @@ var mainVm = new Vue({
                             groupIV: false
                         },
                         {
-                            name: 'Arabian dive roll',
+                            name: 'ARABIAN DIVE ROLL',
                             description: 'Jump backward with half turn to roll forward',
                             value: 'A',
                             valuePoints: .1,
@@ -1363,7 +1365,7 @@ var mainVm = new Vue({
                             groupIV: false
                         },
                         {
-                            name: 'Arabian front handspring',
+                            name: 'ARABIAN FRONT HANDSPRING',
                             description: 'Jump backward with 1/2 turn to handspring forward',
                             value: 'A',
                             valuePoints: .1,
@@ -1384,7 +1386,7 @@ var mainVm = new Vue({
                     letterValue: 'B',
                     BValue: .2,
                     skills: [{
-                            name: 'Back Layout',
+                            name: 'BACK LAYOUT',
                             description: 'Salto backward stretched',
                             value: 'B',
                             valuePoints: .2,
@@ -1400,7 +1402,7 @@ var mainVm = new Vue({
                             groupIV: false
                         },
                         {
-                            name: 'Back Layout half',
+                            name: 'BACK LAYOUT HALF',
                             description: 'Salto backward stretched with half turn',
                             value: 'B',
                             valuePoints: .2,
@@ -1416,7 +1418,7 @@ var mainVm = new Vue({
                             groupIV: false
                         },
                         {
-                            name: 'Whip',
+                            name: 'WHIP BACK',
                             description: 'Tempo salto backward',
                             value: 'B',
                             valuePoints: .2,
@@ -1432,7 +1434,7 @@ var mainVm = new Vue({
                             groupIV: false
                         },
                         {
-                            name: 'Back 3/2 tucked',
+                            name: 'BACK 3/2 TUCKED',
                             description: 'Salto backward tucked with 3/2 turn',
                             value: 'B',
                             valuePoints: .2,
@@ -1448,7 +1450,7 @@ var mainVm = new Vue({
                             groupIV: false
                         },
                         {
-                            name: 'Layout full',
+                            name: 'LAYOUT FULL',
                             description: 'Salto backward stretched with 1/1 turn',
                             value: 'B',
                             valuePoints: .2,
@@ -1464,7 +1466,7 @@ var mainVm = new Vue({
                             groupIV: false
                         },
                         {
-                            name: 'Arabian 1 and 1/4',
+                            name: 'ARABIAN 1 AND 1/4',
                             description: 'Jump backward with 1/2 turn to salto forward tucked or piked to front support',
                             value: 'B',
                             valuePoints: .2,
@@ -1485,7 +1487,7 @@ var mainVm = new Vue({
                     letterValue: 'C',
                     CValue: .3,
                     skills: [{
-                            name: 'Double back tuck',
+                            name: 'DOUBLE BACK TUCK',
                             description: 'Double salto backward tucked',
                             value: 'C',
                             valuePoints: .3,
@@ -1501,7 +1503,7 @@ var mainVm = new Vue({
                             groupIV: false
                         },
                         {
-                            name: 'Double back pike',
+                            name: 'DOUBLE BACK PIKE',
                             description: 'Double salto backward piked',
                             value: 'C',
                             valuePoints: .3,
@@ -1517,7 +1519,7 @@ var mainVm = new Vue({
                             groupIV: false
                         },
                         {
-                            name: 'Back 3/2 layout',
+                            name: 'BACK 3/2 LAYOUT',
                             description: 'Salto backward stretched with 3/2 turn',
                             value: 'C',
                             valuePoints: .3,
@@ -1533,7 +1535,7 @@ var mainVm = new Vue({
                             groupIV: false
                         },
                         {
-                            name: 'Double full layout',
+                            name: 'DOUBLE FULL LAYOUT',
                             description: 'Salto backward stretched with 2/1 turn',
                             value: 'C',
                             valuePoints: .3,
@@ -1554,7 +1556,7 @@ var mainVm = new Vue({
                     letterValue: 'D',
                     DValue: .4,
                     skills: [{
-                            name: 'Full twisting double back, Arabian double',
+                            name: 'FULL TWISTING DOUBLE BACK',
                             description: 'Double salto backward tucked or piked with 1/1 turn. Also Arabian double tucked or piked 1/2 turn',
                             value: 'D',
                             valuePoints: .4,
@@ -1570,7 +1572,7 @@ var mainVm = new Vue({
                             groupIV: false
                         },
                         {
-                            name: 'Arabian double',
+                            name: 'ARABIAN DOUBLE',
                             description: 'Arabian double tucked or piked or double salto backward tucked or piked with 1/2 turn',
                             value: 'D',
                             valuePoints: .4,
@@ -1586,7 +1588,7 @@ var mainVm = new Vue({
                             groupIV: false
                         },
                         {
-                            name: 'Back two and a half layout',
+                            name: 'BACK 5/2 LAYOUT',
                             description: 'Salto backward stretched with 5/2 turn',
                             value: 'D',
                             valuePoints: .4,
@@ -1602,7 +1604,7 @@ var mainVm = new Vue({
                             groupIV: false
                         },
                         {
-                            name: 'Back triple full',
+                            name: 'BACK TRIPLE FULL',
                             description: 'Salto backward stretched with 3/1 turn',
                             value: 'D',
                             valuePoints: .4,
@@ -1618,7 +1620,7 @@ var mainVm = new Vue({
                             groupIV: false
                         },
                         {
-                            name: 'Double layout',
+                            name: 'DOUBLE LAYOUT',
                             description: 'Double salto backward stretched',
                             value: 'D',
                             valuePoints: .4,
@@ -1639,7 +1641,7 @@ var mainVm = new Vue({
                     letterValue: 'E',
                     EValue: .5,
                     skills: [{
-                            name: 'Double double tuck',
+                            name: 'DOUBLE DOUBLE TUCK',
                             description: 'Double salto backward tucked with 2/1 turn',
                             value: 'E',
                             valuePoints: .6,
@@ -1655,7 +1657,7 @@ var mainVm = new Vue({
                             groupIV: false
                         },
                         {
-                            name: 'Double back 3/2',
+                            name: 'DOUBLE BACK 3/2',
                             description: 'Double salto backward tucked with 3/2 turn',
                             value: 'E',
                             valuePoints: .6,
@@ -1671,7 +1673,7 @@ var mainVm = new Vue({
                             groupIV: false
                         },
                         {
-                            name: 'Back 7/2',
+                            name: 'BACK 7/2',
                             description: 'Salto backward stretched with 7/2 turn',
                             value: 'E',
                             valuePoints: .6,
@@ -1687,7 +1689,7 @@ var mainVm = new Vue({
                             groupIV: false
                         },
                         {
-                            name: 'Lou Yun',
+                            name: 'LOU YUN',
                             description: 'Double salto straddled with 1/1 turn',
                             value: 'E',
                             valuePoints: .6,
@@ -1703,7 +1705,7 @@ var mainVm = new Vue({
                             groupIV: false
                         },
                         {
-                            name: 'Tamayo',
+                            name: 'TAMAYO',
                             description: 'Arabian Jump backward to double salto forward stretched or double salto backwards stretched with 1/2 turn',
                             value: 'E',
                             valuePoints: .6,
@@ -1719,7 +1721,7 @@ var mainVm = new Vue({
                             groupIV: false
                         },
                         {
-                            name: 'Full twisting double layout',
+                            name: 'FULL TWISTING DBL LAYOUT',
                             description: 'Double salto backward stretched with 1/1 turn or arabian jump backward to double salto forward stretched with 1/2 turn',
                             value: 'E',
                             valuePoints: .6,
@@ -1740,7 +1742,7 @@ var mainVm = new Vue({
                     letterValue: 'F',
                     EValue: .6,
                     skills: [{
-                            name: 'Double back tuck 5/2',
+                            name: 'DOUBLE TUCK 5/2',
                             description: 'Double salto backward tuked with 5/2 turn',
                             value: 'F',
                             valuePoints: .6,
@@ -1756,7 +1758,7 @@ var mainVm = new Vue({
                             groupIV: false
                         },
                         {
-                            name: 'Shirai or Nguyen',
+                            name: 'SHIRAI/ NGUYEN',
                             description: 'Salto backward stretched with 4/1 turn',
                             value: 'F',
                             valuePoints: .6,
@@ -1772,7 +1774,7 @@ var mainVm = new Vue({
                             groupIV: false
                         },
                         {
-                            name: 'Kolyvanov',
+                            name: 'KOLYVANOV',
                             description: 'Salto backward stretched with 2/1 turn and salto backward piked',
                             value: 'F',
                             valuePoints: .6,
@@ -1788,7 +1790,7 @@ var mainVm = new Vue({
                             groupIV: false
                         },
                         {
-                            name: 'Arabian double layout full',
+                            name: 'ARABIAN DBL LAYOUT FULL',
                             description: 'Double salto backward stretched with 3/2 turn or Arabian jump backward to double salto forward stretched with 1/1 turn',
                             value: 'F',
                             valuePoints: .6,
@@ -1804,7 +1806,7 @@ var mainVm = new Vue({
                             groupIV: false
                         },
                         {
-                            name: 'Double double layout',
+                            name: 'DOUBLE DOUBLE LAYOUT',
                             description: 'Double salto backward stretched with 2/1 turn',
                             value: 'F',
                             valuePoints: .6,
@@ -1825,7 +1827,7 @@ var mainVm = new Vue({
                     letterValue: 'G',
                     EValue: .7,
                     skills: [{
-                            name: 'Ri Jong Song',
+                            name: 'RI JONG SONG',
                             description: 'Double salto backward tucked with 3/1 turn',
                             value: 'G',
                             valuePoints: .7,
@@ -1841,7 +1843,7 @@ var mainVm = new Vue({
                             groupIV: false
                         },
                         {
-                            name: 'Double 5/2 layout',
+                            name: 'DOUBLE 5/2 LAYOUT',
                             description: 'Double salto backward stretched with 5/2 turn',
                             value: 'G',
                             valuePoints: .7,
@@ -1862,7 +1864,7 @@ var mainVm = new Vue({
                     letterValue: 'H',
                     EValue: .8,
                     skills: [{
-                            name: 'Shirai 3',
+                            name: 'SHIRAI 3',
                             description: 'Double salto backward stretched with 3/1 turn',
                             value: 'H',
                             valuePoints: .8,
@@ -1878,7 +1880,7 @@ var mainVm = new Vue({
                             groupIV: false
                         },
                         {
-                            name: 'Liukin',
+                            name: 'LIUKEN',
                             description: 'Triple salto backward tucked',
                             value: 'H',
                             valuePoints: .8,
@@ -2601,18 +2603,16 @@ var mainVm = new Vue({
             //max ten skills
             if (this.selections.length > 9) {
                 alert('You are allowed only 10 skills per routine')
-                mainVm.connection()
                 return
             }
+
             $.post('/select', { skill }, function(data) {
                 console.log('$POST', data)
                 mainVm.selections.push(data)
                 //mainVm.getFreshData()
-                mainVm.connection()
-
                 if (mainVm.selections.length === 10) {
                     mainVm.groupIVComplete()
-                    mainVm.connection()
+    
                 }
             })
         },
@@ -2696,16 +2696,14 @@ var mainVm = new Vue({
         },
 
         groupIVComplete: function() {
-            if (this.selections[9] && this.selections[9].group !== 'Group I') {
+            if (this.selections[9]) {
                 this.selections = this.selections.map(function(element) {
                     element.groupIV = true
                     mainVm.floor.groupIVCompleted = true
                     return element
                 })
-                this.groupFourUpdate()  
-            } else if (this.selections[9] && this.selections[9].group === 'Group I'){
-                alert('You cannot end your routine with a Group I skill')
-                return
+                this.groupFourUpdate() 
+                this.connection()
             }
         },
 //+
@@ -2716,42 +2714,34 @@ var mainVm = new Vue({
             if (this.selections[9].value === 'A') {
                 this.selections[9]['groupDisplayedPts'] = 0
                 this.floor.group4.groupPoints = 0
-                this.calculated()
                 return 0
             } else if (this.selections[9].value === 'B') {
                 this.selections[9]['groupDisplayedPts'] = 0
                 this.floor.group4.groupPoints = 0
-                this.calculated()
                 return 0
             } else if (this.selections[9].value === 'C') {
                 this.selections[9]['groupDisplayedPts'] = .3
                 this.floor.group4.groupPoints = .3
-                this.calculated()
                 return .3
             } else if (this.selections[9].value === 'D') {
                 this.selections[9]['groupDisplayedPts'] = .5
                 this.floor.group4.groupPoints = .5
-                this.calculated()
                 return .5
             } else if (this.selections[9].value === 'E') {
                 this.selections[9]['groupDisplayedPts'] = .5
                 this.floor.group4.groupPoints = .5
-                this.calculated()
                 return .5
             } else if (this.selections[9].value === 'F') {
                 this.selections[9]['groupDisplayedPts'] = .5
                 this.floor.group4.groupPoints = .5
-                this.calculated()
                 return .5
             } else if (this.selections[9].value === 'G') {
                 this.selections[9]['groupDisplayedPts'] = .5
                 this.floor.group4.groupPoints = .5
-                this.calculated()
                 return .5
             } else if (this.selections[9].value === 'H') {
                 this.selections[9]['groupDisplayedPts'] = .5
                 this.floor.group4.groupPoints = .5
-                this.calculated()
                 return .5
             }
         },

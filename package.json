@@ -20,6 +20,7 @@
   "dependencies": {
     "express": "^4.16.2",
     "mongodb": "^2.2.33",
-    "request": "^2.83.0"
+    "request": "^2.83.0",
+    "vue": "^2.5.9"
   }
 }
