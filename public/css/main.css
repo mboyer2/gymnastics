@@ -10,7 +10,7 @@ a:hover{
 	border:.5px solid black;
 }*/
 .m-text{
-	font-size: 1rem;
+	font-size: .7rem;
 }
 
 .borders-bottom{
@@ -56,6 +56,13 @@ a:hover{
 	font-size: .7rem;
 }
 
+.ml-6{
+	margin-left: 6rem
+}
+.container-width{
+	margin-left: 2rem;
+	max-width: 96%;
+}
 .whiteText{
 	color: white;
 }
@@ -73,11 +80,11 @@ a:hover{
 }
 
 .opacity{
-	background:rgba(255,255,255, 0.2);
+	background:rgba(255,255,255, 0.3);
 }
 
 .opacity-2{
-	background:rgba(255,255,255, 0.1);
+	background:rgba(255,255,255, 0.2);
 }
 
 .margin-x{
@@ -88,7 +95,7 @@ a:hover{
 	border-bottom:1px solid black;
 }*/
 .box-height{
-	height: 3.3rem;
+	height: 2.6rem;
 }
 
 .padding-40{

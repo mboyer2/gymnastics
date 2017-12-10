@@ -16,12 +16,12 @@
 </head>
 <body>
     <div id="app">
-        <div class="container">
-            <h1 class="">Floor</h1>
+        <div class="container container-width">
+            <br>
             <br>
 
-            <div class="mx-0 century whiteText row">
-                <div v-for="(selection, index) in selections" v-bind:class="color(selection.value)" class="radius borders col-lg-2 mb-3 mr-4">
+            <div class=" ml-6 century whiteText row">
+                <div v-for="(selection, index) in selections" v-bind:class="color(selection.value)" class="radius borders col-lg-1 mb-3 mr-4">
                     <div class="m-space"></div>
                     <div class="row">
                         <div class="px-0 col-lg-1"></div>                
@@ -120,23 +120,20 @@
                                         </div>
                                     </div>
                                     <div class="borders m-space"></div>
-                                    <div class="opacity rel box-height borders radius">
-
 <!--NOT WORKING connection-->
-                                        <div v-if="selection.connection" class="greenText pos">
-                                            <div class="form-check">
-                                                <label class="form-check-label">
-                                                    <input class="form-check-input" type="checkbox" value="CONNECTION">
-                                                </label>
-                                            </div>
-                                        </div>
-                                        <div else class="pos">CONNECTION</div>
+                                    <div class="opacity rel box-height borders radius">
+                                        <form v-if="selection.connection" class="pos" action="/action_page.php">
+                                            <input type="checkbox" name="vehicle" value="Bike">CONNECTION
+                                        </form>
+                                        <form v-else-if="selection.bigConnection" class="pos" action="/action_page.php">
+                                            <input type="checkbox" name="vehicle" value="Bike">CONNECTION
+                                        </form>
+                                        <div v-else class="pos">CONNECTION</div>
                                     </div>
-
 
                                     <div class="borders m-space"></div>
                                     <div class="opacity rel box-height borders radius link">
-                                        <div class="videoLink pos"><a v-bind:href="selection.reference" target="_blank" class="whiteText" >VIDEO LINK</a></div>
+                                        <div class="videoLink pos"><a v-bind:href="selection.reference" target="_blank" class="whiteText" >VIDEO</a></div>
                                     </div>
                                     <div class="borders m-space"></div>
                                     <div class="opacity rel box-height borders radius link">
