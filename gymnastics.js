@@ -1,8 +1,6 @@
 var mainVm = new Vue({
     el: '#app',
     data: {
-        checked:false,
-        bigChecked:false,
         subStartValue:0,
         skillTotalPoints:0,
         decimalStartValue:0,
@@ -38,6 +36,8 @@ var mainVm = new Vue({
                             reference: 'No Video Available',
                             connection: false,
                             bigConnection: false,
+                            connectionCheck:false,
+                            bigConnectionCheck: false,
                             double: false,
                             subtotalPoints: 0,
                             groupIV: false
@@ -56,6 +56,8 @@ var mainVm = new Vue({
                             reference: "https://www.youtube.com/watch?v=IOV3PNxBGvk",
                             connection: false,
                             bigConnection: false,
+                            connectionCheck:false,
+                            bigConnectionCheck: false,
                             double: false,
                             subtotalPoints: 0,
                             groupIV: false
@@ -73,6 +75,8 @@ var mainVm = new Vue({
                             reference: 'No Video Available',
                             connection: false,
                             bigConnection: false,
+                            connectionCheck:false,
+                            bigConnectionCheck: false,
                             double: false,
                             subtotalPoints: 0,
                             groupIV: false
@@ -90,6 +94,8 @@ var mainVm = new Vue({
                             reference: 'https://www.youtube.com/watch?v=17LM51miUFA',
                             connection: false,
                             bigConnection: false,
+                            connectionCheck:false,
+                            bigConnectionCheck: false,
                             double: false,
                             subtotalPoints: 0,
                             groupIV: false
@@ -107,6 +113,8 @@ var mainVm = new Vue({
                             reference: 'https://www.youtube.com/watch?v=ZMgzZazouCI',
                             connection: false,
                             bigConnection: false,
+                            connectionCheck:false,
+                            bigConnectionCheck: false,
                             double: false,
                             subtotalPoints: 0,
                             groupIV: false
@@ -124,6 +132,8 @@ var mainVm = new Vue({
                             reference: 'No Video Available',
                             connection: false,
                             bigConnection: false,
+                            connectionCheck:false,
+                            bigConnectionCheck: false,
                             double: false,
                             subtotalPoints: 0,
                             groupIV: false
@@ -141,6 +151,8 @@ var mainVm = new Vue({
                             reference: 'https://www.youtube.com/watch?v=mF4F1Xvg1Bg',
                             connection: false,
                             bigConnection: false,
+                            connectionCheck:false,
+                            bigConnectionCheck: false,
                             double: false,
                             subtotalPoints: 0,
                             groupIV: false
@@ -158,6 +170,8 @@ var mainVm = new Vue({
                             reference: 'https://www.youtube.com/watch?v=AKNAXpBQu1E',
                             connection: false,
                             bigConnection: false,
+                            connectionCheck:false,
+                            bigConnectionCheck: false,
                             double: false,
                             subtotalPoints: 0,
                             groupIV: false
@@ -175,6 +189,8 @@ var mainVm = new Vue({
                             reference: 'https://vimeo.com/151238496',
                             connection: false,
                             bigConnection: false,
+                            connectionCheck:false,
+                            bigConnectionCheck: false,
                             double: false,
                             subtotalPoints: 0,
                             groupIV: false
@@ -192,6 +208,8 @@ var mainVm = new Vue({
                             reference: 'https://www.youtube.com/watch?v=hkqKmq-Y76w',
                             connection: false,
                             bigConnection: false,
+                            connectionCheck:false,
+                            bigConnectionCheck: false,
                             double: false,
                             subtotalPoints: 0,
                             groupIV: false
@@ -209,6 +227,8 @@ var mainVm = new Vue({
                             reference: 'No Video Available',
                             connection: false,
                             bigConnection: false,
+                            connectionCheck:false,
+                            bigConnectionCheck: false,
                             double: false,
                             subtotalPoints: 0,
                             groupIV: false
@@ -226,6 +246,8 @@ var mainVm = new Vue({
                             reference: 'https://youtu.be/vbefem-b8p8',
                             connection: false,
                             bigConnection: false,
+                            connectionCheck:false,
+                            bigConnectionCheck: false,
                             double: false,
                             subtotalPoints: 0,
                             groupIV: false
@@ -243,6 +265,8 @@ var mainVm = new Vue({
                             reference: "https://www.youtube.com/embed/FXMkknrEF1k",
                             connection: false,
                             bigConnection: false,
+                            connectionCheck:false,
+                            bigConnectionCheck: false,
                             double: false,
                             subtotalPoints: 0,
                             groupIV: false
@@ -260,6 +284,8 @@ var mainVm = new Vue({
                             reference: "https://www.youtube.com/embed/_N158yVNXMM",
                             connection: false,
                             bigConnection: false,
+                            connectionCheck:false,
+                            bigConnectionCheck: false,
                             double: false,
                             subtotalPoints: 0,
                             groupIV: false
@@ -277,6 +303,8 @@ var mainVm = new Vue({
                             reference: 'https://youtu.be/QL5gCiOT54I',
                             connection: false,
                             bigConnection: false,
+                            connectionCheck:false,
+                            bigConnectionCheck: false,
                             double: false,
                             subtotalPoints: 0,
                             groupIV: false
@@ -294,6 +322,8 @@ var mainVm = new Vue({
                             reference: 'No Video Available',
                             connection: false,
                             bigConnection: false,
+                            connectionCheck:false,
+                            bigConnectionCheck: false,
                             double: false,
                             subtotalPoints: 0,
                             groupIV: false
@@ -316,6 +346,8 @@ var mainVm = new Vue({
                             reference: 'https://www.youtube.com/watch?v=0f6zcS48Bqg',
                             connection: false,
                             bigConnection: false,
+                            connectionCheck:false,
+                            bigConnectionCheck: false,
                             double: false,
                             subtotalPoints: 0,
                             groupIV: false
@@ -333,6 +365,8 @@ var mainVm = new Vue({
                             reference: 'https://www.youtube.com/watch?v=1SpW7Mr4AgA',
                             connection: false,
                             bigConnection: false,
+                            connectionCheck:false,
+                            bigConnectionCheck: false,
                             double: false,
                             subtotalPoints: 0,
                             groupIV: false
@@ -350,6 +384,8 @@ var mainVm = new Vue({
                             reference: 'https://www.youtube.com/watch?v=OW_ljV5CBKk',
                             connection: false,
                             bigConnection: false,
+                            connectionCheck:false,
+                            bigConnectionCheck: false,
                             double: false,
                             subtotalPoints: 0,
                             groupIV: false
@@ -367,6 +403,8 @@ var mainVm = new Vue({
                             reference: 'https://www.youtube.com/watch?v=ygym5oXlRWo',
                             connection: false,
                             bigConnection: false,
+                            connectionCheck:false,
+                            bigConnectionCheck: false,
                             double: false,
                             subtotalPoints: 0,
                             groupIV: false
@@ -384,6 +422,8 @@ var mainVm = new Vue({
                             reference: 'https://www.youtube.com/watch?v=w_gB_KOeZNI',
                             connection: false,
                             bigConnection: false,
+                            connectionCheck:false,
+                            bigConnectionCheck: false,
                             double: false,
                             subtotalPoints: 0,
                             groupIV: false
@@ -401,6 +441,8 @@ var mainVm = new Vue({
                             reference: 'https://www.youtube.com/watch?v=5qR6SMzGbPs',
                             connection: false,
                             bigConnection: false,
+                            connectionCheck:false,
+                            bigConnectionCheck: false,
                             double: false,
                             subtotalPoints: 0,
                             groupIV: false
@@ -418,6 +460,8 @@ var mainVm = new Vue({
                             reference: 'https://www.youtube.com/watch?v=yAlX43vn3oc',
                             connection: false,
                             bigConnection: false,
+                            connectionCheck:false,
+                            bigConnectionCheck: false,
                             double: false,
                             subtotalPoints: 0,
                             groupIV: false
@@ -435,6 +479,8 @@ var mainVm = new Vue({
                             reference: 'No Video Available',
                             connection: false,
                             bigConnection: false,
+                            connectionCheck:false,
+                            bigConnectionCheck: false,
                             double: false,
                             subtotalPoints: 0,
                             groupIV: false
@@ -452,6 +498,8 @@ var mainVm = new Vue({
                             reference: 'https://www.youtube.com/watch?v=FpgMpM6Awps',
                             connection: false,
                             bigConnection: false,
+                            connectionCheck:false,
+                            bigConnectionCheck: false,
                             double: false,
                             subtotalPoints: 0,
                             groupIV: false
@@ -469,6 +517,8 @@ var mainVm = new Vue({
                             reference: 'https://www.youtube.com/watch?v=7Kjq1CbswFk',
                             connection: false,
                             bigConnection: false,
+                            connectionCheck:false,
+                            bigConnectionCheck: false,
                             double: false,
                             subtotalPoints: 0,
                             groupIV: false
@@ -486,6 +536,8 @@ var mainVm = new Vue({
                             reference: 'https://www.youtube.com/watch?v=xf-dmkFutNE',
                             connection: false,
                             bigConnection: false,
+                            connectionCheck:false,
+                            bigConnectionCheck: false,
                             double: false,
                             subtotalPoints: 0,
                             groupIV: false
@@ -503,6 +555,8 @@ var mainVm = new Vue({
                             reference: 'https://www.youtube.com/watch?v=vwcToYbWsTw',
                             connection: false,
                             bigConnection: false,
+                            connectionCheck:false,
+                            bigConnectionCheck: false,
                             double: false,
                             subtotalPoints: 0,
                             groupIV: false
@@ -520,6 +574,8 @@ var mainVm = new Vue({
                             reference: 'https://www.youtube.com/watch?v=-XIthLkD3qA',
                             connection: false,
                             bigConnection: false,
+                            connectionCheck:false,
+                            bigConnectionCheck: false,
                             double: false,
                             subtotalPoints: 0,
                             groupIV: false
@@ -537,6 +593,8 @@ var mainVm = new Vue({
                             reference: 'https://www.youtube.com/watch?v=iTYjHesijLQ',
                             connection: false,
                             bigConnection: false,
+                            connectionCheck:false,
+                            bigConnectionCheck: false,
                             double: false,
                             subtotalPoints: 0,
                             groupIV: false
@@ -554,6 +612,8 @@ var mainVm = new Vue({
                             reference: 'https://www.youtube.com/watch?v=BtwkcidJTfY',
                             connection: false,
                             bigConnection: false,
+                            connectionCheck:false,
+                            bigConnectionCheck: false,
                             double: false,
                             subtotalPoints: 0,
                             groupIV: false
@@ -571,6 +631,8 @@ var mainVm = new Vue({
                             reference: 'No Video Available',
                             connection: false,
                             bigConnection: false,
+                            connectionCheck:false,
+                            bigConnectionCheck: false,
                             double: false,
                             subtotalPoints: 0,
                             groupIV: false
@@ -593,6 +655,8 @@ var mainVm = new Vue({
                             reference: 'https://www.youtube.com/watch?v=Tk8ZRf5xIdY',
                             connection: false,
                             bigConnection: false,
+                            connectionCheck:false,
+                            bigConnectionCheck: false,
                             double: false,
                             subtotalPoints: 0,
                             groupIV: false
@@ -610,6 +674,8 @@ var mainVm = new Vue({
                             reference: 'https://www.youtube.com/watch?v=qebeJexc3Ms',
                             connection: false,
                             bigConnection: false,
+                            connectionCheck:false,
+                            bigConnectionCheck: false,
                             double: false,
                             subtotalPoints: 0,
                             groupIV: false
@@ -627,6 +693,8 @@ var mainVm = new Vue({
                             reference: 'floor split press japanese handstand  gymnastics',
                             connection: false,
                             bigConnection: false,
+                            connectionCheck:false,
+                            bigConnectionCheck: false,
                             double: false,
                             subtotalPoints: 0,
                             groupIV: false
@@ -644,6 +712,8 @@ var mainVm = new Vue({
                             reference: 'https://www.youtube.com/watch?v=zGoMHGZocoI',
                             connection: false,
                             bigConnection: false,
+                            connectionCheck:false,
+                            bigConnectionCheck: false,
                             double: false,
                             subtotalPoints: 0,
                             groupIV: false
@@ -661,6 +731,8 @@ var mainVm = new Vue({
                             reference: 'https://www.youtube.com/watch?v=yYCVsC-2E08',
                             connection: false,
                             bigConnection: false,
+                            connectionCheck:false,
+                            bigConnectionCheck: false,
                             double: false,
                             subtotalPoints: 0,
                             groupIV: false
@@ -678,6 +750,8 @@ var mainVm = new Vue({
                             reference: 'No Video Available',
                             connection: false,
                             bigConnection: false,
+                            connectionCheck:false,
+                            bigConnectionCheck: false,
                             double: false,
                             subtotalPoints: 0,
                             groupIV: false
@@ -695,6 +769,8 @@ var mainVm = new Vue({
                             reference: 'https://www.youtube.com/watch?v=di0ihPN5o-c',
                             connection: false,
                             bigConnection: false,
+                            connectionCheck:false,
+                            bigConnectionCheck: false,
                             double: false,
                             subtotalPoints: 0,
                             groupIV: false
@@ -712,6 +788,8 @@ var mainVm = new Vue({
                             reference: 'https://www.youtube.com/watch?v=4Mq6yrezuRA',
                             connection: false,
                             bigConnection: false,
+                            connectionCheck:false,
+                            bigConnectionCheck: false,
                             double: false,
                             subtotalPoints: 0,
                             groupIV: false
@@ -729,6 +807,8 @@ var mainVm = new Vue({
                             reference: 'https://www.youtube.com/watch?v=WZqevELmaLE',
                             connection: false,
                             bigConnection: false,
+                            connectionCheck:false,
+                            bigConnectionCheck: false,
                             double: false,
                             subtotalPoints: 0,
                             groupIV: false
@@ -746,6 +826,8 @@ var mainVm = new Vue({
                             reference: 'https://www.youtube.com/watch?v=BtwkcidJTfY',
                             connection: false,
                             bigConnection: false,
+                            connectionCheck:false,
+                            bigConnectionCheck: false,
                             double: false,
                             subtotalPoints: 0,
                             groupIV: false
@@ -768,6 +850,8 @@ var mainVm = new Vue({
                             reference: 'https://www.youtube.com/watch?v=fuGpGvr-8Bc',
                             connection: false,
                             bigConnection: false,
+                            connectionCheck:false,
+                            bigConnectionCheck: false,
                             double: false,
                             subtotalPoints: 0,
                             groupIV: false
@@ -785,6 +869,8 @@ var mainVm = new Vue({
                             reference: 'https://www.youtube.com/watch?v=KAp8aEmPSfE',
                             connection: false,
                             bigConnection: false,
+                            connectionCheck:false,
+                            bigConnectionCheck: false,
                             double: false,
                             subtotalPoints: 0,
                             groupIV: false
@@ -802,6 +888,8 @@ var mainVm = new Vue({
                             reference: 'https://www.youtube.com/watch?v=zJ4kJ8ZamDQ',
                             connection: false,
                             bigConnection: false,
+                            connectionCheck:false,
+                            bigConnectionCheck: false,
                             double: false,
                             subtotalPoints: 0,
                             groupIV: false
@@ -819,6 +907,8 @@ var mainVm = new Vue({
                             reference: 'https://www.youtube.com/watch?v=MBXxXPR40O0',
                             connection: false,
                             bigConnection: false,
+                            connectionCheck:false,
+                            bigConnectionCheck: false,
                             double: false,
                             subtotalPoints: 0,
                             groupIV: false
@@ -836,6 +926,8 @@ var mainVm = new Vue({
                             reference: 'https://www.youtube.com/watch?v=-XIthLkD3qA',
                             connection: false,
                             bigConnection: false,
+                            connectionCheck:false,
+                            bigConnectionCheck: false,
                             double: false,
                             subtotalPoints: 0,
                             groupIV: false
@@ -861,6 +953,8 @@ var mainVm = new Vue({
                             reference: 'No Video Available',
                             connection: false,
                             bigConnection: false,
+                            connectionCheck:false,
+                            bigConnectionCheck: false,
                             double: false,
                             subtotalPoints: 0,
                             groupIV: false
@@ -877,6 +971,8 @@ var mainVm = new Vue({
                             reference: 'https://www.youtube.com/watch?v=zjewNdgEq90',
                             connection: false,
                             bigConnection: false,
+                            connectionCheck:false,
+                            bigConnectionCheck: false,
                             double: false,
                             subtotalPoints: 0,
                             groupIV: false
@@ -893,6 +989,8 @@ var mainVm = new Vue({
                             reference: 'https://www.youtube.com/watch?v=ueWNFDCiJ8Q',
                             connection: false,
                             bigConnection: false,
+                            connectionCheck:false,
+                            bigConnectionCheck: false,
                             double: false,
                             subtotalPoints: 0,
                             groupIV: false
@@ -909,6 +1007,8 @@ var mainVm = new Vue({
                             reference: 'https://www.youtube.com/watch?v=md23mspiJbQ',
                             connection: false,
                             bigConnection: false,
+                            connectionCheck:false,
+                            bigConnectionCheck: false,
                             double: false,
                             subtotalPoints: 0,
                             groupIV: false
@@ -925,6 +1025,8 @@ var mainVm = new Vue({
                             reference: 'https://www.youtube.com/watch?v=32MlKbw_OnA',
                             connection: false,
                             bigConnection: false,
+                            connectionCheck:false,
+                            bigConnectionCheck: false,
                             double: false,
                             subtotalPoints: 0,
                             groupIV: false
@@ -941,6 +1043,8 @@ var mainVm = new Vue({
                             reference: 'No Video Available',
                             connection: false,
                             bigConnection: false,
+                            connectionCheck:false,
+                            bigConnectionCheck: false,
                             double: false,
                             subtotalPoints: 0,
                             groupIV: false
@@ -962,6 +1066,8 @@ var mainVm = new Vue({
                             reference: 'No Video Available',
                             connection: false,
                             bigConnection: false,
+                            connectionCheck:false,
+                            bigConnectionCheck: false,
                             double: false,
                             subtotalPoints: 0,
                             groupIV: false
@@ -978,6 +1084,8 @@ var mainVm = new Vue({
                             reference: 'https://www.youtube.com/watch?v=aBSOSwDWArs',
                             connection: false,
                             bigConnection: false,
+                            connectionCheck:false,
+                            bigConnectionCheck: false,
                             double: false,
                             subtotalPoints: 0,
                             groupIV: false
@@ -994,6 +1102,8 @@ var mainVm = new Vue({
                             reference: 'https://www.youtube.com/watch?v=vxdr4vY_QnQ',
                             connection: false,
                             bigConnection: false,
+                            connectionCheck:false,
+                            bigConnectionCheck: false,
                             double: false,
                             subtotalPoints: 0,
                             groupIV: false
@@ -1010,6 +1120,8 @@ var mainVm = new Vue({
                             reference: 'https://www.youtube.com/watch?v=vxdr4vY_QnQ',
                             connection: false,
                             bigConnection: false,
+                            connectionCheck:false,
+                            bigConnectionCheck: false,
                             double: false,
                             subtotalPoints: 0,
                             groupIV: false
@@ -1026,6 +1138,8 @@ var mainVm = new Vue({
                             reference: 'https://www.youtube.com/watch?v=vxdr4vY_QnQ',
                             connection: false,
                             bigConnection: false,
+                            connectionCheck:false,
+                            bigConnectionCheck: false,
                             double: false,
                             subtotalPoints: 0,
                             groupIV: false
@@ -1042,6 +1156,8 @@ var mainVm = new Vue({
                             reference: 'No Video Available',
                             connection: false,
                             bigConnection: false,
+                            connectionCheck:false,
+                            bigConnectionCheck: false,
                             double: false,
                             subtotalPoints: 0,
                             groupIV: false
@@ -1063,6 +1179,8 @@ var mainVm = new Vue({
                             reference: 'No Video Available',
                             connection: false,
                             bigConnection: false,
+                            connectionCheck:false,
+                            bigConnectionCheck: false,
                             double: false,
                             subtotalPoints: 0,
                             groupIV: false
@@ -1079,6 +1197,8 @@ var mainVm = new Vue({
                             reference: 'https://www.youtube.com/watch?v=vxdr4vY_QnQ',
                             connection: false,
                             bigConnection: false,
+                            connectionCheck:false,
+                            bigConnectionCheck: false,
                             double: false,
                             subtotalPoints: 0,
                             groupIV: false
@@ -1095,6 +1215,8 @@ var mainVm = new Vue({
                             reference: 'https://www.youtube.com/watch?v=vxdr4vY_QnQ',
                             connection: false,
                             bigConnection: false,
+                            connectionCheck:false,
+                            bigConnectionCheck: false,
                             double: false,
                             subtotalPoints: 0,
                             groupIV: false
@@ -1111,6 +1233,8 @@ var mainVm = new Vue({
                             reference: 'No Video Available',
                             connection: false,
                             bigConnection: false,
+                            connectionCheck:false,
+                            bigConnectionCheck: false,
                             double: false,
                             subtotalPoints: 0,
                             groupIV: false
@@ -1132,6 +1256,8 @@ var mainVm = new Vue({
                             reference: 'https://www.youtube.com/watch?v=3SCznCNqc0g',
                             connection: false,
                             bigConnection: false,
+                            connectionCheck:false,
+                            bigConnectionCheck: false,
                             double: false,
                             subtotalPoints: 0,
                             groupIV: false
@@ -1148,6 +1274,8 @@ var mainVm = new Vue({
                             reference: 'https://www.youtube.com/watch?v=z6L51SiNtbY',
                             connection: false,
                             bigConnection: false,
+                            connectionCheck:false,
+                            bigConnectionCheck: false,
                             double: true,
                             subtotalPoints: 0,
                             groupIV: false
@@ -1164,6 +1292,8 @@ var mainVm = new Vue({
                             reference: 'https://www.youtube.com/watch?v=_XrtUJ81t6w',
                             connection: false,
                             bigConnection: false,
+                            connectionCheck:false,
+                            bigConnectionCheck: false,
                             double: false,
                             subtotalPoints: 0,
                             groupIV: false
@@ -1180,6 +1310,8 @@ var mainVm = new Vue({
                             reference: 'No Video Available',
                             connection: false,
                             bigConnection: false,
+                            connectionCheck:false,
+                            bigConnectionCheck: false,
                             double: true,
                             subtotalPoints: 0,
                             groupIV: false
@@ -1201,6 +1333,8 @@ var mainVm = new Vue({
                             reference: 'https://www.youtube.com/watch?v=0s5Gz_UM8KU',
                             connection: false,
                             bigConnection: false,
+                            connectionCheck:false,
+                            bigConnectionCheck: false,
                             double: true,
                             subtotalPoints: 0,
                             groupIV: false
@@ -1217,6 +1351,8 @@ var mainVm = new Vue({
                             reference: 'https://www.youtube.com/watch?v=OFK3qiXrJL8',
                             connection: false,
                             bigConnection: false,
+                            connectionCheck:false,
+                            bigConnectionCheck: false,
                             double: true,
                             subtotalPoints: 0,
                             groupIV: false
@@ -1233,6 +1369,8 @@ var mainVm = new Vue({
                             reference: 'https://www.youtube.com/watch?v=3us9h2H3Lzg',
                             connection: false,
                             bigConnection: false,
+                            connectionCheck:false,
+                            bigConnectionCheck: false,
                             double: false,
                             subtotalPoints: 0,
                             groupIV: false
@@ -1254,6 +1392,8 @@ var mainVm = new Vue({
                             reference: 'https://www.youtube.com/watch?v=eSITioQT3NU',
                             connection: false,
                             bigConnection: false,
+                            connectionCheck:false,
+                            bigConnectionCheck: false,
                             double: true,
                             subtotalPoints: 0,
                             groupIV: false
@@ -1270,6 +1410,8 @@ var mainVm = new Vue({
                             reference: 'https://www.youtube.com/watch?v=sTfbicZoE8g',
                             connection: false,
                             bigConnection: false,
+                            connectionCheck:false,
+                            bigConnectionCheck: false,
                             double: false,
                             subtotalPoints: 0,
                             groupIV: false
@@ -1286,6 +1428,8 @@ var mainVm = new Vue({
                             reference: 'https://www.youtube.com/watch?v=bPxncXWWu7o',
                             connection: false,
                             bigConnection: false,
+                            connectionCheck:false,
+                            bigConnectionCheck: false,
                             double: true,
                             subtotalPoints: 0,
                             groupIV: false
@@ -1311,6 +1455,8 @@ var mainVm = new Vue({
                             reference: 'https://www.youtube.com/watch?v=WD1h2bSH1eY',
                             connection: false,
                             bigConnection: false,
+                            connectionCheck:false,
+                            bigConnectionCheck: false,
                             double: false,
                             subtotalPoints: 0,
                             groupIV: false
@@ -1328,6 +1474,8 @@ var mainVm = new Vue({
                             reference: 'https://www.youtube.com/watch?v=rMle2G5AOdQ',
                             connection: false,
                             bigConnection: false,
+                            connectionCheck:false,
+                            bigConnectionCheck: false,
                             double: false,
                             subtotalPoints: 0,
                             groupIV: false
@@ -1344,6 +1492,8 @@ var mainVm = new Vue({
                             reference: 'https://www.youtube.com/watch?v=TZTevhiE5BI',
                             connection: false,
                             bigConnection: false,
+                            connectionCheck:false,
+                            bigConnectionCheck: false,
                             double: false,
                             subtotalPoints: 0,
                             groupIV: false
@@ -1360,6 +1510,8 @@ var mainVm = new Vue({
                             reference: 'https://www.youtube.com/watch?v=8KtmqP3Ouq4',
                             connection: false,
                             bigConnection: false,
+                            connectionCheck:false,
+                            bigConnectionCheck: false,
                             double: false,
                             subtotalPoints: 0,
                             groupIV: false
@@ -1376,6 +1528,8 @@ var mainVm = new Vue({
                             reference: 'https://www.youtube.com/watch?v=jzVIICSVLdM',
                             connection: false,
                             bigConnection: false,
+                            connectionCheck:false,
+                            bigConnectionCheck: false,
                             double: false,
                             subtotalPoints: 0,
                             groupIV: false
@@ -1397,6 +1551,8 @@ var mainVm = new Vue({
                             reference: 'https://www.youtube.com/watch?v=3v0rgdehz3k',
                             connection: false,
                             bigConnection: false,
+                            connectionCheck:false,
+                            bigConnectionCheck: false,
                             double: false,
                             subtotalPoints: 0,
                             groupIV: false
@@ -1413,6 +1569,8 @@ var mainVm = new Vue({
                             reference: 'https://www.youtube.com/watch?v=8Dau9AJsP2U',
                             connection: false,
                             bigConnection: false,
+                            connectionCheck:false,
+                            bigConnectionCheck: false,
                             double: false,
                             subtotalPoints: 0,
                             groupIV: false
@@ -1429,6 +1587,8 @@ var mainVm = new Vue({
                             reference: 'https://www.youtube.com/watch?v=xTgRpkpapuI',
                             connection: false,
                             bigConnection: false,
+                            connectionCheck:false,
+                            bigConnectionCheck: false,
                             double: false,
                             subtotalPoints: 0,
                             groupIV: false
@@ -1445,6 +1605,8 @@ var mainVm = new Vue({
                             reference: 'https://www.youtube.com/watch?v=0um2RsXyUyg',
                             connection: false,
                             bigConnection: false,
+                            connectionCheck:false,
+                            bigConnectionCheck: false,
                             double: false,
                             subtotalPoints: 0,
                             groupIV: false
@@ -1461,6 +1623,8 @@ var mainVm = new Vue({
                             reference: 'https://www.youtube.com/watch?v=JsLvr4D1AwU',
                             connection: false,
                             bigConnection: false,
+                            connectionCheck:false,
+                            bigConnectionCheck: false,
                             double: false,
                             subtotalPoints: 0,
                             groupIV: false
@@ -1477,6 +1641,8 @@ var mainVm = new Vue({
                             reference: 'No Video Available',
                             connection: false,
                             bigConnection: false,
+                            connectionCheck:false,
+                            bigConnectionCheck: false,
                             double: false,
                             subtotalPoints: 0,
                             groupIV: false
@@ -1498,6 +1664,8 @@ var mainVm = new Vue({
                             reference: 'https://www.youtube.com/watch?v=f2C6UexLu8A',
                             connection: false,
                             bigConnection: false,
+                            connectionCheck:false,
+                            bigConnectionCheck: false,
                             double: true,
                             subtotalPoints: 0,
                             groupIV: false
@@ -1514,6 +1682,8 @@ var mainVm = new Vue({
                             reference: 'https://www.youtube.com/watch?v=kEwVLRqHRA8',
                             connection: false,
                             bigConnection: false,
+                            connectionCheck:false,
+                            bigConnectionCheck: false,
                             double: true,
                             subtotalPoints: 0,
                             groupIV: false
@@ -1530,6 +1700,8 @@ var mainVm = new Vue({
                             reference: 'https://www.youtube.com/watch?v=G55M_P35xSA',
                             connection: false,
                             bigConnection: false,
+                            connectionCheck:false,
+                            bigConnectionCheck: false,
                             double: false,
                             subtotalPoints: 0,
                             groupIV: false
@@ -1546,6 +1718,8 @@ var mainVm = new Vue({
                             reference: 'https://www.youtube.com/watch?v=hpsgwGvBdW8&t=12s',
                             connection: false,
                             bigConnection: false,
+                            connectionCheck:false,
+                            bigConnectionCheck: false,
                             double: false,
                             subtotalPoints: 0,
                             groupIV: false
@@ -1567,6 +1741,8 @@ var mainVm = new Vue({
                             reference: 'https://www.youtube.com/watch?v=RKuCY_I9HQs',
                             connection: false,
                             bigConnection: false,
+                            connectionCheck:false,
+                            bigConnectionCheck: false,
                             double: true,
                             subtotalPoints: 0,
                             groupIV: false
@@ -1583,6 +1759,8 @@ var mainVm = new Vue({
                             reference: 'https://www.youtube.com/watch?v=E_c-Dylz9aI',
                             connection: false,
                             bigConnection: false,
+                            connectionCheck:false,
+                            bigConnectionCheck: false,
                             double: true,
                             subtotalPoints: 0,
                             groupIV: false
@@ -1599,6 +1777,8 @@ var mainVm = new Vue({
                             reference: 'https://www.youtube.com/watch?v=2AMx2podVhM',
                             connection: false,
                             bigConnection: false,
+                            connectionCheck:false,
+                            bigConnectionCheck: false,
                             double: false,
                             subtotalPoints: 0,
                             groupIV: false
@@ -1615,6 +1795,8 @@ var mainVm = new Vue({
                             reference: 'https://www.youtube.com/watch?v=z805keIFnV4',
                             connection: false,
                             bigConnection: false,
+                            connectionCheck:false,
+                            bigConnectionCheck: false,
                             double: false,
                             subtotalPoints: 0,
                             groupIV: false
@@ -1631,6 +1813,8 @@ var mainVm = new Vue({
                             reference: 'https://www.youtube.com/watch?v=1USTwc5lD6s',
                             connection: false,
                             bigConnection: false,
+                            connectionCheck:false,
+                            bigConnectionCheck: false,
                             double: true,
                             subtotalPoints: 0,
                             groupIV: false
@@ -1652,6 +1836,8 @@ var mainVm = new Vue({
                             reference: 'https://www.youtube.com/watch?v=zlj2n97OjO4',
                             connection: false,
                             bigConnection: false,
+                            connectionCheck:false,
+                            bigConnectionCheck: false,
                             double: true,
                             subtotalPoints: 0,
                             groupIV: false
@@ -1668,6 +1854,8 @@ var mainVm = new Vue({
                             reference: 'https://www.youtube.com/watch?v=KPTv7BSD5ts',
                             connection: false,
                             bigConnection: false,
+                            connectionCheck:false,
+                            bigConnectionCheck: false,
                             double: true,
                             subtotalPoints: 0,
                             groupIV: false
@@ -1684,6 +1872,8 @@ var mainVm = new Vue({
                             reference: 'https://www.youtube.com/watch?v=KPTv7BSD5ts',
                             connection: false,
                             bigConnection: false,
+                            connectionCheck:false,
+                            bigConnectionCheck: false,
                             double: false,
                             subtotalPoints: 0,
                             groupIV: false
@@ -1700,6 +1890,8 @@ var mainVm = new Vue({
                             reference: 'https://www.youtube.com/watch?v=uSp8ysQhBBM',
                             connection: false,
                             bigConnection: false,
+                            connectionCheck:false,
+                            bigConnectionCheck: false,
                             double: true,
                             subtotalPoints: 0,
                             groupIV: false
@@ -1716,6 +1908,8 @@ var mainVm = new Vue({
                             reference: 'https://www.youtube.com/watch?v=vQilnlEoP6g',
                             connection: false,
                             bigConnection: false,
+                            connectionCheck:false,
+                            bigConnectionCheck: false,
                             double: true,
                             subtotalPoints: 0,
                             groupIV: false
@@ -1732,6 +1926,8 @@ var mainVm = new Vue({
                             reference: 'Full twisting double layout mens floor',
                             connection: false,
                             bigConnection: false,
+                            connectionCheck:false,
+                            bigConnectionCheck: false,
                             double: true,
                             subtotalPoints: 0,
                             groupIV: false
@@ -1753,6 +1949,8 @@ var mainVm = new Vue({
                             reference: 'https://www.youtube.com/watch?v=2yuAn-OwdeA',
                             connection: false,
                             bigConnection: false,
+                            connectionCheck:false,
+                            bigConnectionCheck: false,
                             double: true,
                             subtotalPoints: 0,
                             groupIV: false
@@ -1769,6 +1967,8 @@ var mainVm = new Vue({
                             reference: 'https://www.youtube.com/watch?v=p5d_esUdrjo',
                             connection: false,
                             bigConnection: false,
+                            connectionCheck:false,
+                            bigConnectionCheck: false,
                             double: false,
                             subtotalPoints: 0,
                             groupIV: false
@@ -1785,6 +1985,8 @@ var mainVm = new Vue({
                             reference: 'https://www.youtube.com/watch?v=yzDL_rBOj_4',
                             connection: false,
                             bigConnection: false,
+                            connectionCheck:false,
+                            bigConnectionCheck: false,
                             double: true,
                             subtotalPoints: 0,
                             groupIV: false
@@ -1801,6 +2003,8 @@ var mainVm = new Vue({
                             reference: 'https://www.youtube.com/watch?v=KPTv7BSD5ts',
                             connection: false,
                             bigConnection: false,
+                            connectionCheck:false,
+                            bigConnectionCheck: false,
                             double: true,
                             subtotalPoints: 0,
                             groupIV: false
@@ -1817,6 +2021,8 @@ var mainVm = new Vue({
                             reference: 'https://www.youtube.com/watch?v=4MyCbj8hocQ',
                             connection: false,
                             bigConnection: false,
+                            connectionCheck:false,
+                            bigConnectionCheck: false,
                             double: true,
                             subtotalPoints: 0,
                             groupIV: false
@@ -1838,6 +2044,8 @@ var mainVm = new Vue({
                             reference: 'https://www.youtube.com/watch?v=_cTTdJxsgAI',
                             connection: false,
                             bigConnection: false,
+                            connectionCheck:false,
+                            bigConnectionCheck: false,
                             double: true,
                             subtotalPoints: 0,
                             groupIV: false
@@ -1854,6 +2062,8 @@ var mainVm = new Vue({
                             reference: 'https://www.youtube.com/watch?v=_cTTdJxsgAI',
                             connection: false,
                             bigConnection: false,
+                            connectionCheck:false,
+                            bigConnectionCheck: false,
                             double: true,
                             subtotalPoints: 0,
                             groupIV: false
@@ -1875,6 +2085,8 @@ var mainVm = new Vue({
                             reference: 'https://www.youtube.com/watch?v=of68F9RLt5Y',
                             connection: false,
                             bigConnection: false,
+                            connectionCheck:false,
+                            bigConnectionCheck: false,
                             double: true,
                             subtotalPoints: 0,
                             groupIV: false
@@ -1891,6 +2103,8 @@ var mainVm = new Vue({
                             reference: 'https://www.youtube.com/watch?v=pTiPZmp_drI',
                             connection: false,
                             bigConnection: false,
+                            connectionCheck:false,
+                            bigConnectionCheck: false,
                             double: true,
                             subtotalPoints: 0,
                             groupIV: false
@@ -2568,6 +2782,17 @@ var mainVm = new Vue({
         //             }, 
 
     },
+    updated() {
+        // ensure that the bootstrap tooltips are being activated on the elements that we want them on by attatching a new one each time the page is updated
+        this.$nextTick(function () { //$nextTick is built into vue, and reuns after the lifecycle method it is contained in
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    },
+    created() {
+        $.get('/select', function(data) {
+            mainVm.selections = data
+        })
+    },
     methods: {
         select: function(event, skill) {
             event.preventDefault()
@@ -2625,6 +2850,23 @@ var mainVm = new Vue({
             console.log(selection)
             $.post('/deleteSelection', { id: selection._id }, function(data) {
                 // console.log('$POST REMOVE', data)
+                mainVm.checked                  =false
+                mainVm.bigChecked               =false
+                mainVm.subStartValue            =0
+                mainVm.skillTotalPoints         =0
+                mainVm.decimalStartValue        =0
+                mainVm.totalBonus               = 0
+                mainVm.bonusPoints              = []
+                mainVm.skillNumberPoints        = 0
+                mainVm.selections               = []
+                mainVm.totalPoints              = []
+                mainVm.startValue               = 0
+                mainVm.floor.groupICompleted    = false
+                mainVm.floor.groupIICompleted   = false
+                mainVm.floor.groupIIICompleted  = false
+                mainVm.floor.groupIVCompleted   = false
+                mainVm.floor.doubleRequirement  = false
+
                 mainVm.getFreshData()
             })
         },
@@ -2654,27 +2896,53 @@ var mainVm = new Vue({
             }
         },
         calculated: function() {
+            this.checked()
+            if (this.selections.length === 10) {
+                for (var i = 0; i < this.bonusPoints.length; i++) {
+                    this.totalBonus += this.bonusPoints[i]
+                    console.log('bonus', this.totalBonus)
+                }
+                for (var i = 0; i < this.selections.length; i++) {
+                    this.skillTotalPoints = this.selections[i].valuePoints
+                    this.totalPoints.push(this.skillTotalPoints)
+                    console.log('skillTotalPoints', this.skillTotalPoints)
+                    console.log('totalPoints', this.totalPoints)
+                }
+                for (var i = 0; i < this.totalPoints.length; i++) {
+                    this.subStartValue += this.totalPoints[i]
+                    console.log('subStartValue', this.subStartValue)
+                }
+                this.decimalStartValue = this.subStartValue + this.floor.group1.groupPoints + this.floor.group2.groupPoints + this.floor.group3.groupPoints + this.floor.group4.groupPoints + this.skillNumberPoints + this.deduction + this.totalBonus
 
-            for (var i = 0; i < this.bonusPoints.length; i++) {
-                this.totalBonus += this.bonusPoints[i]
-                console.log('bonus', this.totalBonus)
+                this.startValue = Math.round(100 * this.decimalStartValue) / 100
+            } else {
+                alert ('please include 10 skills before calculating the Start Value')
             }
-            for (var i = 0; i < this.selections.length; i++) {
-                this.skillTotalPoints = this.selections[i].valuePoints
-                this.totalPoints.push(this.skillTotalPoints)
-                console.log('skillTotalPoints', this.skillTotalPoints)
-                console.log('totalPoints', this.totalPoints)
-            }
-            for (var i = 0; i < this.totalPoints.length; i++) {
-                this.subStartValue += this.totalPoints[i]
-                console.log('subStartValue', this.subStartValue)
-            }
-            this.decimalStartValue = this.subStartValue + this.floor.group1.groupPoints + this.floor.group2.groupPoints + this.floor.group3.groupPoints + this.floor.group4.groupPoints + this.skillNumberPoints + this.deduction + this.totalBonus
+        },
 
-            this.startValue = Math.round(100 * this.decimalStartValue) / 100
+        newRoutine: function(){
+            this.selections = []
+            mainVm.subStartValue            =0
+            mainVm.skillTotalPoints         =0
+            mainVm.decimalStartValue        =0
+            mainVm.totalBonus               = 0
+            mainVm.bonusPoints              = []
+            mainVm.skillNumberPoints        = 0
+            mainVm.selections               = []
+            mainVm.totalPoints              = []
+            mainVm.startValue               = 0
+            mainVm.floor.groupICompleted    = false
+            mainVm.floor.groupIICompleted   = false
+            mainVm.floor.groupIIICompleted  = false
+            mainVm.floor.groupIVCompleted   = false
+            mainVm.floor.doubleRequirement  = false
+
+            $.post('/deleteAll', function(data) {
+                console.log(data) // details about deletion
+            })
+            this.getFreshData()
         },
         
-
         color: function(value) {
             if (value === 'A') {
                 return 'red'
@@ -2745,322 +3013,290 @@ var mainVm = new Vue({
                 return .5
             }
         },
+        checked: function() {
+            var bonus = 0
+            for (var i = 1; i < this.selections.length; i++) {
+                if (this.selections[i].connectionCheck){
+                    bonus = .1
+                    mainVm.bonusPoints.push(bonus)
+                } else if (this.selections[i].bigConnectionCheck){
+                    bonus = .2
+                    mainVm.bonusPoints.push(bonus)
+                }
+            }
+        },
 //+
         connection: function() {
-            var bonus = 0
             for (var i = 1; i < this.selections.length; i++) {
                 if (this.selections[i].value === 'B' && this.selections[i - 1].value === 'D' && this.selections[i].group !== 'Group I' && this.selections[i-1].group !== 'Group I' && this.selections[i].group === this.selections[i-1].group) {
                     console.log('connection function running')
                     this.selections[i].connection = true
                     this.selections[i - 1].connection = false
-                    bonus = .1
-                    mainVm.bonusPoints.push(bonus)
+                    
                 }
                 if (this.selections[i].value === 'B' && this.selections[i - 1].value === 'E' && this.selections[i].group !== 'Group I' && this.selections[i-1].group !== 'Group I' && this.selections[i].group === this.selections[i-1].group) {
                     console.log('connection function running')
                     this.selections[i].connection = true
                     this.selections[i - 1].connection = false
-                    bonus = .1
-                    mainVm.bonusPoints.push(bonus)
+                    
                 }
                 if (this.selections[i].value === 'B' && this.selections[i - 1].value === 'F' && this.selections[i].group !== 'Group I' && this.selections[i-1].group !== 'Group I' && this.selections[i].group === this.selections[i-1].group) {
                     console.log('connection function running')
                     this.selections[i].connection = true
                     this.selections[i - 1].connection = false
-                    bonus = .1
-                    mainVm.bonusPoints.push(bonus)
+                    
                 }
                 if (this.selections[i].value === 'B' && this.selections[i - 1].value === 'G' && this.selections[i].group !== 'Group I' && this.selections[i-1].group !== 'Group I' && this.selections[i].group === this.selections[i-1].group) {
                     console.log('connection function running')
                     this.selections[i].connection = true
                     this.selections[i - 1].connection = false
-                    bonus = .1
-                    mainVm.bonusPoints.push(bonus)
+                    
                 }
                 if (this.selections[i].value === 'B' && this.selections[i - 1].value === 'H' && this.selections[i].group !== 'Group I' && this.selections[i-1].group !== 'Group I' && this.selections[i].group === this.selections[i-1].group) {
                     console.log('connection function running')
                     this.selections[i].connection = true
                     this.selections[i - 1].connection = false
-                    bonus = .1
-                    mainVm.bonusPoints.push(bonus)
+                    
                 }
                 if (this.selections[i].value === 'C' && this.selections[i - 1].value === 'D' && this.selections[i].group !== 'Group I' && this.selections[i-1].group !== 'Group I' && this.selections[i].group === this.selections[i-1].group) {
                     console.log('connection function running')
                     this.selections[i].connection = true
                     this.selections[i - 1].connection = false
-                    bonus = .1
-                    mainVm.bonusPoints.push(bonus)
+                    
                 }
                 if (this.selections[i].value === 'C' && this.selections[i - 1].value === 'E' && this.selections[i].group !== 'Group I' && this.selections[i-1].group !== 'Group I' && this.selections[i].group === this.selections[i-1].group) {
                     console.log('connection function running')
                     this.selections[i].connection = true
                     this.selections[i - 1].connection = false
-                    bonus = .1
-                    mainVm.bonusPoints.push(bonus)
+                    
                 }
                 if (this.selections[i].value === 'C' && this.selections[i - 1].value === 'F' && this.selections[i].group !== 'Group I' && this.selections[i-1].group !== 'Group I' && this.selections[i].group === this.selections[i-1].group) {
                     console.log('connection function running')
                     this.selections[i].connection = true
                     this.selections[i - 1].connection = false
-                    bonus = .1
-                    mainVm.bonusPoints.push(bonus)
+                    
                 }
                 if (this.selections[i].value === 'C' && this.selections[i - 1].value === 'G' && this.selections[i].group !== 'Group I' && this.selections[i-1].group !== 'Group I' && this.selections[i].group === this.selections[i-1].group) {
                     console.log('connection function running')
                     this.selections[i].connection = true
                     this.selections[i - 1].connection = false
-                    bonus = .1
-                    mainVm.bonusPoints.push(bonus)
+                    
                 }
                 if (this.selections[i].value === 'C' && this.selections[i - 1].value === 'H' && this.selections[i].group !== 'Group I' && this.selections[i-1].group !== 'Group I' && this.selections[i].group === this.selections[i-1].group) {
                     console.log('connection function running')
                     this.selections[i].connection = true
                     this.selections[i - 1].connection = false
-                    bonus = .1
-                    mainVm.bonusPoints.push(bonus)
+                    
                 }
                 if (this.selections[i].value === 'D' && this.selections[i - 1].value === 'B' && this.selections[i].group !== 'Group I' && this.selections[i-1].group !== 'Group I' && this.selections[i].group === this.selections[i-1].group) {
                     console.log('connection function running')
                     this.selections[i].connection = true
                     this.selections[i - 1].connection = false
-                    bonus = .1
-                    mainVm.bonusPoints.push(bonus)
+                    
                 }
                 if (this.selections[i].value === 'D' && this.selections[i - 1].value === 'C' && this.selections[i].group !== 'Group I' && this.selections[i-1].group !== 'Group I' && this.selections[i].group === this.selections[i-1].group) {
                     console.log('connection function running')
                     this.selections[i].connection = true
                     this.selections[i - 1].connection = false
-                    bonus = .1
-                    mainVm.bonusPoints.push(bonus)
+                    
                 }
                 if (this.selections[i].value === 'E' && this.selections[i - 1].value === 'B' && this.selections[i].group !== 'Group I' && this.selections[i-1].group !== 'Group I' && this.selections[i].group === this.selections[i-1].group) {
                     console.log('connection function running')
                     this.selections[i].connection = true
                     this.selections[i - 1].connection = false
-                    bonus = .1
-                    mainVm.bonusPoints.push(bonus)
+                    
                 }
                 if (this.selections[i].value === 'E' && this.selections[i - 1].value === 'C' && this.selections[i].group !== 'Group I' && this.selections[i-1].group !== 'Group I' && this.selections[i].group === this.selections[i-1].group) {
                     console.log('connection function running')
                     this.selections[i].connection = true
                     this.selections[i - 1].connection = false
-                    bonus = .1
-                    mainVm.bonusPoints.push(bonus)
+                    
                 }
                 if (this.selections[i].value === 'F' && this.selections[i - 1].value === 'B' && this.selections[i].group !== 'Group I' && this.selections[i-1].group !== 'Group I' && this.selections[i].group === this.selections[i-1].group) {
                     console.log('connection function running')
                     this.selections[i].connection = true
                     this.selections[i - 1].connection = false
-                    bonus = .1
-                    mainVm.bonusPoints.push(bonus)
+                    
                 }
                 if (this.selections[i].value === 'F' && this.selections[i - 1].value === 'C' && this.selections[i].group !== 'Group I' && this.selections[i-1].group !== 'Group I' && this.selections[i].group === this.selections[i-1].group) {
                     console.log('connection function running')
                     this.selections[i].connection = true
                     this.selections[i - 1].connection = false
-                    bonus = .1
-                    mainVm.bonusPoints.push(bonus)
+                    
                 }
                 if (this.selections[i].value === 'G' && this.selections[i - 1].value === 'B' && this.selections[i].group !== 'Group I' && this.selections[i-1].group !== 'Group I' && this.selections[i].group === this.selections[i-1].group) {
                     console.log('connection function running')
                     this.selections[i].connection = true
                     this.selections[i - 1].connection = false
-                    bonus = .1
-                    mainVm.bonusPoints.push(bonus)
+                    
                 }
                 if (this.selections[i].value === 'G' && this.selections[i - 1].value === 'C' && this.selections[i].group !== 'Group I' && this.selections[i-1].group !== 'Group I' && this.selections[i].group === this.selections[i-1].group) {
                     console.log('connection function running')
                     this.selections[i].connection = true
                     this.selections[i - 1].connection = false
-                    bonus = .1
-                    mainVm.bonusPoints.push(bonus)
+                    
                 }
                 if (this.selections[i].value === 'H' && this.selections[i - 1].value === 'B' && this.selections[i].group !== 'Group I' && this.selections[i-1].group !== 'Group I' && this.selections[i].group === this.selections[i-1].group) {
                     console.log('connection function running')
                     this.selections[i].connection = true
                     this.selections[i - 1].connection = false
-                    bonus = .1
-                    mainVm.bonusPoints.push(bonus)
+                    
                 }
                 if (this.selections[i].value === 'H' && this.selections[i - 1].value === 'C' && this.selections[i].group !== 'Group I' && this.selections[i-1].group !== 'Group I' && this.selections[i].group === this.selections[i-1].group) {
                     console.log('connection function running')
                     this.selections[i].connection = true
                     this.selections[i - 1].connection = false
-                    bonus = .1
-                    mainVm.bonusPoints.push(bonus)
+                    
                 }
                 if (this.selections[i].value === 'D' && this.selections[i - 1].value === 'D' && this.selections[i].group !== 'Group I' && this.selections[i-1].group !== 'Group I' && this.selections[i].group === this.selections[i-1].group) {
                     console.log('connection function running')
                     this.selections[i].bigConnection = true
                     this.selections[i - 1].bigConnection = false
-                    bonus = .2
-                    mainVm.bonusPoints.push(bonus)
+                    
                 }
                 if (this.selections[i].value === 'D' && this.selections[i - 1].value === 'E' && this.selections[i].group !== 'Group I' && this.selections[i-1].group !== 'Group I' && this.selections[i].group === this.selections[i-1].group) {
                     console.log('connection function running')
                     this.selections[i].bigConnection = true
                     this.selections[i - 1].bigConnection = false
-                    bonus = .2
-                    mainVm.bonusPoints.push(bonus)
+                    
                 }
                 if (this.selections[i].value === 'D' && this.selections[i - 1].value === 'F' && this.selections[i].group !== 'Group I' && this.selections[i-1].group !== 'Group I' && this.selections[i].group === this.selections[i-1].group) {
                     console.log('connection function running')
                     this.selections[i].bigConnection = true
                     this.selections[i - 1].bigConnection = false
-                    bonus = .2
-                    mainVm.bonusPoints.push(bonus)
+                    
                 }
                 if (this.selections[i].value === 'D' && this.selections[i - 1].value === 'G' && this.selections[i].group !== 'Group I' && this.selections[i-1].group !== 'Group I' && this.selections[i].group === this.selections[i-1].group) {
                     console.log('connection function running')
                     this.selections[i].bigConnection = true
                     this.selections[i - 1].bigConnection = false
-                    bonus = .2
-                    mainVm.bonusPoints.push(bonus)
+                    
                 }
                 if (this.selections[i].value === 'D' && this.selections[i - 1].value === 'H' && this.selections[i].group !== 'Group I' && this.selections[i-1].group !== 'Group I' && this.selections[i].group === this.selections[i-1].group) {
                     console.log('connection function running')
                     this.selections[i].bigConnection = true
                     this.selections[i - 1].bigConnection = false
-                    bonus = .2
-                    mainVm.bonusPoints.push(bonus)
+                    
                 }
                 if (this.selections[i].value === 'E' && this.selections[i - 1].value === 'D' && this.selections[i].group !== 'Group I' && this.selections[i-1].group !== 'Group I' && this.selections[i].group === this.selections[i-1].group) {
                     console.log('connection function running')
                     this.selections[i].bigConnection = true
                     this.selections[i - 1].bigConnection = false
-                    bonus = .2
-                    mainVm.bonusPoints.push(bonus)
+                    
                 }
                 if (this.selections[i].value === 'E' && this.selections[i - 1].value === 'E' && this.selections[i].group !== 'Group I' && this.selections[i-1].group !== 'Group I' && this.selections[i].group === this.selections[i-1].group) {
                     console.log('connection function running')
                     this.selections[i].bigConnection = true
                     this.selections[i - 1].bigConnection = false
-                    bonus = .2
-                    mainVm.bonusPoints.push(bonus)
+                    
                 }
                 if (this.selections[i].value === 'E' && this.selections[i - 1].value === 'F' && this.selections[i].group !== 'Group I' && this.selections[i-1].group !== 'Group I' && this.selections[i].group === this.selections[i-1].group) {
                     console.log('connection function running')
                     this.selections[i].bigConnection = true
                     this.selections[i - 1].bigConnection = false
-                    bonus = .2
-                    mainVm.bonusPoints.push(bonus)
+                    
                 }
                 if (this.selections[i].value === 'E' && this.selections[i - 1].value === 'G' && this.selections[i].group !== 'Group I' && this.selections[i-1].group !== 'Group I' && this.selections[i].group === this.selections[i-1].group) {
                     console.log('connection function running')
                     this.selections[i].bigConnection = true
                     this.selections[i - 1].bigConnection = false
-                    bonus = .2
-                    mainVm.bonusPoints.push(bonus)
+                    
                 }
                 if (this.selections[i].value === 'E' && this.selections[i - 1].value === 'H' && this.selections[i].group !== 'Group I' && this.selections[i-1].group !== 'Group I' && this.selections[i].group === this.selections[i-1].group) {
                     console.log('connection function running')
                     this.selections[i].bigConnection = true
                     this.selections[i - 1].bigConnection = false
-                    bonus = .2
-                    mainVm.bonusPoints.push(bonus)
+                    
                 }
                 if (this.selections[i].value === 'F' && this.selections[i - 1].value === 'D' && this.selections[i].group !== 'Group I' && this.selections[i-1].group !== 'Group I' && this.selections[i].group === this.selections[i-1].group) {
                     console.log('connection function running')
                     this.selections[i].bigConnection = true
                     this.selections[i - 1].bigConnection = false
-                    bonus = .2
-                    mainVm.bonusPoints.push(bonus)
+                    
                 }
                 if (this.selections[i].value === 'F' && this.selections[i - 1].value === 'E' && this.selections[i].group !== 'Group I' && this.selections[i-1].group !== 'Group I' && this.selections[i].group === this.selections[i-1].group) {
                     console.log('connection function running')
                     this.selections[i].bigConnection = true
                     this.selections[i - 1].bigConnection = false
-                    bonus = .2
-                    mainVm.bonusPoints.push(bonus)
+                    
                 }
                 if (this.selections[i].value === 'F' && this.selections[i - 1].value === 'F' && this.selections[i].group !== 'Group I' && this.selections[i-1].group !== 'Group I' && this.selections[i].group === this.selections[i-1].group) {
                     console.log('connection function running')
                     this.selections[i].bigConnection = true
                     this.selections[i - 1].bigConnection = false
-                    bonus = .2
-                    mainVm.bonusPoints.push(bonus)
+                    
                 }
                 if (this.selections[i].value === 'F' && this.selections[i - 1].value === 'G' && this.selections[i].group !== 'Group I' && this.selections[i-1].group !== 'Group I' && this.selections[i].group === this.selections[i-1].group) {
                     console.log('connection function running')
                     this.selections[i].bigConnection = true
                     this.selections[i - 1].bigConnection = false
-                    bonus = .2
-                    mainVm.bonusPoints.push(bonus)
+                    
                 }
                 if (this.selections[i].value === 'G' && this.selections[i - 1].value === 'D' && this.selections[i].group !== 'Group I' && this.selections[i-1].group !== 'Group I' && this.selections[i].group === this.selections[i-1].group) {
                     console.log('connection function running')
                     this.selections[i].bigConnection = true
                     this.selections[i - 1].bigConnection = false
-                    bonus = .2
-                    mainVm.bonusPoints.push(bonus)
+                    
                 }
                 if (this.selections[i].value === 'G' && this.selections[i - 1].value === 'E' && this.selections[i].group !== 'Group I' && this.selections[i-1].group !== 'Group I' && this.selections[i].group === this.selections[i-1].group) {
                     console.log('connection function running')
                     this.selections[i].bigConnection = true
                     this.selections[i - 1].bigConnection = false
-                    bonus = .2
-                    mainVm.bonusPoints.push(bonus)
+                    
                 }
                 if (this.selections[i].value === 'G' && this.selections[i - 1].value === 'F' && this.selections[i].group !== 'Group I' && this.selections[i-1].group !== 'Group I' && this.selections[i].group === this.selections[i-1].group) {
                     console.log('connection function running')
                     this.selections[i].bigConnection = true
                     this.selections[i - 1].bigConnection = false
-                    bonus = .2
-                    mainVm.bonusPoints.push(bonus)
+                    
                 }
                 if (this.selections[i].value === 'G' && this.selections[i - 1].value === 'G' && this.selections[i].group !== 'Group I' && this.selections[i-1].group !== 'Group I' && this.selections[i].group === this.selections[i-1].group) {
                     console.log('connection function running')
                     this.selections[i].bigConnection = true
                     this.selections[i - 1].bigConnection = false
-                    bonus = .2
-                    mainVm.bonusPoints.push(bonus)
+                    
                 }
                 if (this.selections[i].value === 'G' && this.selections[i - 1].value === 'H' && this.selections[i].group !== 'Group I' && this.selections[i-1].group !== 'Group I' && this.selections[i].group === this.selections[i-1].group) {
                     console.log('connection function running')
                     this.selections[i].bigConnection = true
                     this.selections[i - 1].bigConnection = false
-                    bonus = .2
-                    mainVm.bonusPoints.push(bonus)
+                    
                 }
                 if (this.selections[i].value === 'H' && this.selections[i - 1].value === 'D' && this.selections[i].group !== 'Group I' && this.selections[i-1].group !== 'Group I' && this.selections[i].group === this.selections[i-1].group) {
                     console.log('connection function running')
                     this.selections[i].bigConnection = true
                     this.selections[i - 1].bigConnection = false
-                    bonus = .2
-                    mainVm.bonusPoints.push(bonus)
+                    
                 }
                 if (this.selections[i].value === 'H' && this.selections[i - 1].value === 'E' && this.selections[i].group !== 'Group I' && this.selections[i-1].group !== 'Group I' && this.selections[i].group === this.selections[i-1].group) {
                     console.log('connection function running')
                     this.selections[i].bigConnection = true
                     this.selections[i - 1].bigConnection = false
-                    bonus = .2
-                    mainVm.bonusPoints.push(bonus)
+                    
                 } 
                 if (this.selections[i].value === 'H' && this.selections[i - 1].value === 'F' && this.selections[i].group !== 'Group I' && this.selections[i-1].group !== 'Group I' && this.selections[i].group === this.selections[i-1].group) {
                     console.log('connection function running')
                     this.selections[i].bigConnection = true
                     this.selections[i - 1].bigConnection = false
-                    bonus = .2
-                    mainVm.bonusPoints.push(bonus)
+                    
                 }
                 if (this.selections[i].value === 'H' && this.selections[i - 1].value === 'G' && this.selections[i].group !== 'Group I' && this.selections[i-1].group !== 'Group I' && this.selections[i].group === this.selections[i-1].group) {
                     console.log('connection function running')
                     this.selections[i].bigConnection = true
                     this.selections[i - 1].bigConnection = false
-                    bonus = .2
-                    mainVm.bonusPoints.push(bonus)
+                    
                 }
                 if (this.selections[i].value === 'H' && this.selections[i - 1].value === 'E' && this.selections[i].group !== 'Group I' && this.selections[i-1].group !== 'Group I' && this.selections[i].group === this.selections[i-1].group) {
                     console.log('connection function running')
                     this.selections[i].bigConnection = true
                     this.selections[i - 1].bigConnection = false
-                    bonus = .2
-                    mainVm.bonusPoints.push(bonus)
+                    
                 }
             }
         }
     },
-//+
+//+ 
+
     computed: {
         getFreshData: function(event) {
             $.get('/select', function(data) {

@@ -26,7 +26,7 @@
                     <div class="row">
                         <div class="px-0 col-lg-1"></div>                
                         <div class=" px-0 width100 borders col-lg-10">
-                            <div class="borders-bottom borders name">{{selection.name}}</div>
+                            <div data-toggle="tooltip" data-placement="top" v-bind:title="selection.description" class="borders-bottom borders name">{{selection.name}}</div>
                             <div class="borders m-space"></div>
                             <div class="white p-1 borders radius pic"><img width="100%" v-bind:src="selection.pic"></div>
                             <div class="borders m-space"></div>
@@ -50,7 +50,7 @@
                                     <div class="borders m-space"></div>
                                     <div class="mx-0 row">
                                         <div class="opacity radius box-height px-0 borders col-lg-5">
- <!--skill number-->                         <div class="m-text greenText pos value">1</div>
+ <!--skill number-->                         <div class="m-text greenText pos value">{{index + 1}}</div>
                                         </div> 
                                         <div class="box-height px-0 borders col-lg-2"></div>
                                         <div class="opacity radius box-height px-0 borders col-lg-5">
@@ -62,8 +62,8 @@
                                     <div class="borders m-space"></div>
                                     <div class="mx-0 row">
                                         <div class="radius box-height px-0 borders col-lg-5 opacity">
-                                            <div v-if="groupOneRequirement" class="greenText m-text pos value">G I</div>
-                                            <div v-else class="m-text pos value">GI</div>
+                                            <div data-toggle="tooltip" data-placement="top" title="Non-Acrobatic Skills" v-if="groupOneRequirement" class="greenText m-text pos value">G I</div>
+                                            <div data-toggle="tooltip" data-placement="top" title="Non-Acrobatic Skills" v-else class="m-text pos value">GI</div>
                                         </div> 
                                         <div class="box-height px-0 borders col-lg-2"></div>
                                         <div class="radius box-height px-0 borders col-lg-5 opacity">
@@ -74,8 +74,8 @@
                                     <div class="borders sm-space"></div>
                                     <div class="mx-0 row">
                                         <div class="radius box-height px-0 borders col-lg-5 opacity">
-                                            <div v-if="groupTwoRequirement" class="greenText m-text pos value">GII</div>
-                                            <div v-else class="m-text pos value">GII</div>
+                                            <div data-toggle="tooltip" data-placement="top" title="Front Salto Skills" v-if="groupTwoRequirement" class="greenText m-text pos value">GII</div>
+                                            <div data-toggle="tooltip" data-placement="top" title="Front Salto Skills" v-else class="m-text pos value">GII</div>
                                         </div> 
                                         <div class="box-height px-0 borders col-lg-2"></div>
                                         <div class="radius box-height px-0 borders col-lg-5 opacity">
@@ -86,8 +86,8 @@
                                     <div class="borders sm-space"></div>
                                     <div class="mx-0 row">
                                         <div class="radius box-height px-0 borders col-lg-5 opacity">
-                                            <div v-if="groupThreeRequirement" class="greenText m-text pos value">GIII</div>
-                                            <div v-else class="m-text pos value">GIII</div>
+                                            <div data-toggle="tooltip" data-placement="top" title="Back Salto Skills" v-if="groupThreeRequirement" class="greenText m-text pos value">GIII</div>
+                                            <div data-toggle="tooltip" data-placement="top" title="Back Salto Skills" v-else class="m-text pos value">GIII</div>
                                         </div> 
                                         <div class="box-height px-0 borders col-lg-2"></div>
                                         <div class="radius box-height px-0 borders col-lg-5 opacity">
@@ -98,8 +98,8 @@
                                     <div class="borders sm-space"></div>
                                     <div class="mx-0 row">
                                         <div class="radius box-height px-0 borders col-lg-5 opacity">
-                                            <div v-if="groupFourRequirement" class="greenText m-text pos value">GIV</div>
-                                            <div v-else class="m-text pos value">GIV</div>
+                                            <div data-toggle="tooltip" data-placement="top" title="Dismount" v-if="groupFourRequirement" class="greenText m-text pos value">GIV</div>
+                                            <div data-toggle="tooltip" data-placement="top" title="Dismount" v-else class="m-text pos value">GIV</div>
                                         </div> 
                                         <div class="box-height px-0 borders col-lg-2"></div>
                                         <div class="radius box-height px-0 borders col-lg-5 opacity">
@@ -110,8 +110,8 @@
                                     <div class="borders sm-space"></div>
                                     <div class="mx-0 row">
                                         <div class="radius box-height px-0 borders col-lg-5 opacity">
-                                            <div v-if="doubleRequirement"  class="greenText m-text pos value">DBL</div>
-                                            <div v-else class="m-text pos value">DBL</div>
+                                            <div data-toggle="tooltip" data-placement="top" title="Double Flipping Skill" v-if="doubleRequirement"  class="greenText m-text pos value">DBL</div>
+                                            <div data-toggle="tooltip" data-placement="top" title="Double Flipping Skill" v-else class="m-text pos value">DBL</div>
                                         </div> 
                                         <div class="box-height px-0 borders col-lg-2"></div>
                                         <div class="radius box-height px-0 borders col-lg-5 opacity">
@@ -121,19 +121,19 @@
                                     </div>
                                     <div class="borders m-space"></div>
 <!--NOT WORKING connection-->
-                                    <div class="opacity rel box-height borders radius">
-                                        <form v-if="selection.connection" class="pos" action="/action_page.php">
-                                            <input type="checkbox" name="vehicle" value="Bike">CONNECTION
+                                    <div class=" opacity rel box-height borders radius">
+                                        <form v-if="selection.connection" class="element pos white-space" action="/action_page.php">
+                                            <input v-model="selection.connectionCheck" type="checkbox" name="vehicle" value="Bike">CONNECT
                                         </form>
-                                        <form v-else-if="selection.bigConnection" class="pos" action="/action_page.php">
-                                            <input type="checkbox" name="vehicle" value="Bike">CONNECTION
+                                        <form v-else-if="selection.bigConnection" class="element pos white-space" action="/action_page.php">
+                                            <input v-model="selection.bigConnectionCheck" type="checkbox" name="vehicle" value="Bike">CONNECT
                                         </form>
                                         <div v-else class="pos">CONNECTION</div>
                                     </div>
 
                                     <div class="borders m-space"></div>
                                     <div class="opacity rel box-height borders radius link">
-                                        <div class="videoLink pos"><a v-bind:href="selection.reference" target="_blank" class="whiteText" >VIDEO</a></div>
+                                        <div class="videoLink pos"><a v-bind:href="selection.reference" target="_blank" class="whiteText">VIDEO</a></div>
                                     </div>
                                     <div class="borders m-space"></div>
                                     <div class="opacity rel box-height borders radius link">
@@ -150,10 +150,27 @@
                 </div>
             </div>
             <br>
+            <div class="row">
+                <div class="col-lg-9"></div>
+                 <div class="padding-left-3 col-lg-3">
+                    <div>
+                        <button v-on:click="newRoutine" type="button" class="btn btn-danger">New Routine</button>
+                        <button v-on:click="calculated" type="button" class="btn btn-success">Calculate Start Value</button>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-lg-10"></div>
+                <div class="padding-left-3 col-lg-2">
+                    <div v-if="floor.groupIVCompleted" class="lg-text start-value">START VALUE:&nbsp;<b>{{startValue}}</b></div>
+                </div>
+            </div>
+            <br>
 
 
 
-                        <h2 class="px-2 row"> Group I: Non-Acrobatic Skill</h2>
+            <h2 class="px-2 row"> Group I: Non-Acrobatic Skill</h2>
             <h3 class="px-2 row red"></h3>
             <div id="accordion" role="tablist" aria-multiselectable="true">
                 <!-- Group 1 A -->
