@@ -1,6 +1,9 @@
 var mainVm = new Vue({
     el: '#app',
     data: {
+        // savedRoutine: [],
+        complete: false,
+        modalShow: false,
         subStartValue:0,
         skillTotalPoints:0,
         decimalStartValue:0,
@@ -2787,11 +2790,21 @@ var mainVm = new Vue({
         this.$nextTick(function () { //$nextTick is built into vue, and reuns after the lifecycle method it is contained in
             $('[data-toggle="tooltip"]').tooltip()
         })
+        if (this.complete && !this.modalShow) {
+            $('#connectionModal').modal('show')
+            this.modalShow = true
+        }
+
     },
     created() {
         $.get('/select', function(data) {
             mainVm.selections = data
         })
+
+        // $.get('/routine', function(data){
+        //     mainVm.savedRoutine = data
+        // })
+        
     },
     methods: {
         select: function(event, skill) {
@@ -2841,6 +2854,13 @@ var mainVm = new Vue({
                 }
             })
         },
+
+        // save: function(event, rountine){
+        //     $.post('/routine', { routine: this.selections }, function(data) {
+        //         console.log(data)
+        //     })
+        // },
+
         getFreshData: function(event) {
             $.get('/select', function(data) {
                 mainVm.selections = data
@@ -2848,26 +2868,26 @@ var mainVm = new Vue({
         },
         deleter: function(event, selection) {
             console.log(selection)
-            $.post('/deleteSelection', { id: selection._id }, function(data) {
+            $.post('/deleteSelection', { id: selection._id }, (data) => {
                 // console.log('$POST REMOVE', data)
-                mainVm.checked                  =false
-                mainVm.bigChecked               =false
-                mainVm.subStartValue            =0
-                mainVm.skillTotalPoints         =0
-                mainVm.decimalStartValue        =0
-                mainVm.totalBonus               = 0
-                mainVm.bonusPoints              = []
-                mainVm.skillNumberPoints        = 0
-                mainVm.selections               = []
-                mainVm.totalPoints              = []
-                mainVm.startValue               = 0
-                mainVm.floor.groupICompleted    = false
-                mainVm.floor.groupIICompleted   = false
-                mainVm.floor.groupIIICompleted  = false
-                mainVm.floor.groupIVCompleted   = false
-                mainVm.floor.doubleRequirement  = false
+                this.complete                 =false
+                this.modalShow                =false
+                this.subStartValue            =0
+                this.skillTotalPoints         =0
+                this.decimalStartValue        =0
+                this.totalBonus               = 0
+                this.bonusPoints              = []
+                this.skillNumberPoints        = 0
+                this.selections               = []
+                this.totalPoints              = []
+                this.startValue               = 0
+                this.floor.groupICompleted    = false
+                this.floor.groupIICompleted   = false
+                this.floor.groupIIICompleted  = false
+                this.floor.groupIVCompleted   = false
+                this.floor.doubleRequirement  = false
 
-                mainVm.getFreshData()
+                this.getFreshData()
             })
         },
 //skill Number points
@@ -2921,26 +2941,29 @@ var mainVm = new Vue({
         },
 
         newRoutine: function(){
+            this.complete                 =false
+            this.modalShow                =false
             this.selections = []
-            mainVm.subStartValue            =0
-            mainVm.skillTotalPoints         =0
-            mainVm.decimalStartValue        =0
-            mainVm.totalBonus               = 0
-            mainVm.bonusPoints              = []
-            mainVm.skillNumberPoints        = 0
-            mainVm.selections               = []
-            mainVm.totalPoints              = []
-            mainVm.startValue               = 0
-            mainVm.floor.groupICompleted    = false
-            mainVm.floor.groupIICompleted   = false
-            mainVm.floor.groupIIICompleted  = false
-            mainVm.floor.groupIVCompleted   = false
-            mainVm.floor.doubleRequirement  = false
+            this.subStartValue            =0
+            this.skillTotalPoints         =0
+            this.decimalStartValue        =0
+            this.totalBonus               = 0
+            this.bonusPoints              = []
+            this.skillNumberPoints        = 0
+            this.selections               = []
+            this.totalPoints              = []
+            this.startValue               = 0
+            this.floor.groupICompleted    = false
+            this.floor.groupIICompleted   = false
+            this.floor.groupIIICompleted  = false
+            this.floor.groupIVCompleted   = false
+            this.floor.doubleRequirement  = false
 
             $.post('/deleteAll', function(data) {
                 console.log(data) // details about deletion
+                this.getFreshData()
             })
-            this.getFreshData()
+            
         },
         
         color: function(value) {
@@ -3032,264 +3055,308 @@ var mainVm = new Vue({
                     console.log('connection function running')
                     this.selections[i].connection = true
                     this.selections[i - 1].connection = false
+                    this.complete = true
                     
                 }
                 if (this.selections[i].value === 'B' && this.selections[i - 1].value === 'E' && this.selections[i].group !== 'Group I' && this.selections[i-1].group !== 'Group I' && this.selections[i].group === this.selections[i-1].group) {
                     console.log('connection function running')
                     this.selections[i].connection = true
                     this.selections[i - 1].connection = false
+                    this.complete = true
                     
                 }
                 if (this.selections[i].value === 'B' && this.selections[i - 1].value === 'F' && this.selections[i].group !== 'Group I' && this.selections[i-1].group !== 'Group I' && this.selections[i].group === this.selections[i-1].group) {
                     console.log('connection function running')
                     this.selections[i].connection = true
                     this.selections[i - 1].connection = false
+                    this.complete = true
                     
                 }
                 if (this.selections[i].value === 'B' && this.selections[i - 1].value === 'G' && this.selections[i].group !== 'Group I' && this.selections[i-1].group !== 'Group I' && this.selections[i].group === this.selections[i-1].group) {
                     console.log('connection function running')
                     this.selections[i].connection = true
                     this.selections[i - 1].connection = false
+                    this.complete = true
                     
                 }
                 if (this.selections[i].value === 'B' && this.selections[i - 1].value === 'H' && this.selections[i].group !== 'Group I' && this.selections[i-1].group !== 'Group I' && this.selections[i].group === this.selections[i-1].group) {
                     console.log('connection function running')
                     this.selections[i].connection = true
                     this.selections[i - 1].connection = false
+                    this.complete = true
                     
                 }
                 if (this.selections[i].value === 'C' && this.selections[i - 1].value === 'D' && this.selections[i].group !== 'Group I' && this.selections[i-1].group !== 'Group I' && this.selections[i].group === this.selections[i-1].group) {
                     console.log('connection function running')
                     this.selections[i].connection = true
                     this.selections[i - 1].connection = false
+                    this.complete = true
                     
                 }
                 if (this.selections[i].value === 'C' && this.selections[i - 1].value === 'E' && this.selections[i].group !== 'Group I' && this.selections[i-1].group !== 'Group I' && this.selections[i].group === this.selections[i-1].group) {
                     console.log('connection function running')
                     this.selections[i].connection = true
                     this.selections[i - 1].connection = false
+                    this.complete = true
                     
                 }
                 if (this.selections[i].value === 'C' && this.selections[i - 1].value === 'F' && this.selections[i].group !== 'Group I' && this.selections[i-1].group !== 'Group I' && this.selections[i].group === this.selections[i-1].group) {
                     console.log('connection function running')
                     this.selections[i].connection = true
                     this.selections[i - 1].connection = false
+                    this.complete = true
                     
                 }
                 if (this.selections[i].value === 'C' && this.selections[i - 1].value === 'G' && this.selections[i].group !== 'Group I' && this.selections[i-1].group !== 'Group I' && this.selections[i].group === this.selections[i-1].group) {
                     console.log('connection function running')
                     this.selections[i].connection = true
                     this.selections[i - 1].connection = false
+                    this.complete = true
                     
                 }
                 if (this.selections[i].value === 'C' && this.selections[i - 1].value === 'H' && this.selections[i].group !== 'Group I' && this.selections[i-1].group !== 'Group I' && this.selections[i].group === this.selections[i-1].group) {
                     console.log('connection function running')
                     this.selections[i].connection = true
                     this.selections[i - 1].connection = false
+                    this.complete = true
                     
                 }
                 if (this.selections[i].value === 'D' && this.selections[i - 1].value === 'B' && this.selections[i].group !== 'Group I' && this.selections[i-1].group !== 'Group I' && this.selections[i].group === this.selections[i-1].group) {
                     console.log('connection function running')
                     this.selections[i].connection = true
                     this.selections[i - 1].connection = false
+                    this.complete = true
                     
                 }
                 if (this.selections[i].value === 'D' && this.selections[i - 1].value === 'C' && this.selections[i].group !== 'Group I' && this.selections[i-1].group !== 'Group I' && this.selections[i].group === this.selections[i-1].group) {
                     console.log('connection function running')
                     this.selections[i].connection = true
                     this.selections[i - 1].connection = false
+                    this.complete = true
                     
                 }
                 if (this.selections[i].value === 'E' && this.selections[i - 1].value === 'B' && this.selections[i].group !== 'Group I' && this.selections[i-1].group !== 'Group I' && this.selections[i].group === this.selections[i-1].group) {
                     console.log('connection function running')
                     this.selections[i].connection = true
                     this.selections[i - 1].connection = false
+                    this.complete = true
                     
                 }
                 if (this.selections[i].value === 'E' && this.selections[i - 1].value === 'C' && this.selections[i].group !== 'Group I' && this.selections[i-1].group !== 'Group I' && this.selections[i].group === this.selections[i-1].group) {
                     console.log('connection function running')
                     this.selections[i].connection = true
                     this.selections[i - 1].connection = false
+                    this.complete = true
                     
                 }
                 if (this.selections[i].value === 'F' && this.selections[i - 1].value === 'B' && this.selections[i].group !== 'Group I' && this.selections[i-1].group !== 'Group I' && this.selections[i].group === this.selections[i-1].group) {
                     console.log('connection function running')
                     this.selections[i].connection = true
                     this.selections[i - 1].connection = false
+                    this.complete = true
                     
                 }
                 if (this.selections[i].value === 'F' && this.selections[i - 1].value === 'C' && this.selections[i].group !== 'Group I' && this.selections[i-1].group !== 'Group I' && this.selections[i].group === this.selections[i-1].group) {
                     console.log('connection function running')
                     this.selections[i].connection = true
                     this.selections[i - 1].connection = false
+                    this.complete = true
                     
                 }
                 if (this.selections[i].value === 'G' && this.selections[i - 1].value === 'B' && this.selections[i].group !== 'Group I' && this.selections[i-1].group !== 'Group I' && this.selections[i].group === this.selections[i-1].group) {
                     console.log('connection function running')
                     this.selections[i].connection = true
                     this.selections[i - 1].connection = false
+                    this.complete = true
                     
                 }
                 if (this.selections[i].value === 'G' && this.selections[i - 1].value === 'C' && this.selections[i].group !== 'Group I' && this.selections[i-1].group !== 'Group I' && this.selections[i].group === this.selections[i-1].group) {
                     console.log('connection function running')
                     this.selections[i].connection = true
                     this.selections[i - 1].connection = false
+                    this.complete = true
                     
                 }
                 if (this.selections[i].value === 'H' && this.selections[i - 1].value === 'B' && this.selections[i].group !== 'Group I' && this.selections[i-1].group !== 'Group I' && this.selections[i].group === this.selections[i-1].group) {
                     console.log('connection function running')
                     this.selections[i].connection = true
                     this.selections[i - 1].connection = false
+                    this.complete = true
                     
                 }
                 if (this.selections[i].value === 'H' && this.selections[i - 1].value === 'C' && this.selections[i].group !== 'Group I' && this.selections[i-1].group !== 'Group I' && this.selections[i].group === this.selections[i-1].group) {
                     console.log('connection function running')
                     this.selections[i].connection = true
                     this.selections[i - 1].connection = false
+                    this.complete = true
                     
                 }
                 if (this.selections[i].value === 'D' && this.selections[i - 1].value === 'D' && this.selections[i].group !== 'Group I' && this.selections[i-1].group !== 'Group I' && this.selections[i].group === this.selections[i-1].group) {
                     console.log('connection function running')
                     this.selections[i].bigConnection = true
                     this.selections[i - 1].bigConnection = false
+                    this.complete = true
                     
                 }
                 if (this.selections[i].value === 'D' && this.selections[i - 1].value === 'E' && this.selections[i].group !== 'Group I' && this.selections[i-1].group !== 'Group I' && this.selections[i].group === this.selections[i-1].group) {
                     console.log('connection function running')
                     this.selections[i].bigConnection = true
                     this.selections[i - 1].bigConnection = false
+                    this.complete = true
                     
                 }
                 if (this.selections[i].value === 'D' && this.selections[i - 1].value === 'F' && this.selections[i].group !== 'Group I' && this.selections[i-1].group !== 'Group I' && this.selections[i].group === this.selections[i-1].group) {
                     console.log('connection function running')
                     this.selections[i].bigConnection = true
                     this.selections[i - 1].bigConnection = false
+                    this.complete = true
                     
                 }
                 if (this.selections[i].value === 'D' && this.selections[i - 1].value === 'G' && this.selections[i].group !== 'Group I' && this.selections[i-1].group !== 'Group I' && this.selections[i].group === this.selections[i-1].group) {
                     console.log('connection function running')
                     this.selections[i].bigConnection = true
                     this.selections[i - 1].bigConnection = false
+                    this.complete = true
                     
                 }
                 if (this.selections[i].value === 'D' && this.selections[i - 1].value === 'H' && this.selections[i].group !== 'Group I' && this.selections[i-1].group !== 'Group I' && this.selections[i].group === this.selections[i-1].group) {
                     console.log('connection function running')
                     this.selections[i].bigConnection = true
                     this.selections[i - 1].bigConnection = false
+                    this.complete = true
                     
                 }
                 if (this.selections[i].value === 'E' && this.selections[i - 1].value === 'D' && this.selections[i].group !== 'Group I' && this.selections[i-1].group !== 'Group I' && this.selections[i].group === this.selections[i-1].group) {
                     console.log('connection function running')
                     this.selections[i].bigConnection = true
                     this.selections[i - 1].bigConnection = false
+                    this.complete = true
                     
                 }
                 if (this.selections[i].value === 'E' && this.selections[i - 1].value === 'E' && this.selections[i].group !== 'Group I' && this.selections[i-1].group !== 'Group I' && this.selections[i].group === this.selections[i-1].group) {
                     console.log('connection function running')
                     this.selections[i].bigConnection = true
                     this.selections[i - 1].bigConnection = false
+                    this.complete = true
                     
                 }
                 if (this.selections[i].value === 'E' && this.selections[i - 1].value === 'F' && this.selections[i].group !== 'Group I' && this.selections[i-1].group !== 'Group I' && this.selections[i].group === this.selections[i-1].group) {
                     console.log('connection function running')
                     this.selections[i].bigConnection = true
                     this.selections[i - 1].bigConnection = false
+                    this.complete = true
                     
                 }
                 if (this.selections[i].value === 'E' && this.selections[i - 1].value === 'G' && this.selections[i].group !== 'Group I' && this.selections[i-1].group !== 'Group I' && this.selections[i].group === this.selections[i-1].group) {
                     console.log('connection function running')
                     this.selections[i].bigConnection = true
                     this.selections[i - 1].bigConnection = false
+                    this.complete = true
                     
                 }
                 if (this.selections[i].value === 'E' && this.selections[i - 1].value === 'H' && this.selections[i].group !== 'Group I' && this.selections[i-1].group !== 'Group I' && this.selections[i].group === this.selections[i-1].group) {
                     console.log('connection function running')
                     this.selections[i].bigConnection = true
                     this.selections[i - 1].bigConnection = false
+                    this.complete = true
                     
                 }
                 if (this.selections[i].value === 'F' && this.selections[i - 1].value === 'D' && this.selections[i].group !== 'Group I' && this.selections[i-1].group !== 'Group I' && this.selections[i].group === this.selections[i-1].group) {
                     console.log('connection function running')
                     this.selections[i].bigConnection = true
                     this.selections[i - 1].bigConnection = false
+                    this.complete = true
                     
                 }
                 if (this.selections[i].value === 'F' && this.selections[i - 1].value === 'E' && this.selections[i].group !== 'Group I' && this.selections[i-1].group !== 'Group I' && this.selections[i].group === this.selections[i-1].group) {
                     console.log('connection function running')
                     this.selections[i].bigConnection = true
                     this.selections[i - 1].bigConnection = false
+                    this.complete = true
                     
                 }
                 if (this.selections[i].value === 'F' && this.selections[i - 1].value === 'F' && this.selections[i].group !== 'Group I' && this.selections[i-1].group !== 'Group I' && this.selections[i].group === this.selections[i-1].group) {
                     console.log('connection function running')
                     this.selections[i].bigConnection = true
                     this.selections[i - 1].bigConnection = false
+                    this.complete = true
                     
                 }
                 if (this.selections[i].value === 'F' && this.selections[i - 1].value === 'G' && this.selections[i].group !== 'Group I' && this.selections[i-1].group !== 'Group I' && this.selections[i].group === this.selections[i-1].group) {
                     console.log('connection function running')
                     this.selections[i].bigConnection = true
                     this.selections[i - 1].bigConnection = false
+                    this.complete = true
                     
                 }
                 if (this.selections[i].value === 'G' && this.selections[i - 1].value === 'D' && this.selections[i].group !== 'Group I' && this.selections[i-1].group !== 'Group I' && this.selections[i].group === this.selections[i-1].group) {
                     console.log('connection function running')
                     this.selections[i].bigConnection = true
                     this.selections[i - 1].bigConnection = false
+                    this.complete = true
                     
                 }
                 if (this.selections[i].value === 'G' && this.selections[i - 1].value === 'E' && this.selections[i].group !== 'Group I' && this.selections[i-1].group !== 'Group I' && this.selections[i].group === this.selections[i-1].group) {
                     console.log('connection function running')
                     this.selections[i].bigConnection = true
                     this.selections[i - 1].bigConnection = false
+                    this.complete = true
                     
                 }
                 if (this.selections[i].value === 'G' && this.selections[i - 1].value === 'F' && this.selections[i].group !== 'Group I' && this.selections[i-1].group !== 'Group I' && this.selections[i].group === this.selections[i-1].group) {
                     console.log('connection function running')
                     this.selections[i].bigConnection = true
                     this.selections[i - 1].bigConnection = false
+                    this.complete = true
                     
                 }
                 if (this.selections[i].value === 'G' && this.selections[i - 1].value === 'G' && this.selections[i].group !== 'Group I' && this.selections[i-1].group !== 'Group I' && this.selections[i].group === this.selections[i-1].group) {
                     console.log('connection function running')
                     this.selections[i].bigConnection = true
                     this.selections[i - 1].bigConnection = false
+                    this.complete = true
                     
                 }
                 if (this.selections[i].value === 'G' && this.selections[i - 1].value === 'H' && this.selections[i].group !== 'Group I' && this.selections[i-1].group !== 'Group I' && this.selections[i].group === this.selections[i-1].group) {
                     console.log('connection function running')
                     this.selections[i].bigConnection = true
                     this.selections[i - 1].bigConnection = false
+                    this.complete = true
                     
                 }
                 if (this.selections[i].value === 'H' && this.selections[i - 1].value === 'D' && this.selections[i].group !== 'Group I' && this.selections[i-1].group !== 'Group I' && this.selections[i].group === this.selections[i-1].group) {
                     console.log('connection function running')
                     this.selections[i].bigConnection = true
                     this.selections[i - 1].bigConnection = false
+                    this.complete = true
                     
                 }
                 if (this.selections[i].value === 'H' && this.selections[i - 1].value === 'E' && this.selections[i].group !== 'Group I' && this.selections[i-1].group !== 'Group I' && this.selections[i].group === this.selections[i-1].group) {
                     console.log('connection function running')
                     this.selections[i].bigConnection = true
                     this.selections[i - 1].bigConnection = false
+                    this.complete = true
                     
                 } 
                 if (this.selections[i].value === 'H' && this.selections[i - 1].value === 'F' && this.selections[i].group !== 'Group I' && this.selections[i-1].group !== 'Group I' && this.selections[i].group === this.selections[i-1].group) {
                     console.log('connection function running')
                     this.selections[i].bigConnection = true
                     this.selections[i - 1].bigConnection = false
+                    this.complete = true
                     
                 }
                 if (this.selections[i].value === 'H' && this.selections[i - 1].value === 'G' && this.selections[i].group !== 'Group I' && this.selections[i-1].group !== 'Group I' && this.selections[i].group === this.selections[i-1].group) {
                     console.log('connection function running')
                     this.selections[i].bigConnection = true
                     this.selections[i - 1].bigConnection = false
+                    this.complete = true
                     
                 }
                 if (this.selections[i].value === 'H' && this.selections[i - 1].value === 'E' && this.selections[i].group !== 'Group I' && this.selections[i-1].group !== 'Group I' && this.selections[i].group === this.selections[i-1].group) {
                     console.log('connection function running')
                     this.selections[i].bigConnection = true
                     this.selections[i - 1].bigConnection = false
+                    this.complete = true
                     
                 }
             }
@@ -3303,6 +3370,7 @@ var mainVm = new Vue({
                 mainVm.selections = data
             })
         },
+
         groupOneRequirement: function() {
             for (var i = 0; i < this.selections.length; i++) {
                 if (this.selections[i].group === 'Group I') {

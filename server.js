@@ -38,7 +38,7 @@ app.use(function(req, res, next) {
 })
 
 var gymnasticsSchema = new mongoose.Schema({
-
+	complete: {type: Boolean},
 	name: {type: String},			
 	description: {type: String},	
 	value: {type: String},				
@@ -65,11 +65,15 @@ var gymnasticsSchema = new mongoose.Schema({
 	startValue: {type: Number},
 	floor: {type: Object},
 	userId: {type:String},
+})
 
-
+var routineSchema = new mongoose.Schema({
+	userId: {type:String},
+	routine: {type:Array},
 })
 
 var GymnasticsModel = mongoose.model('gymnastics', gymnasticsSchema)
+var RoutineModel = mongoose.model('routine', routineSchema)
 
 app.get('/', function(request, response){
 	response.sendFile(__dirname + '/gymnastics.html')
@@ -96,6 +100,24 @@ app.post('/select', function(req, res){
 	})
 })
 
+app.post('/routine', function(req, res){
+	console.log('routine body? ', req.body)
+	req.body['userId'] = req.session.id
+	var newRoutineSelection = new RoutineModel(req.body)
+	console.log(newRoutineSelection)
+	newRoutineSelection.save(function(err, createdRoutine){
+
+		if (err){
+			console.log(err)
+			res.send('POST Selection: oops, something went wrong.')
+		}
+		else {
+			res.send(createdRoutine)
+			// console.log(createdTodo)
+		}
+	})
+})
+
 
 //retrieving fresh data t
 app.get('/select', function(req, res){
@@ -103,6 +125,18 @@ app.get('/select', function(req, res){
 		if (err) {
 			console.log(err)
 			res.send('GET Selections: oops, something went wrong.')
+		}
+		else {
+			res.send(docs)
+		}
+	}) 
+})
+
+app.get('/routine', function(req, res){
+	RoutineModel.find({userId : req.session.id}, function(err, docs){   ///study syntax changes. TodoModel is how we access database
+		if (err) {
+			console.log(err)
+			res.send('GET Routine: oops, something went wrong.')
 		}
 		else {
 			res.send(docs)
