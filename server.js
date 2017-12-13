@@ -176,6 +176,6 @@ app.post('/deleteAll', function(req, res){
 	})
 })
 
-app.listen(8080, function(){
+app.listen(80, function(){
 	console.log('the app is running on post 8080')
 })
